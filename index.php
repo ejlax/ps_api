@@ -1,4 +1,5 @@
 <?php
+session_start();
 //include_once('verify.php');
 //require_once 'AWSSDKforPHP/sdk.class.php';
 //$ec2 = new AmazonEC2();
@@ -20,10 +21,11 @@ $ps_url = $_GET['ps_url'];
           <div class="span10">
           <div class="tabbable tabs-left">
           	<ul class="span3 nav nav-tabs">
-            <li class=><a href="#tab1" class='active' data-toggle="tab">Generate Token</a></li>
-            <li><a href="#tab2" data-toggle="tab">Import Staff and Students</a></li>
-            <li><a href="#tab3" data-toggle="tab">Import Courses and Sections</a></li>
-			<li><a href="#tab4" data-toggle="tab">Import Enrollments</a></li>            
+            <li><a href="#tab1" data-toggle="tab">Generate Token</a></li>
+            <li><a href="#tab2" data-toggle="tab">Select Schools</a></li>
+            <li><a href="#tab3" data-toggle="tab">Import Staff and Students</a></li>
+            <li><a href="#tab4" data-toggle="tab">Import Courses and Sections</a></li>
+			<li><a href="#tab5" data-toggle="tab">Import Enrollments</a></li>            
           </ul>	
           <div id="nav nav-tab" class="span7 tab-content">
             <div style="overflow: visible;" class="tab-pane" id="tab1">
@@ -42,52 +44,57 @@ $ps_url = $_GET['ps_url'];
 				</form>
 				<h5 id="token"></h5>
            	</div>
-           	<div style="overflow: visible;" class="tab-pane" id="tab2">
-				<form class="form-condensed" method="post" action="create_tag.php">
-				 <div class="control-group">
-				    <label class="control-label" for="keyPair"><h5>Resource ID</h5></label>
-				    <div class="controls">
-				      <select name="resource_id">
-				      </select>
+           	            <div style="overflow: visible;" class="tab-pane" id="tab2">
+              	<form class="form-condensed" method="post" action="oauth.php" id='get_token'>
+				  <div class="control-group">
+				    <label class="control-label" for="imageId"><h5>Select Schools</h5></label>
+				    <div class="controls"><?
+				    
+//$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
+//$url ="https://ps-vscsd.gwaea.org/ws/v1/district/school";
+$url = $_SESSION['ps_url'];
+//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
+//echo $url."<br>";
+$ch = curl_init($url);
+$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
+		'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
+);
+
+# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
+$ch = curl_init($url);
+//echo $url."<br>";
+//print_r($request_headers);
+echo "<br>";
+
+// Set headers
+	curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$response = new SimpleXMLElement(curl_exec($ch));
+		//$info = curl_getinfo($ch);
+		curl_close($ch);		
+//print_r($response);
+
+/*
+ * $fp = fopen('courses.csv', 'w');
+//fwrite($fp,$json_str);
+$data = "course_id,short_name,long_name,status\n";
+fwrite($fp,$data);*/
+echo "<p><h5>Select Your Schools</h5></p><form method='post' action='import.php' id='import'><select name='schools[]' multiple='multiple' size='10'>";
+foreach($response->school as $school)
+{
+    	$school_id = (String) $school->id;
+		$school_name = (String) $school->name;
+	echo "<option class='option' value='".$school_id."'>".$school_name."</option>";
+}
+echo "</select>";
+			      	?>
 				    </div>
 				  </div>
 				  <div class="control-group">
-				    <label class="control-label" for="securityGroup"><h5>Key Name Value Pair</h5></label>
-				    <div class="controls">
-				    	<label class='control-label' for='keyName'>Key Name</label>
-				      <input type='text' name='keyName'>
-				    	<label class='control-label' for='keyName'>Key Value</label>				      
-				      <input type='text' name='keyValue'>
-				    </div>
-				  </div>
-				  <button type="submit" class="btn">Add Tag</button>
+				  <button type="submit" class="btn">Get Token</button><img id='loading' style='display: none;' src='img/ajax-loader.gif'>
+					</div>				
 				</form>
-           	</div>
-           	<div style="overflow: visible;" class="tab-pane" id="tab3">
-				<form class="form-condensed" method="post" action="create_vol.php">
-				 <div class="control-group">
-				    <label class="control-label" for="keyPair"><h5>Instance ID</h5></label>
-				    <p>This is the instance to which you will add the volume.</p>
-				    <div class="controls">
-				      <select name="resource_id">
-				      </select>
-				    </div>
-				  </div>
-				  <div class="control-group">
-				    <label class="control-label" for="securityGroup"><h5>Volume Info</h5></label>
-				    <div class="controls">
-				    <label class='control-label' for='keyName'><h5>Volume Size (in GB)</h5></label>
-				      <input type='text' name='size'>	
-				    	<label class='control-label' for='keyName'><h5>Tag Name</h5></label>
-				    	<p>Tag name of 'name' will give the instance a reference name</p>
-				      <input type='text' name='key'>
-				    	<label class='control-label' for='keyName'>Tag Value</label>
-				    	<p>The value of the tag you want to create</p>			      
-				      <input type='text' name='value'>
-				    </div>
-				  </div>
-				  <button type="submit" class="btn">Add Tag</button>
-				</form>
+				<h5 id="token"></h5>
            	</div>
          	</div><!--/nav-tab-->
         	</div><!--/tabbable-->
