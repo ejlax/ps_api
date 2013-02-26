@@ -39,7 +39,4 @@ $('.nav-tabs a').on('shown', function (e) {
     });
     });
 
-    </script>
-
-  </body>
-</html>
+</script>
