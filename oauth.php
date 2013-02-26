@@ -20,7 +20,7 @@ $response = curl_exec($ch);
 $json = json_decode($response);
 //print_r($json);
 //$result = new SimpleXMLElement(curl_exec($ch));
-session_destroy();
+session_start();
 if(curl_errno($ch))
 {
   echo 'Curl error: ' . curl_error($ch);

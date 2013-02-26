@@ -43,59 +43,14 @@ $ps_url = $_GET['ps_url'];
 					</div>				
 				</form>
 				<h5 id="token"></h5>
-           	</div>
-           	            <div style="overflow: visible;" class="tab-pane" id="tab2">
-              	<form class="form-condensed" method="post" action="oauth.php" id='get_token'>
-				  <div class="control-group">
-				    <label class="control-label" for="imageId"><h5>Select Schools</h5></label>
-				    <div class="controls"><?
-				    
-//$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
-//$url ="https://ps-vscsd.gwaea.org/ws/v1/district/school";
-$url = $_SESSION['ps_url'];
-//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
-//echo $url."<br>";
-$ch = curl_init($url);
-$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
-		'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
-);
-
-# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
-$ch = curl_init($url);
-//echo $url."<br>";
-//print_r($request_headers);
-echo "<br>";
-
-// Set headers
-	curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	$response = new SimpleXMLElement(curl_exec($ch));
-		//$info = curl_getinfo($ch);
-		curl_close($ch);		
-//print_r($response);
-
-/*
- * $fp = fopen('courses.csv', 'w');
-//fwrite($fp,$json_str);
-$data = "course_id,short_name,long_name,status\n";
-fwrite($fp,$data);*/
-echo "<p><h5>Select Your Schools</h5></p><form method='post' action='import.php' id='import'><select name='schools[]' multiple='multiple' size='10'>";
-foreach($response->school as $school)
-{
-    	$school_id = (String) $school->id;
-		$school_name = (String) $school->name;
-	echo "<option class='option' value='".$school_id."'>".$school_name."</option>";
-}
-echo "</select>";
-			      	?>
-				    </div>
-				  </div>
-				  <div class="control-group">
-				  <button type="submit" class="btn">Get Token</button><img id='loading' style='display: none;' src='img/ajax-loader.gif'>
-					</div>				
+				<form method='post' action='imports.php'>
+					<input type='hidden' name='access_token' value="<? echo $_SESSION['access_token'];?>"></input>
+					<input type='hidden' name='ps_url' value="<?php echo $ps_url;?>"></input>
+					<button type="submit" class="btn">Save Token</button>
 				</form>
-				<h5 id="token"></h5>
+				
            	</div>
+           	    
          	</div><!--/nav-tab-->
         	</div><!--/tabbable-->
         </div><!--/span-->
@@ -106,7 +61,7 @@ echo "</select>";
 include_once('footer.php');
 ?>
       
-<script>$('#get_token').bind('submit', function() {
+<!--  <script>$('#get_token').bind('submit', function() {
   $('#loading').show()
 });
 </script>
@@ -117,7 +72,7 @@ include_once('footer.php');
 }).ajaxStop(function(){
    $(this).hide();
 });
-</script>
+</script>  -->
 <script> 
 $("#get_token").submit(function(){
         var formdata = $(this).serialize(); // Serialize all form data
@@ -132,7 +87,9 @@ $("#get_token").submit(function(){
 });
 </script>
 
-
+<?php
+$_POST['access_token'] = $_SESSION['access_token'];
+?>
 
   </body>
 </html>
