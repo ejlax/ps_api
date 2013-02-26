@@ -20,25 +20,27 @@ $ps_url = $_GET['ps_url'];
           <div class="span10">
           <div class="tabbable tabs-left">
           	<ul class="span3 nav nav-tabs">
-            <li><a href="#tab1" data-toggle="tab">Generate Token</a></li>
+            <li class=><a href="#tab1" class='active' data-toggle="tab">Generate Token</a></li>
             <li><a href="#tab2" data-toggle="tab">Import Staff and Students</a></li>
             <li><a href="#tab3" data-toggle="tab">Import Courses and Sections</a></li>
 			<li><a href="#tab4" data-toggle="tab">Import Enrollments</a></li>            
           </ul>	
           <div id="nav nav-tab" class="span7 tab-content">
             <div style="overflow: visible;" class="tab-pane" id="tab1">
-              	<form class="form-condensed" method="post" action="oauth.php" id='create'>
+              	<form class="form-condensed" method="post" action="oauth.php" id='get_token'>
 				  <div class="control-group">
-				    <label class="control-label" for="imageId"><h5>Platform</h5></label>
+				    <label class="control-label" for="imageId"><h5>Get Token</h5></label>
 				    <div class="controls">
-						<input type="hidden" id="client_id" value='<?echo $client_id;?>'><? echo $client_id;?></input>
-						<input type="hidden" id="client_secret" value='<?echo $client_secret;?>'><? echo $client_secret;?></input>
-						<input type="hidden" id="ps_url" value='<?echo $ps_url;?>'><? echo $ps_url;?></input>
+						<input type="hidden" name="client_id" value='<?php echo $client_id;?>'></input>
+						<input type="hidden" name="client_secret" value='<?php echo $client_secret;?>'></input>
+						<input type="hidden" name="ps_url" value='<?php echo $ps_url;?>'></input>
 				    </div>
 				  </div>
 				  <div class="control-group">
 				  <button type="submit" class="btn">Get Token</button><img id='loading' style='display: none;' src='img/ajax-loader.gif'>
+					</div>				
 				</form>
+				<h5 id="token"></h5>
            	</div>
            	<div style="overflow: visible;" class="tab-pane" id="tab2">
 				<form class="form-condensed" method="post" action="create_tag.php">
@@ -92,20 +94,38 @@ $ps_url = $_GET['ps_url'];
         </div><!--/span-->
        </div>
       </div><!--/row-->
+
       <?php
 include_once('footer.php');
 ?>
-
       
-      <script>$('#create').bind('submit', function() {
+<script>$('#get_token').bind('submit', function() {
   $('#loading').show()
 });
 </script>
 <script>
-	$("#create").submit(function(){
+	$("#get_token").submit(function(){
 		$("#loading").submit(function(){
     $(this).show();
 }).ajaxStop(function(){
    $(this).hide();
 });
 </script>
+<script> 
+$("#get_token").submit(function(){
+        var formdata = $(this).serialize(); // Serialize all form data
+
+    // Post data to your PHP processing script
+    $.post( "oauth.php", formdata, function( data ) {
+        // Act upon the data returned, setting it to #success <div>
+        $("#token").html ( data );
+    });
+
+    return false; // Prevent the form from actually submitting
+});
+</script>
+
+
+
+  </body>
+</html>
