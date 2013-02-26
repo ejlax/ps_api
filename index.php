@@ -25,7 +25,7 @@ $ps_url = $_GET['ps_url'];
             <li class='disabled'><a href="#tab2" data-toggle="tab">Select Schools</a></li>
             <li class='disabled'><a href="#tab3" data-toggle="tab">Import Staff and Students</a></li>
             <li class='disabled'><a href="#tab4" data-toggle="tab">Import Courses and Sections</a></li>
-			<li class='disabled'><a href="#tab5" data-toggle="tab">Import Enrollments</a></li>            
+			<li class='disabled'><a href="#tab5" data-toggle="tab">Import Enrollments</a></li>          
           </ul>	
           <div id="nav nav-tab" class="span7 tab-content">
             <div style="overflow: visible;" class="tab-pane" id="tab1">
