@@ -31,9 +31,9 @@ $ps_url = $_GET['ps_url'];
 				  <div class="control-group">
 				    <label class="control-label" for="imageId"><h5>Platform</h5></label>
 				    <div class="controls">
-						<input type="hidden" id="client_id" value='<?echo $client_id;?>'></input>
-						<input type="hidden" id="client_secret" value='<?echo $client_secret;?>'></input>
-						<input type="hidden" id="ps_url" value='<?echo $ps_url;?>'></input>
+						<input type="hidden" id="client_id" value='<?echo $client_id;?>'><? echo $client_id;?></input>
+						<input type="hidden" id="client_secret" value='<?echo $client_secret;?>'><? echo $client_secret;?></input>
+						<input type="hidden" id="ps_url" value='<?echo $ps_url;?>'><? echo $ps_url;?></input>
 				    </div>
 				  </div>
 				  <div class="control-group">
