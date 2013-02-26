@@ -2,7 +2,7 @@
 session_start();
 $ps_url= $_POST['ps_url'];
 
-$ps_code = $_POST['client_code'];
+$ps_code = $_POST['client_id'];
 $ps_secret = $_POST['client_secret'];
 $auth_url = $ps_url."/oauth/access_token/";
 //$auth = base64_encode($ps_code.$ps_secret);

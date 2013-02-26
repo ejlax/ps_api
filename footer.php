@@ -5,7 +5,7 @@
       <hr>
 
       <footer>
-        <p align='center'>&copy; Pearson K12 Technology 2012</p>
+        <p align='center'>&copy; ejlax</p>
       </footer>
 
     </div><!--/.fluid-container-->
@@ -14,7 +14,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="bootstrap.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script>var url = document.location.toString();
 if (url.match('#')) {
     $('.nav-tabs a[href=#'+url.split('#')[1]+']').tab('show') ;

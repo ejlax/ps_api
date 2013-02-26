@@ -12,83 +12,32 @@ $ps_url = $_GET['ps_url'];
             <p>Live list of all instances in AWS</p>
             <p><a class="btn btn-primary btn-large" href="//aws.amazon.com/what-is-aws/">Learn more &raquo;</a></p>
           </div>  -->
+        <div class="row-fluid">
 		<div class="span10 content">
         <!-- Main hero unit for a primary marketing message or call to action -->
         <!-- Tabs -->
-          <h3>PowerSchool API Integration</h3>
+          <h2>PowerSchool API Integration</h2>
           <div class="span10">
           <div class="tabbable tabs-left">
           	<ul class="span3 nav nav-tabs">
-            <li><a href="#GenerateToken" data-toggle="tab">Generate Token</a></li>
+            <li><a href="#tab1" data-toggle="tab">Generate Token</a></li>
             <li><a href="#tab2" data-toggle="tab">Import Staff and Students</a></li>
             <li><a href="#tab3" data-toggle="tab">Import Courses and Sections</a></li>
 			<li><a href="#tab4" data-toggle="tab">Import Enrollments</a></li>            
           </ul>	
           <div id="nav nav-tab" class="span7 tab-content">
-            <div style="overflow: visible;" class="tab-pane" id="GenerateToken">
-              	<form class="form-condensed" method="post" action="create.php" id='create'>
+            <div style="overflow: visible;" class="tab-pane" id="tab1">
+              	<form class="form-condensed" method="post" action="oauth.php" id='create'>
 				  <div class="control-group">
 				    <label class="control-label" for="imageId"><h5>Platform</h5></label>
 				    <div class="controls">
-				      <select name="imageId">
-				      	<option value="ami-3d4ff254">Linux</option>
-				      	<option value="ami-6cb90605">Windows</option>
-				      </select>
+						<input type="hidden" id="client_id" value='<?echo $client_id;?>'></input>
+						<input type="hidden" id="client_secret" value='<?echo $client_secret;?>'></input>
+						<input type="hidden" id="ps_url" value='<?echo $ps_url;?>'></input>
 				    </div>
 				  </div>
 				  <div class="control-group">
-				    <label class="control-label" for="instanceRegion"><h5>Region</h5></label>
-				    <div class="controls">
-				      <select name="region">
-				      	<option value="US_E1">US-East</option>
-				      	<option value="US_W1">US-West</option>
-				      </select>
-				    </div>
-				  </div>
-				  <div class="control-group">
-				    <label class="control-label" for="instanceSize"><h5>Instance Size</h5></label>
-				    <div class="controls">
-				      <select name="instanceType">
-				      	<option value="t1.micro">t1.micro</option>
-				      	<option value="m1.small">m1.small</option>
-				      	<option value="m1.medium">m1.medium</option>
-				      	<option value="c1.medium">c1.medium</option>				      	
-				      	<option value="m1.large">m1.large</option>
-				      	<option value="m1.xlarge">m1.xlarge</option>
-				      </select>
-				    </div>
-				  </div>
-				 <div class="control-group">
-				    <label class="control-label" for="keyPair"><h5>Key Pair</h5></label>
-				    <div class="controls">
-				      <select name="keyPair">
-						<?php
-						$response  = $ec2->describe_key_pairs();
-						//print_r($response);
-							foreach ($response->body->keySet->item as $item) {
-								$keyName = (String) $item->keyName;
-								echo "<option value=". $keyName . ">" . $keyName . "</option>";							
-							}						
-						?>
-				      </select>
-				    </div>
-				  </div>
-				  <div class="control-group">
-				    <label class="control-label" for="securityGroup"><h5>Securty Group</h5></label>
-				    <div class="controls">
-				      <select name="securityGroupName">
-						<?php
-						$response  = $ec2->describe_security_groups();
-						foreach ($response->body->securityGroupInfo->item as $item) {
-							$sgName = (String) $item->groupName;
-							$sgID = (string) $item->groupId;
-							echo "<option value=". $sgID . ">" . $sgName . "</option>";
-						}						
-						?>
-				      </select>
-				    </div>
-				  </div>
-				  <button type="submit" class="btn">Launch Instance</button><img id='loading' style='display: none;' src='img/ajax-loader.gif'>
+				  <button type="submit" class="btn">Get Token</button><img id='loading' style='display: none;' src='img/ajax-loader.gif'>
 				</form>
            	</div>
            	<div style="overflow: visible;" class="tab-pane" id="tab2">
@@ -97,14 +46,6 @@ $ps_url = $_GET['ps_url'];
 				    <label class="control-label" for="keyPair"><h5>Resource ID</h5></label>
 				    <div class="controls">
 				      <select name="resource_id">
-						<?php
-						$response = $ec2->describe_instances();
-						//print_r($response);
-							foreach($response->body->reservationSet->item as $item){
-							$instanceId = (string) $item->instancesSet->item->instanceId;
-							echo "<option value=" .$instanceId .">" . $instanceId . "</option>"; 
-							}						
-						?>
 				      </select>
 				    </div>
 				  </div>
@@ -127,15 +68,6 @@ $ps_url = $_GET['ps_url'];
 				    <p>This is the instance to which you will add the volume.</p>
 				    <div class="controls">
 				      <select name="resource_id">
-						<?php
-						$response = $ec2->describe_instances();
-						//print_r($response);
-							foreach($response->body->reservationSet->item as $item){
-							$instanceId = (string) $item->instancesSet->item->instanceId;
-							$name = (string) $item->instancesSet->item->tagSet->item->value;
-							echo "<option value=" .$instanceId .">" . $name ."-" . $instanceId . "</option>"; 
-							}						
-						?>
 				      </select>
 				    </div>
 				  </div>
@@ -160,6 +92,10 @@ $ps_url = $_GET['ps_url'];
         </div><!--/span-->
        </div>
       </div><!--/row-->
+      <?php
+include_once('footer.php');
+?>
+
       
       <script>$('#create').bind('submit', function() {
   $('#loading').show()
@@ -173,6 +109,3 @@ $ps_url = $_GET['ps_url'];
    $(this).hide();
 });
 </script>
-<?php
-include_once('footer.php');
-?>
