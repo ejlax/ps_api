@@ -69,7 +69,8 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
 						}
 						echo "</select>";
 									      	?>
-						<button type='submit' class="btn-info">Select Schools</button>	
+						<br><button type='submit' class="btn-info">Select Schools</button>
+						</form>	
 				    </div>
 				  </div>
 				  

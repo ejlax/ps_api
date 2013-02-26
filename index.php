@@ -22,16 +22,16 @@ $ps_url = $_GET['ps_url'];
           <div class="tabbable tabs-left">
           	<ul class="span3 nav nav-tabs">
             <li><a href="#tab1" data-toggle="tab">Generate Token</a></li>
-            <li><a href="#tab2" data-toggle="tab">Select Schools</a></li>
-            <li><a href="#tab3" data-toggle="tab">Import Staff and Students</a></li>
-            <li><a href="#tab4" data-toggle="tab">Import Courses and Sections</a></li>
-			<li><a href="#tab5" data-toggle="tab">Import Enrollments</a></li>            
+            <li class='disabled'><a href="#tab2" data-toggle="tab">Select Schools</a></li>
+            <li class='disabled'><a href="#tab3" data-toggle="tab">Import Staff and Students</a></li>
+            <li class='disabled'><a href="#tab4" data-toggle="tab">Import Courses and Sections</a></li>
+			<li class='disabled'><a href="#tab5" data-toggle="tab">Import Enrollments</a></li>            
           </ul>	
           <div id="nav nav-tab" class="span7 tab-content">
             <div style="overflow: visible;" class="tab-pane" id="tab1">
               	<form class="form-condensed" method="post" action="oauth.php" id='get_token'>
 				  <div class="control-group">
-				    <label class="control-label" for="imageId"><h5>Get Token</h5></label>
+				    <label class="control-label" for="imageId"></label>
 				    <div class="controls">
 						<input type="hidden" name="client_id" value='<?php echo $client_id;?>'></input>
 						<input type="hidden" name="client_secret" value='<?php echo $client_secret;?>'></input>
@@ -43,7 +43,7 @@ $ps_url = $_GET['ps_url'];
 					</div>				
 				</form>
 				<h5 id="token"></h5>
-				<form method='post' action='imports.php'>
+				<form method='post' action='schools.php'>
 					<input type='hidden' name='access_token' value="<? echo $_SESSION['access_token'];?>"></input>
 					<input type='hidden' name='ps_url' value="<?php echo $ps_url;?>"></input>
 					<button type="submit" class="btn">Save Token</button>

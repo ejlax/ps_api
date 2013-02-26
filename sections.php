@@ -1,9 +1,8 @@
 <?php
-
-$token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
+session_start();
 //$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
 //get course count by school
-$url ="https://ps-vscsd.gwaea.org/ws/v1/school/6/section/count";
+//$url ="https://ps-vscsd.gwaea.org/ws/v1/school/6/section/count";
 //$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
 //api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 //echo $url."<br>";
