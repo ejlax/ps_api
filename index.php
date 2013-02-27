@@ -4,9 +4,11 @@ session_start();
 //require_once 'AWSSDKforPHP/sdk.class.php';
 //$ec2 = new AmazonEC2();
 include_once('header.php');
+include_once('oauth.php');
 $client_id = $_GET['client_id'];
 $client_secret = $_GET['client_secret'];
 $ps_url = $_GET['ps_url'];
+
 ?>
           <!--  <div class="hero-unit">
             <h1>AWS Instance List</h1>

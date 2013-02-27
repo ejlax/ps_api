@@ -3,9 +3,9 @@ ob_start();
 //$account = $_GET['account'];
 //$domain = $_GET['domain'];
 echo "This isn't working<br>";
-$token = "5d38f5a9-24cf-4a87-a383-2e5f164d51cc";
+$token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
 //$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
-$url ="http://powerschool-ag.dev.sifworks.com/ws/v1/school/3/term?Q=start_year==2013";
+$url ="http://ps-vscsd.gwaea.org/ws/v1/school/6/term?Q=start_year==2013";
 //api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 //echo $url."<br>";
 $ch = curl_init($url);
@@ -48,7 +48,7 @@ foreach($response->term as $term)
 		fclose($f);
 }
 
-
+/*
 $account = 1;
 $domain = "ericadams";
 $token = "1~OVzaepeSrdCKW9IJipmK2hMTeClJAQaGkD0RjQc59BDUQT3TRaUZgtPopqTdcKn4";
@@ -95,7 +95,7 @@ $ch = curl_init($url);
 	/*curl_setopt($ch, CURLOPT_POSTFIELDS,
 	array(
 		  'access_token' => "$token")
-	);*/
+	);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	//curl_setopt($ch, CURLINFO_HEADER_OUT);
 		$json = curl_exec($ch);
@@ -126,6 +126,6 @@ $ch = curl_init($url);
 			echo "There was no domain set.";
 		}
 			
-	
+	*/
  ob_flush();
 ?>

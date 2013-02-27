@@ -1,13 +1,12 @@
 <?php
 session_start();
-/*
-if(){
+
 	
 	foreach($_GET['schools'] as $school){
 
-
+		echo "Woo Hoo for School";
 
 	}
-}*/
-echo "Whoo Hoo!";
+
+
 ?>

@@ -41,7 +41,7 @@ $num = 1;
 
 $fp = fopen('courses.csv', 'w');
 //fwrite($fp,$json_str);
-$data = "course_id,short_name,long_name,status\n";
+$data = "course_id,short_name,long_name,term_id,status\n";
 $fp = fwrite($fp, $data);
 while($i < $pages){
 		
@@ -68,7 +68,7 @@ while($i < $pages){
 				curl_close($ch);		
 		//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
 		    //$json_obj = json_decode ($json_str);
-		//print_r($response);
+		print_r($response);
 		$num++;
 		
 		foreach($response->course as $course)
@@ -76,8 +76,9 @@ while($i < $pages){
     	$course_id = (String) $course->id;
 		$short_name = (String) $course->course_number;
 		$long_name = (String) $course->course_name;
+		$term_id = 226;
 		$status = 'active';
-		$data = $course_id.",".$short_name.",".$long_name.",".$status."\n";
+		$data = $course_id.",".$short_name.",".$long_name.",".$term_id.",".$status."\n";
 		$f = fopen('courses.csv', 'a');
 		fwrite($f,$data);
 		fclose($f);

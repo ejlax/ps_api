@@ -1,10 +1,10 @@
 <?php
 ob_start();
 session_start();
-$ps_url= $_POST['ps_url'];
+$ps_url= $_GET['ps_url'];
 
-$ps_code = $_POST['client_id'];
-$ps_secret = $_POST['client_secret'];
+$ps_code = $_GET['client_id'];
+$ps_secret = $_GET['client_secret'];
 $auth_url = $ps_url."/oauth/access_token/";
 //$auth = base64_encode($ps_code.$ps_secret);
 //echo $auth_url;
@@ -20,7 +20,7 @@ $response = curl_exec($ch);
 $json = json_decode($response);
 //print_r($json);
 //$result = new SimpleXMLElement(curl_exec($ch));
-session_start();
+//unset($_SESSION['access_token']);
 if(curl_errno($ch))
 {
   echo 'Curl error: ' . curl_error($ch);
