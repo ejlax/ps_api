@@ -44,20 +44,18 @@
           <a class="brand" href="home.php">Canvas PowerSchool API Tool</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#"><i class="icon-home icon-black"></i>Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="contact.php">Contact</a></li>
+              <li class="active"><a href="https://lti-examples.heroku.com/index.html?tool=redirect"><i class="icon-hand-right icon-black"></i> Redirect LTI Tool</a></li>
             </ul>
             <ul class="nav pull-right">
             	<li class="dropdown">
-            		<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="icon-user"></b>Welcome<b class="caret"></b></a>
+            		<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="icon-user"></b>Welcome<b class="caret"></b></a>
               		<ul class="dropdown-menu">
 						<!--  <li><a href='#'>Settings</a></li>  
 		                <li><a href='#'>Profile</a></li>  
-		                <li class='divider'></li>   -->
+		                <li class='divider'></li>   
 		                <li><a href='logout.php'>Logout</a></li>
-              		</ul>
-          		<li>
+        			</ul>   -->
+          		</li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

@@ -4,7 +4,8 @@ session_start();
 	
 	foreach($_GET['schools'] as $school){
 
-		echo "Woo Hoo for School";
+		$school_id = $school[0];
+		echo $school_id."<br>";
 
 	}
 
