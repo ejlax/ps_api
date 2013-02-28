@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_unregister($_SESSION['ps_url']);
 ob_start();
 include_once('header.php');
 if(isset($_SESSION['access_token']) && isset($_SESSION['ps_url'])){
