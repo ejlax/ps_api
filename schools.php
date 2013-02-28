@@ -60,7 +60,7 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
 						//fwrite($fp,$json_str);
 						$data = "course_id,short_name,long_name,status\n";
 						fwrite($fp,$data);*/
-						echo "<form method='get' action='sync.php' id='import'><select name='schools[]' multiple='multiple' size='10'>";
+						echo "<form method='get' action='' id='import'><select name='schools[]' multiple='multiple' size='10'>";
 						foreach($response->school as $school)
 						{
 						    	$school_id = (String) $school->id;
@@ -116,3 +116,10 @@ $_POST['access_token'] = $_SESSION['access_token'];
 
   </body>
 </html>
+<?php
+foreach($_GET['schools'] as $school){
+
+	$school_id = $school[0];
+	echo $school_id."<br>";
+
+}
