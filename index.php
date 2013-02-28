@@ -3,11 +3,11 @@ session_start();
 ob_start();
 include_once('header.php');
 if(isset($_SESSION['access_token']) && isset($_SESSION['ps_url'])){
-	
+	session_unset();
 }else{
 $ps_url= $_GET['ps_url'];
 $_SESSION['ps_url'] = $ps_url; 
-$ps_code = $_GET['client_code'];
+$ps_code = $_GET['client_id'];
 $ps_secret = $_GET['client_secret'];
 $auth_url = $ps_url."/oauth/access_token/";
 //$auth = base64_encode($ps_code.$ps_secret);

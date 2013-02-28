@@ -5,6 +5,8 @@ session_start();
 //$ec2 = new AmazonEC2();
 include_once('header.php');
 $token = $_SESSION['access_token'];
+//$token = '5d38f5a9-24cf-4a87-a383-2e5f164d51cc';
+//$ps_url = 'https://ps-vscsd.gwaea.org';
 $ps_url = $_POST['ps_url'];
 $_POST['ps_url'] = $_SESSION['ps_url'];
 ?>
@@ -33,7 +35,7 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
 				    <label class="control-label" for="imageId"><h5>Select Schools</h5></label>
 				    <div class="controls"><?
 						//$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
-						$url =$ps_url."/ws/v1/district/school";
+						$url = $ps_url."/ws/v1/district/school";
 						//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 						//echo $url."<br>";
 						$ch = curl_init($url);
@@ -42,25 +44,30 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
 						);
 						
 						# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
-						$ch = curl_init($url);
+						//$ch = curl_init($url);
 						//echo $url."<br>";
 						//print_r($request_headers);
-						echo "<br>";
-						
+						//echo "<br>";
+						if(curl_errno($ch)){
+						  $curlerror = 'Curl error: ' . curl_error($ch);
+							echo $curlerror;
+						}
+						else{ 
 						// Set headers
 							curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
 							curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 							$response = new SimpleXMLElement(curl_exec($ch));
+							//$response = curl_exec($ch);
 								//$info = curl_getinfo($ch);
 								curl_close($ch);		
-						//print_r($response);
+						print_r($response);
 						
 						/*
 						 * $fp = fopen('courses.csv', 'w');
 						//fwrite($fp,$json_str);
 						$data = "course_id,short_name,long_name,status\n";
 						fwrite($fp,$data);*/
-						echo "<form method='get' action='' id='import'><select name='schools[]' multiple='multiple' size='10'>";
+						echo "<form method='get' action='sync.php' id='import'><select name='schools[]' multiple='multiple' size='10'>";
 						foreach($response->school as $school)
 						{
 						    	$school_id = (String) $school->id;
@@ -68,7 +75,7 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
 							echo "<option class='option' value='".$school_id."'>".$school_name."</option>";
 						}
 						echo "</select>";
-									      	?>
+									      	}?>
 						<br><button type='submit' class="btn-info">Select Schools</button>
 						</form>	
 				    </div>
@@ -83,43 +90,9 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
       <?php
 include_once('footer.php');
 ?>
-      
-<script>$('#get_token').bind('submit', function() {
-  $('#loading').show()
-});
-</script>
-<script>
-	$("#get_token").submit(function(){
-		$("#loading").submit(function(){
-    $(this).show();
-}).ajaxStop(function(){
-   $(this).hide();
-});
-</script>
-<script> 
-$("#get_token").submit(function(){
-        var formdata = $(this).serialize(); // Serialize all form data
-
-    // Post data to your PHP processing script
-    $.post( "oauth.php", formdata, function( data ) {
-        // Act upon the data returned, setting it to #success <div>
-        $("#token").html ( data );
-    });
-
-    return false; // Prevent the form from actually submitting
-});
-</script>
-
 <?php
 $_POST['access_token'] = $_SESSION['access_token'];
 ?>
 
   </body>
 </html>
-<?php
-foreach($_GET['schools'] as $school){
-
-	$school_id = $school[0];
-	echo $school_id."<br>";
-
-}
