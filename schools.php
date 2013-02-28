@@ -25,7 +25,7 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
           <div class="tabbable tabs-left">
           	<ul class="span3 nav nav-tabs">
             <li><a href="#tab1" data-toggle="tab">Select Schools</a></li>
-            <li><a href="#tab2" data-toggle="tab">Import Staff and Students</a></li>
+            <li><a href="import_users.php" data-toggle="tab">Import Staff and Students</a></li>
             <li><a href="#tab3" data-toggle="tab">Import Courses and Sections</a></li>
 			<li><a href="#tab4" data-toggle="tab">Import Enrollments</a></li>            
           </ul>	
