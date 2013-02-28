@@ -60,7 +60,7 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
 							//$response = curl_exec($ch);
 								//$info = curl_getinfo($ch);
 								curl_close($ch);		
-						print_r($response);
+						//print_r($response);
 						
 						/*
 						 * $fp = fopen('courses.csv', 'w');
