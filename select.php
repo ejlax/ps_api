@@ -37,50 +37,11 @@ if(curl_errno($ch)){
 	//fwrite($fp,$json_str);
 	$data = "course_id,short_name,long_name,status\n";
 	fwrite($fp,$data);*/
-	//echo "<form method='get' action='import_users.php' id='import'><select name='schools[]' multiple='multiple' size='10'>";
 
-
-/*<div class="span 6 center">
-	<form method='get' action='' id='list'>
-            <table class="table table-hover" id="schools">
-              <thead>
-                <tr>
-                  <th>Select?</th>
-                  <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><input type='checkbox' value='1' name='schools[]'></input></td>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td><input type='checkbox' value='2' name='schools[]'></input></td>	
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-            <br><button class='btn-info btn-large' type='submit' value='Select'>Select</button>
-          </form>
-          </div>   
-  </div>
-         */ 
 
 print_r($_GET['schools']);
+			echo "<div class='row span6'>";
+			echo "<legend>Select Schools</legend>";
 			echo "<div class='table'>";
 			echo"<form name='schools_submit' method='get' action='import_users.php'>";
 				echo "<table id='schools' class='table-condensed table-striped table-hover'>";
@@ -93,10 +54,30 @@ print_r($_GET['schools']);
 					
 				echo "<tr><td><input type='checkbox' value='".$school_id."' name='schools[]'></td><td>".$school_id."</td><td>".$school_name."</td></tr>";
 				}	
-				echo "</tbody></table><button class='btn-primary' type='submit' value='submit'>Select Schools</button></form></div>";
-include_once('footer.php');
+				echo "</tbody></table><br>";
+				echo "<legend>Import Users</legend>";
+				echo "<label class='checkbox'>
+			      <input type='checkbox' name='import_students[]' value='y'><h6>Import Students</h6>
+			    </label>";
+				echo "<label class='checkbox'>
+			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Staff</h6>
+			    </label>";
+				echo "<legend>Import Course and Sections</legend>";
+				echo "<label class='checkbox'>
+			      <input type='checkbox' name='import_courses[]' value='y'><h6>Import Courses</h6>
+			    </label>";
+			    echo "<label class='checkbox'>
+			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Sections</h6>
+			    </label>";
+				echo "<label class='checkbox'>
+			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Enrollments</h6>
+			    </label>";
+				echo "<label class='checkbox'>
+			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Term</h6>
+			    </label>";
+				echo "<button class='btn-primary' type='submit' value='submit'>Start Import</button></p></form></div></div>";
+				include_once('footer.php');
 }
-
 ?>
     <script type="text/javascript">$(document).ready(function() {
 

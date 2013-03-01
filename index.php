@@ -4,7 +4,7 @@ ob_start();
 include_once('header.php');
 if(isset($_SESSION['access_token']) && isset($_SESSION['ps_url'])){
 	session_unset();
-}else{
+}
 $ps_url= $_GET['ps_url'];
 $_SESSION['ps_url'] = $ps_url; 
 $ps_code = $_GET['client_id'];
@@ -49,7 +49,7 @@ if( isset($ps_url) && isset($ps_secret) && isset($ps_code)){
 		break;
 		}
 
-}?>
+?>
 
 
 

@@ -1,12 +1,7 @@
- </div><!--/span-->
-       </div>
-      </div><!--/row-->
 
-      <hr>
+      <div class='row span6'>
 
-      <footer>
-        <p align='center'>&copy; ejlax</p>
-      </footer>
+      </div>
 
     </div><!--/.fluid-container-->
 
