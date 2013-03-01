@@ -41,17 +41,15 @@ if( isset($ps_url) && isset($ps_secret) && isset($ps_code)){
 	
 	
 	
-	
 	//$_SESSION['ps_url'] = $ps_url;
 	//echo $_SESSION['access_token'];
 	}else{
-		echo "<div class='span4'><h6>Please input your client Id, client secret, and PowerSchool URL in the <a href='https://lti-examples.heroku.com/index.html?tool=redirect'>Redirect LTI tool</a>.<p>This Program will not function until you do.<p></h6></div>";
-		break;
+		echo "<div class='row'><div class='span4'><h6>Please input your client Id, client secret, and PowerSchool URL in the <a href='https://lti-examples.heroku.com/index.html?tool=redirect'>Redirect LTI tool</a>.<p>This Program will not function until you do.<p></h6></div>";
+		echo "</div><div><iframe src='https://lti-examples.heroku.com/index.html?tool=redirect' height=800 width=800></iframe></div>";
+		exit();
 		}
 header("location:select.php");
 ?>
-
-
 
           <!--  <div class="hero-unit">
             <h1>AWS Instance List</h1>
