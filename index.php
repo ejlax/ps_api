@@ -48,7 +48,7 @@ if( isset($ps_url) && isset($ps_secret) && isset($ps_code)){
 		echo "<div class='span4'><h6>Please input your client Id, client secret, and PowerSchool URL in the <a href='https://lti-examples.heroku.com/index.html?tool=redirect'>Redirect LTI tool</a>.<p>This Program will not function until you do.<p></h6></div>";
 		break;
 		}
-
+header("location:select.php");
 ?>
 
 

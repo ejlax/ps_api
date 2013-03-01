@@ -59,11 +59,11 @@ if(curl_errno($ch)){
 foreach($_GET['schools'] as $school){
 
 	$school_id = $school[0];
-	echo $school_id."<br>";
+	//echo $school_id."<br>";
 	$i++;
 	//get student count
 	$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/student/count";
-	echo $url."<br>";
+	//echo $url."<br>";
 	# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
 	$ch = curl_init($url);
 	$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
@@ -76,11 +76,11 @@ foreach($_GET['schools'] as $school){
 	curl_close($ch);		
 	
 	//print_r($response);
-	echo "<br>";
+	//echo "<br>";
 	$i = 0;
 	//store course count as $count
 	$student_count = $response->count;
-	echo $student_count;
+	//echo $student_count;
 	// setting remainder to determing how many pages to request from API
 	$pages = $student_count / 100;
 	//echo $pages;
@@ -150,11 +150,11 @@ foreach($_GET['schools'] as $school){
 	curl_close($ch);		
 	
 	//print_r($response);
-	echo "<br>";
+	//echo "<br>";
 	$i = 0;
 	//store course count as $count
 	$student_count = $response->count;
-	echo $student_count;
+	//echo $student_count;
 	// setting remainder to determing how many pages to request from API
 	$pages = $student_count / 100;
 	//echo $pages;
@@ -204,7 +204,7 @@ foreach($_GET['schools'] as $school){
 		$i++;
 		}
 	}
-
+	}
 /*
 $account = 1;
 $domain = "ericadams.test";
@@ -286,3 +286,7 @@ $ch = curl_init($url);
  * 
  */
 ?>
+<form method='get' action='users_1.csv'>
+<br><button type='submit' class='btn-info btn-large' src='users_1.csv'>Download Me</button>
+</form>
+
