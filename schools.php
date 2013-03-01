@@ -22,10 +22,11 @@ $_POST['ps_url'] = $_SESSION['ps_url'];
           <h2>PowerSchool API Integration</h2>
           <!--  <? echo $token." and ".$ps_url;?>  -->
           <div class="span10">
+          <li><a href="import_users.php">Import Staff and Students</a></li>
           <div class="tabbable tabs-left">
           	<ul class="span3 nav nav-tabs">
             <li><a href="#tab1" data-toggle="tab">Select Schools</a></li>
-            <li><a href="import_users.php" data-toggle="tab">Import Staff and Students</a></li>
+
             <li><a href="#tab3" data-toggle="tab">Import Courses and Sections</a></li>
 			<li><a href="#tab4" data-toggle="tab">Import Enrollments</a></li>            
           </ul>	

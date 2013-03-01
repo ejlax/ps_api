@@ -88,11 +88,11 @@ if( isset($ps_url) && isset($ps_secret) && isset($ps_code)){
 				  <button type="submit" class="btn">Get Token</button><img id='loading' style='display: none;' src='img/ajax-loader.gif'>
 					</div>				
 				</form>  -->
-				<h5 id="token"><?php echo $_SESSION['access_token'];?></h5> 
-				<form method='post' action='schools.php'>
+				<h5 class='hidden' id="token"><?php echo $_SESSION['access_token'];?></h5>
+				<form method='post' action='select.php'>
 					<input type='hidden' name='access_token' value="<?php echo $_SESSION['access_token'];?>"></input>
 					<input type='hidden' name='ps_url' value="<?php echo $_SESSION['ps_url'];?>"></input>
-					<button type="submit" class="btn">Save Token</button>
+					<button type="submit" class="btn">Select Schools</button>
 				</form>
 				
            	</div>
