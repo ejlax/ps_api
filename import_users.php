@@ -47,10 +47,10 @@ if(curl_errno($ch)){
 	echo "</select><br><button type='submit' class='btn-info'>Select Schools</button>
 			</form>";
   	}
-}?>
+}else{
 			
 
-<?php
+
 	$fp = fopen('users.csv', 'w');
 	$data = "user_id,login_id,first_name,last_name,email,status\n";
 	//writing users.csv headers
