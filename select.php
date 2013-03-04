@@ -75,7 +75,7 @@ print_r($_GET['schools']);
 				echo "<label class='checkbox'>
 			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Term</h6>
 			    </label>";
-				echo "<button class='btn-primary' type='submit' value='submit'>Start Import</button></p></form></div></div>";
+				echo "<button id='import' class='btn btn-primary' data-loading-text='Importing...' type='submit'>Start Import</button></p></form></div></div>";
 				include_once('footer.php');
 }
 ?>
@@ -89,4 +89,14 @@ print_r($_GET['schools']);
     });
 
 });
+</script>
+<script>
+	$('#import')
+    .click(function () {
+        var btn = $(this)
+        btn.button('loading')
+        setTimeout(function () {
+            btn.button('reset')
+        }, 5000)
+    });
 </script>

@@ -44,7 +44,7 @@ if(curl_errno($ch)){
 				$school_name = (String) $school->name;
 			echo "<option class='option' value='".$school_id."'>".$school_name."</option>";
 		}
-	echo "</select><br><button type='submit' class='btn-info'>Select Schools</button>
+	echo "</select><br><button type='submit' class='btn btn-info'>Select Schools</button>
 			</form>";
   	}
 }else{
@@ -137,7 +137,7 @@ foreach($_GET['schools'] as $school){
 	$i++;
 	//get student count
 	$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/staff/count";
-	echo $url."<br>";
+	//echo $url."<br>";
 	# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
 	$ch = curl_init($url);
 	$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
@@ -287,6 +287,6 @@ $ch = curl_init($url);
  */
 ?>
 <form method='get' action='users_1.csv'>
-<br><button type='submit' class='btn-info btn-large' src='users_1.csv'>Download Me</button>
+<br><button type='submit' class='btn btn-primary' data-loading-text='Loading...' src='users_1.csv'>Download Me</button>
 </form>
 
