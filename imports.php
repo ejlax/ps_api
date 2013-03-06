@@ -105,7 +105,6 @@ foreach($_GET['schools'] as $school){
 		$c++;
 		
 	}
-	echo "<a href='courses.csv' class='btn btn-primary'><i class='icon-download-alt icon-white'></i> Courses.csv</a>";
 }else{
 	//do nothing
 }
@@ -171,9 +170,9 @@ if ($_GET['import_sections'] === 'y'){
 		
 		# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
 		$ch = curl_init($url);
-		echo $url."<br>";
+		//echo $url."<br>";
 		//print_r($request_headers);
-		echo "<br>";
+		//echo "<br>";
 		
 		// Set headers
 		curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
@@ -273,9 +272,7 @@ if ($_GET['import_sections'] === 'y'){
 		
 	
 	
-		echo "<form method='get' action='sections.csv'>
-		<br><button type='submit' class='btn btn-primary' data-loading-text='Loading...' src='users.csv'><i class='icon-download-alt icon-white'</i> Sections.csv</button>
-		</form>";	
+	
 	}else{
 		//do nothing
 	}

@@ -49,7 +49,7 @@ fwrite($fp,$data);
 while($i < $pages){
 //call all students
 $token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
-$url = "https://ps-vscsd.gwaea.org/ws/v1/school/6/student?page=".$num."&page_size=100";
+$url = "https://ps-vscsd.gwaea.org/ws/v1/school/6/student?expansions=demographics,addresses,alerts,phones&page=".$num."&page_size=100";
 //api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 //echo $url."<br>";
 
