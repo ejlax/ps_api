@@ -1,6 +1,13 @@
 <?php
+ob_start();
 session_start();
 $token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
+/*if(!isset($_SESSION['access_token'])){
+	echo "<div class='alert-error'><h6>There is no access token configured. Redirecting you to LTI Redirect tool.</h6></div>";
+	sleep(5);
+	header('location: index.php');
+}*/
+//$token = $_SESSION['acces_token'];
 //$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
 //get course count by school
 $url ="https://ps-vscsd.gwaea.org/ws/v1/school/6/section/count?q=term.start_year==2012";
@@ -53,7 +60,7 @@ fwrite($fp,$data);
 fclose($fp);
 while($i < $pages){
 		
-			$url ="https://ps-vscsd.gwaea.org/ws/v1/school/6/section?page=".$num;
+		$url ="https://ps-vscsd.gwaea.org/ws/v1/school/6/section?page=".$num;
 		//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
 		//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 		//echo $url."<br>";
@@ -86,10 +93,29 @@ while($i < $pages){
 		$name = (String) $section->section_number;
 		$term_id = (String) $section->term_id;
 		$status = 'active';
-			
+
+		/*$data = $section_id.",".$course_id.",".$name.",".$status."\n";
+		$f = fopen('sections.csv', 'a');
+		fwrite($f,$data);
+		fclose($f);*/
 		
-		//Creating enrollments for active term section
-			if($term_id == '228'){
+		//add case for term_id (implement in later version)
+		if ($term_id == '227'){
+			$data = $section_id.",".$course_id.",".$name.",".$status."\n";
+		$f = fopen('sections.csv', 'a');
+		fwrite($f,$data);
+		fclose($f);
+		}
+		elseif ($term_id == '226'){			
+		$data = $section_id.",".$course_id.",".$name.",".$status."\n";
+		$f = fopen('sections.csv', 'a');
+		fwrite($f,$data);
+		fclose($f);
+		}
+		else{}
+
+		//Creating courses.csv with term_id
+		/*Creating enrollments for active term section
 				
 				$url ="https://ps-vscsd.gwaea.org/ws/v1/section/".$section_id."/section_enrollment";
 				//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
@@ -131,7 +157,7 @@ while($i < $pages){
 						fwrite($f,$data);
 						fclose($f);
 					}
-			}
+			
 			
 		
 		
@@ -140,7 +166,7 @@ while($i < $pages){
 		$f = fopen('sections.csv', 'a');
 		fwrite($f,$data);
 		fclose($f);
-		}
+		}*/
 		}
 		
 		$i++;

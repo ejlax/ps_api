@@ -1,10 +1,10 @@
 <?php
 //$account = $_GET['account'];
 //$domain = $_GET['domain'];
-echo "This isn't working<br>";
-$token = "5d38f5a9-24cf-4a87-a383-2e5f164d51cc";
+
+$token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
 //$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
-$url ="http://powerschool-ag.dev.sifworks.com/ws/v1/school/3/course";
+$url ="https://ps-vscsd.gwaea.org/ws/v1/school/109/courses";
 //api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 //echo $url."<br>";
 $ch = curl_init($url);
@@ -14,8 +14,8 @@ $request_headers = array('Authorization: Bearer ' . $token,
 
 # Initiate cURL, adding the REQUEST_HEADERS to it for authentication
 $ch = curl_init($url);
-echo $url."<br>";
-print_r($request_headers);
+//echo $url."<br>";
+//print_r($request_headers);
 echo "<br>";
 
 // Set headers
@@ -26,24 +26,50 @@ echo "<br>";
 		curl_close($ch);		
 //$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
     //$json_obj = json_decode ($json_str);
-print_r($response);
+//print_r($response);
 
+//$fp = fopen('courses.csv', 'w');
 $fp = fopen('courses.csv', 'w');
 //fwrite($fp,$json_str);
-$data = "course_id,short_name,long_name,status\n";
+$data = "course_id,short_name,long_name,term_id,status\n";
 fwrite($fp,$data);
 foreach($response->course as $course)
 {
-    	$course_id = (String) $course->id;
-		$short_name = (String) $course->course_number;
-		$long_name = (String) $course->course_name;
-		$status = 'active';
+
+		//received the course ID, now request all sections for all courses
+		//then parse through them and write them into a courses.csv file
 		
-		$data = $course_id.",".$short_name.",".$long_name.",".$status."\n";
+		$token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
+		//$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
+		$url ="https://ps-vscsd.gwaea.org/ws/v1/school/109/term?q=start_year==2013";
+		//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
+		//echo $url."<br>";
+		$ch = curl_init($url);
+		$request_headers = array('Authorization: Bearer ' . $token,
+				'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
+		);
+		
+		# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
+		$ch = curl_init($url);
+		//echo $url."<br>";
+		//print_r($request_headers);
+		echo "<br>";
+
+		// Set headers
+			curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			$response = new SimpleXMLElement(curl_exec($ch));
+				//$info = curl_getinfo($ch);
+				curl_close($ch);
+				
+				
+		
+		
 		
 		$f = fopen('courses.csv', 'a');
 		fwrite($f,$data);
 		fclose($f);
+		
 }
 
 
@@ -90,7 +116,7 @@ $ch = curl_init($url);
 	/*curl_setopt($ch, CURLOPT_POSTFIELDS,
 	array(
 		  'access_token' => "$token")
-	);*/
+	);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	//curl_setopt($ch, CURLINFO_HEADER_OUT);
 		$json = curl_exec($ch);
@@ -119,5 +145,5 @@ $ch = curl_init($url);
 		}
 		else{
 			echo "There was no domain set.";
-		}
+		}*/
 ?>

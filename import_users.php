@@ -286,7 +286,7 @@ $ch = curl_init($url);
  * 
  */
 ?>
-<form method='get' action='users_1.csv'>
-<br><button type='submit' class='btn btn-primary' data-loading-text='Loading...' src='users_1.csv'>Download Me</button>
+<form method='get' action='users.csv'>
+<br><button type='submit' class='btn btn-primary' data-loading-text='Loading...' src='users.csv'><i class="icon-download-alt icon-white"</i> Users.csv</button>
 </form>
 

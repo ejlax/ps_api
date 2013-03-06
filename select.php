@@ -1,7 +1,14 @@
 <?php
-//ob_start();
+ob_start();
 session_start();
 include_once('header.php');
+//include_once('host-test.php');
+if(!isset($_SESSION['access_token'])){
+	echo "<div class='alert-error'><h6>There is no access token configured. Redirecting you to LTI Redirect tool.</h6></div>";
+	sleep(5);
+	header('location: index.php');
+	
+}
 /*if(!isset($_GET['schools'])){
 /*select schools from which to import users
  * this will loop through each school and aggregate all users (Staff and Students)
@@ -38,12 +45,11 @@ if(curl_errno($ch)){
 	$data = "course_id,short_name,long_name,status\n";
 	fwrite($fp,$data);*/
 
-
-print_r($_GET['schools']);
+//print_r($_GET['schools']);
 			echo "<div class='row span6'>";
 			echo "<legend>Select Schools</legend>";
 			echo "<div class='table'>";
-			echo"<form name='schools_submit' method='get' action='import_users.php'>";
+			echo"<form name='schools_submit' method='get' action='imports.php'>";
 				echo "<table id='schools' class='table-condensed table-striped table-hover'>";
 				echo "<thead><tr class='info'><th>Select</th><th>School&nbsp;Id</th><th>School&nbspName</th></tr>";
 				echo "<tbody>";
@@ -57,25 +63,25 @@ print_r($_GET['schools']);
 				echo "</tbody></table><br>";
 				echo "<legend>Import Users</legend>";
 				echo "<label class='checkbox'>
-			      <input type='checkbox' name='import_students[]' value='y'><h6>Import Students</h6>
+			      <input type='checkbox' name='import_students' value='y'><h6>Import Students</h6>
 			    </label>";
 				echo "<label class='checkbox'>
-			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Staff</h6>
+			      <input type='checkbox' name='import_staff' value='y'><h6>Import Staff</h6>
 			    </label>";
 				echo "<legend>Import Course and Sections</legend>";
 				echo "<label class='checkbox'>
-			      <input type='checkbox' name='import_courses[]' value='y'><h6>Import Courses</h6>
+			      <input type='checkbox' name='import_courses' value='y'><h6>Import Courses</h6>
 			    </label>";
 			    echo "<label class='checkbox'>
-			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Sections</h6>
+			      <input type='checkbox' name='import_sections' value='y'><h6>Import Sections</h6>
 			    </label>";
 				echo "<label class='checkbox'>
-			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Enrollments</h6>
+			      <input type='checkbox' name='import_enrollments' value='y'><h6>Import Enrollments</h6>
 			    </label>";
 				echo "<label class='checkbox'>
-			      <input type='checkbox' name='import_staff[]' value='y'><h6>Import Term</h6>
+			      <input type='checkbox' name='import_terms' value='y'><h6>Import Term</h6>
 			    </label>";
-				echo "<button id='import' class='btn btn-primary' data-loading-text='Importing...' type='submit'>Start Import</button></p></form></div></div>";
+				echo "<button id='import' class='btn btn-primary' data-loading-text='Generating...' type='submit'>Create Import Files</button></p></form></div></div>";
 				include_once('footer.php');
 }
 ?>
@@ -97,6 +103,6 @@ print_r($_GET['schools']);
         btn.button('loading')
         setTimeout(function () {
             btn.button('reset')
-        }, 5000)
+        }, 10000)
     });
 </script>

@@ -5,6 +5,11 @@ include_once('header.php');
 if(isset($_SESSION['access_token']) && isset($_SESSION['ps_url'])){
 	session_unset();
 }
+if(!isset($_GET['ps_url']) && !isset($_GET['client_secret']) && !isset($_GET['client_id'])){
+			echo "<div class='row'><div class='span4'><h6>Please input your client Id, client secret, and PowerSchool URL in the <a href='https://lti-examples.heroku.com/index.html?tool=redirect'>Redirect LTI tool</a>.<p>This Program will not function until you do.<p></h6></div>";
+		echo "</div><div><iframe src='https://lti-examples.heroku.com/index.html?tool=redirect' height=800 width=800></iframe></div>";
+		exit();
+}
 $ps_url= $_GET['ps_url'];
 $_SESSION['ps_url'] = $ps_url; 
 $ps_code = $_GET['client_id'];
@@ -30,6 +35,8 @@ if( isset($ps_url) && isset($ps_secret) && isset($ps_code)){
 	//unset($_SESSION['access_token']);
 	if(curl_errno($ch)){
 	  $curlerror = 'Curl error: ' . curl_error($ch);
+		echo "<div class='alert-error'><h4>".$curlerror."</h4></div>";
+		exit();
 	}
 	else{    
 	  //print_r($result);
@@ -44,9 +51,7 @@ if( isset($ps_url) && isset($ps_secret) && isset($ps_code)){
 	//$_SESSION['ps_url'] = $ps_url;
 	//echo $_SESSION['access_token'];
 	}else{
-		echo "<div class='row'><div class='span4'><h6>Please input your client Id, client secret, and PowerSchool URL in the <a href='https://lti-examples.heroku.com/index.html?tool=redirect'>Redirect LTI tool</a>.<p>This Program will not function until you do.<p></h6></div>";
-		echo "</div><div><iframe src='https://lti-examples.heroku.com/index.html?tool=redirect' height=800 width=800></iframe></div>";
-		exit();
+
 		}
 header("location:select.php");
 ?>

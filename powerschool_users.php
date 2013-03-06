@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-/*
+
 //get student count
 $token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
 //$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
@@ -52,7 +52,6 @@ $token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
 $url = "https://ps-vscsd.gwaea.org/ws/v1/school/6/student?page=".$num."&page_size=100";
 //api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 //echo $url."<br>";
-$ch = curl_init($url);
 
 $request_headers = array('Authorization: Bearer ' . $token,
 		'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
@@ -73,7 +72,7 @@ $ch = curl_init($url);
 		$num++;	
 //$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
     //$json_obj = json_decode ($json_str);
-//print_r($response);
+print_r($response);
 
 
 foreach($response->student as $student)
@@ -91,7 +90,8 @@ foreach($response->student as $student)
 		fclose($f);
 }
 $i++;
-}*/
+}
+/*
 //get student count
 $token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
 //$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
@@ -173,7 +173,7 @@ foreach($response->staff as $staff)
 		$status = 'active';
 		$email = $fname.".".$lname."@vscsd.org";
 		
-		$str = "usr_".$user_id.",".$email.",".$fname.",".$lname.",".$email.",".$status."\n";
+		$str = $user_id.",".$email.",".$fname.",".$lname.",".$email.",".$status."\n";
 		$data = strtolower($str);
 		$f = fopen('users_staff.csv', 'a');
 		fwrite($f,$data);
@@ -262,9 +262,9 @@ $ch = curl_init($url);
  * 
  * 
  */
+
  
- 
-?>
+
 
 
 

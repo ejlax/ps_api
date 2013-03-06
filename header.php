@@ -66,4 +66,6 @@
 			  <li><a href="instances.php">Instances</a> <span class="divider">/</span></li>
 			  <li class="active">Search</li>
 			</ul>  -->
-    </div>        
+    </div>    
+    <div class='span1'></div>
+    	    

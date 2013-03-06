@@ -5,7 +5,7 @@ ob_start();
 echo "This isn't working<br>";
 $token = "d3389800-3540-4b51-889a-3ee5a1c9cdda";
 //$inputFile = "/Users/eric/Documents/canvas/vscsd-students-test.csv";
-$url ="http://ps-vscsd.gwaea.org/ws/v1/school/6/term?Q=start_year==2013";
+$url ="http://ps-vscsd.gwaea.org/ws/v1/school/6/term";
 //api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 //echo $url."<br>";
 $ch = curl_init($url);
