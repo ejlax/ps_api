@@ -1,5 +1,4 @@
 user_id,login_id,first_name,last_name,email,status
-<<<<<<< HEAD
 518,stephanie.adam@govikes.org,stephanie,adam,stephanie.adam@govikes.org,active
 519,claire.andreesen@govikes.org,claire,andreesen,claire.andreesen@govikes.org,active
 520,devon.ankney@govikes.org,devon,ankney,devon.ankney@govikes.org,active
@@ -474,5 +473,3 @@ user_id,login_id,first_name,last_name,email,status
 3405,aaron.holder@govikes.org,aaron,holder,aaron.holder@govikes.org,active
 3409,virginia.hensley@govikes.org,virginia,hensley,virginia.hensley@govikes.org,active
 3502,samulito.carrillo@govikes.org,samulito,carrillo,samulito.carrillo@govikes.org,active
-=======
->>>>>>> deleted users.csv
