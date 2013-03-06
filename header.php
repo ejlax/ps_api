@@ -41,10 +41,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="home.php">Canvas PowerSchool API Tool</a>
+          <a class="brand" href="index.php">Canvas PowerSchool API Tool</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="https://lti-examples.heroku.com/index.html?tool=redirect"><i class="icon-hand-right icon-black"></i> Redirect LTI Tool</a></li>
+              <li class="active"><a href="https://lti-examples.heroku.com/index.html?tool=redirect"><i class="icon-hand-right icon-black"></i>Redirect LTI Tool</a></li>
+              <li><a href="schedule.php"><i class="icon-calendar icon-black"></i>Schedule</a></li>
             </ul>
             <ul class="nav pull-right">
             	<li class="dropdown">
