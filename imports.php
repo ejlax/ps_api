@@ -309,7 +309,8 @@ if ($_GET['import_students'] === 'y'){
 		$num = 1;
 		//creating users.csv for download
 		//looping through API requests for as many pages as necessary to complete student
-		echo"<div class='accordion' id='accordion2'>
+		echo"
+		<div class='accordion' id='accordion2'><div class='accordion' id='accordion2'>
 			  <div class='accordion-group'>
 			    <div class='accordion-heading'>
 			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapseOne'>
@@ -372,8 +373,7 @@ if ($_GET['import_students'] === 'y'){
 					
 			}
 			echo "</table></div></div>
-			    </div>
-			  </div>";
+			    </div>";
 			$st++;
 			}
 		}else{
@@ -398,14 +398,27 @@ if($_GET['import_staff'] === 'y'){
 	//echo "<br>";
 	$st = 0;
 	//store course count as $count
-	$student_count = $response->count;
+	$staff_count = $response->count;
 	//echo $student_count;
 	// setting remainder to determing how many pages to request from API
-	$pages = $student_count / 100;
+	$pages = $staff_count / 100;
 	//echo $pages;
 	$num = 1;
+	echo "
+	
+	<div class='accordion-group'>
+	    <div class='accordion-heading'>
+	      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapseTwo'>
+	        Preview Staff
+	      </h4>
+	    </div>
+	    <div id='collapseTwo' class='accordion-body collapse out'>
+	      <div class='accordion-inner'>
+	        		<div id='staff_preview'><table class='table table-striped'>
+	<thead><tr><td>User_ID</td><td>Login_id</td><td>First&nbspName</td><td>Last&nbspName</td></tr></thead>";
 	//creating users.csv for download
 	//looping through API requests for as many pages as necessary to complete student
+	$pre = 0;
 	while($st < $pages){
 		//call all students
 		$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/staff?page=".$num."&page_size=100";
@@ -445,12 +458,23 @@ if($_GET['import_staff'] === 'y'){
 				$f = fopen('users.csv', 'a');
 				fwrite($f,$data);
 				fclose($f);
+				if($pre < 6){
+
+					echo "<tr><td>".$user_id."</td><td>".$email."</td><td>".$fname."</td><td>".$lname."</td></tr>";	
+					}
+					$pre++;
+					
+				}
+			echo "</table></div></div>
+			    </div>
+			  </div>";
+			  $st++;
 		}
-		$st++;
-		}
-	}else{
+		
+		}else{
 		//do nothing
 	}
+	
 }
 	
 
