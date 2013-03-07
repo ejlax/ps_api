@@ -46,10 +46,14 @@ if(curl_errno($ch)){
 	fwrite($fp,$data);*/
 
 //print_r($_GET['schools']);
-			echo "<div class='row span6'>";
+			echo "<div class='span6'>";
+			echo "<div id='instances'>
+          			<!--  Where the AJAX return HTML will go -->
+          			</div>";
+
+			echo "<div id='select' class='table'>";
 			echo "<legend>Select Schools</legend>";
-			echo "<div class='table'>";
-			echo"<form name='schools_submit' method='get' action='imports.php'>";
+			echo"<form id='schools_submit' method='get' action=''>";
 				echo "<table id='schools' class='table-condensed table-striped table-hover'>";
 				echo "<thead><tr class='info'><th>Select</th><th>School&nbsp;Id</th><th>School&nbspName</th></tr>";
 				echo "<tbody>";
@@ -81,28 +85,58 @@ if(curl_errno($ch)){
 				echo "<label class='checkbox'>
 			      <input type='checkbox' name='import_terms' value='y'><h6>Import Term</h6>
 			    </label>";
-				echo "<button id='import' class='btn btn-primary' data-loading-text='Generating...' type='submit'>Create Import Files</button></p></form></div></div>";
+				echo "<button id='import' class='btn btn-primary' data-loading-text='Creating...' type='submit'>Create Import Files</button></p></form></div></div>";
+
 				include_once('footer.php');
 }
 ?>
-    <script type="text/javascript">$(document).ready(function() {
-
-    $('#schools tr').click(function() {
-        var href = $(this).find("a").attr("href");
-        if(href) {
-            window.location = href;
-        }
+</script>
+<script>
+	$('#import').click(function () {
+        var btn = $(this)
+        btn.button('loading')
+        //setTimeout(function () {
+         //   btn.button('reset')
+        //}, 100)
     });
-
+</script>
+</script>
+<script>$('#schools_submit').bind('submit', function() {
+  $('#loading').show()
 });
 </script>
 <script>
-	$('#import')
-    .click(function () {
+
+</script>
+<script>
+	$("#schools_submit").submit(function(){
+		$('#import').button();
+		$('#import').submit(function(){
+			$(this).button('loading');
+		});
+		$("#import").submit(function(){
+   $(this).show();
+}).ajaxStop(function(){
+   $(this).hide();
+   	$('#import').button(); 
         var btn = $(this)
-        btn.button('loading')
-        setTimeout(function () {
-            btn.button('reset')
-        }, 10000)
+        btn.button('reset')
+        //setTimeout(function () {
+         //   btn.button('reset')
+        //}, 100)
+      $("#select").fadeOut("fast");
+});
+
+    // Intercept the form submission
+    var formdata = $(this).serialize(); // Serialize all form data
+
+    // Post data to your PHP processing script
+    $.get( "imports.php", formdata, function( data ) {
+        // Act upon the data returned, setting it to #success <div>
+        //$("#instances").html ( data ).fadeIn("slow");
+        $('#instances').hide().html( data ).fadeIn('slow');
     });
+
+    return false; // Prevent the form from actually submitting
+});
 </script>

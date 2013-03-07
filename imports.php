@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-include_once('header.php');
+//include_once('header.php');
 //include_once('host-test.php');
  
 	// Set headers		
@@ -48,7 +48,7 @@ foreach($_GET['schools'] as $school){
 	$c = 0;
 //store course count as $count
 	foreach($response->count as $course_count) {
-		echo "This school has ".$course_count." courses.";
+		//echo "This school has ".$course_count." courses.";
 
 		}
 
@@ -309,6 +309,20 @@ if ($_GET['import_students'] === 'y'){
 		$num = 1;
 		//creating users.csv for download
 		//looping through API requests for as many pages as necessary to complete student
+		echo"<div class='accordion' id='accordion2'>
+			  <div class='accordion-group'>
+			    <div class='accordion-heading'>
+			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapseOne'>
+			        Preview Students
+			      </h4>
+			    </div>
+			    <div id='collapseOne' class='accordion-body collapse out'>
+			      <div class='accordion-inner'>
+			        		<div id='students_preview'><table class='table table-striped'>
+			<thead><tr><td>User_ID</td><td>Login_id</td><td>First&nbspName</td><td>Last&nbspName</td></tr></thead>";
+
+
+		$pre = 0;
 		while($st < $pages){
 			//call all students
 			$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/student?page=".$num."&page_size=100";
@@ -336,6 +350,8 @@ if ($_GET['import_students'] === 'y'){
 			//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
 			    //$json_obj = json_decode ($json_str);
 			//print_r($response);
+
+
 			foreach($response->student as $student){
 			    	$user_id = (String) $student->id;
 			    	$fname = (String) $student->name->first_name;
@@ -348,7 +364,16 @@ if ($_GET['import_students'] === 'y'){
 					$f = fopen('users.csv', 'a');
 					fwrite($f,$data);
 					fclose($f);
+					if($pre < 6){
+
+					echo "<tr><td>".$user_id."</td><td>".$email."</td><td>".$fname."</td><td>".$lname."</td></tr>";	
+					}
+					$pre++;
+					
 			}
+			echo "</table></div></div>
+			    </div>
+			  </div>";
 			$st++;
 			}
 		}else{
@@ -512,22 +537,21 @@ $ch = curl_init($url);
  * 
  */
 
-echo "<div class='span6'>";
 echo "<legend>Download Import Files</legend>";
 if($_GET['import_courses'] === 'y'){
 	
-	echo "<a class='btn btn-primary' href='courses.csv'><i class='icon-download-alt icon-white'></i> Courses.csv</a>";
+	echo "<a class='btn btn-primary' href='courses.csv'><i class='icon-download-alt icon-white'></i> Courses</a><br><br>";
 }
 if($_GET['import_sections'] === 'y'){
-	echo "<a class='btn btn-primary' href='sections.csv'><i class='icon-download-alt icon-white'></i> Sections.csv</a>";
+	echo "<a class='btn btn-primary' href='sections.csv'><i class='icon-download-alt icon-white'></i> Sections</a><br><br>";
 }
 if($_GET['import_enrollments'] === 'y'){
-	echo "<a class='btn btn-primary' href='enrollments.csv'><i class='icon-download-alt icon-white'></i> Enrollments.csv</a>";
+	echo "<a class='btn btn-primary' href='enrollments.csv'><i class='icon-download-alt icon-white'></i> Enrollments</a><br><br>";
 } 
 if($_GET['import_students'] === 'y' && $_GET['import_staff'] === 'y'){
-	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Staff and Students</a>";
+	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Staff and Students</a><br><br>";
 	}elseif($_GET['import_students'] === 'y'){
-	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Students</a>";
+	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Students</a><br><br>";
 	}elseif($_GET['import_staff'] === 'y'){
 	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Staff</a>";
 	}
