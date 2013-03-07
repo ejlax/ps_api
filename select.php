@@ -46,7 +46,7 @@ if(curl_errno($ch)){
 	fwrite($fp,$data);*/
 
 //print_r($_GET['schools']);
-			echo "<div class='span6'>";
+			echo "<div class='span10'>";
 			echo "<div id='instances'>
           			<!--  Where the AJAX return HTML will go -->
           			</div>";
@@ -87,9 +87,14 @@ if(curl_errno($ch)){
 			    </label>";
 				echo "<button id='import' class='btn btn-primary' data-loading-text='Creating...' type='submit'>Create Import Files</button></p></form></div></div>";
 
-				include_once('footer.php');
+				//include_once('footer.php');
 }
 ?>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!--  <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>  -->
+	<script src='js/tableutils.js'></script>
+    <script src="js/bootstrap.js"></script>
 </script>
 <script>
 	$('#import').click(function () {
@@ -110,6 +115,9 @@ if(curl_errno($ch)){
 </script>
 <script>
 	$("#schools_submit").submit(function(){
+		      $("#select").fadeOut('slow', function(){
+      	
+      });
 		$('#import').button();
 		$('#import').submit(function(){
 			$(this).button('loading');
@@ -124,7 +132,7 @@ if(curl_errno($ch)){
         //setTimeout(function () {
          //   btn.button('reset')
         //}, 100)
-      $("#select").fadeOut("fast");
+
 });
 
     // Intercept the form submission
@@ -140,3 +148,5 @@ if(curl_errno($ch)){
     return false; // Prevent the form from actually submitting
 });
 </script>
+
+

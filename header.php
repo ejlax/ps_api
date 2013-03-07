@@ -9,6 +9,7 @@
 
     <!-- Le styles -->
     <link href="css/bootstrap.css" rel="stylesheet">
+    <link href='css/tableutils.css' rel='stylesheet'>
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -17,6 +18,40 @@
       .sidebar-nav {
         padding: 9px 0;
       }
+/*      #staff.table{
+  width: 100%;
+  margin-bottom: 20px;
+  height: 300px;
+  overflow: auto;
+}*/
+      .accordion-inner .table{
+      	
+  width: 100%;
+  margin-bottom: 20px;
+  height: 300px;
+  overflow: auto;
+}
+.accordion-heading{
+	  min-height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #fafafa;
+  background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+  background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+  background-repeat: repeat-x;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#fff2f2f2', GradientType=0);
+  *zoom: 1;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
     </style>
     <link href="css/bootstrap-responsive.css" rel="stylesheet">
 

@@ -1,3 +1,4 @@
+
 <?php
 ob_start();
 session_start();
@@ -22,7 +23,7 @@ session_start();
 			</form>";
   	}
 }*/
-
+echo "<div class='accordion' id='accordion2'>";
 foreach($_GET['schools'] as $school){
 	$school_id = $school[0];
 	//echo $school_id."<br>";
@@ -61,6 +62,17 @@ foreach($_GET['schools'] as $school){
 //fwrite($fp,$json_str);
 	$data = "course_id,short_name,long_name,term_id,status\n";
 	$fp = fwrite($fp, $data);
+			echo"		  <div class='accordion-group'>
+			    <div class='accordion-heading'>
+			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#courses' align='center'>
+			        Preview Courses
+			      </h4>
+			    </div>
+			    <div id='courses' class='accordion-body collapse out'>
+			      <div class='accordion-inner'>
+			        		<div id='courses_preview' class='table'><table class='table table-striped table-condensed'>
+			<thead><tr><td>Course&nbspID</td><td>Short&nbspName</td><td>Long&nbspName</td><td>Status</td></tr></thead>";
+		$pre = 0;
 	while($c < $pages){
 		
 		$url = $_SESSION['ps_url']."/ws/v1/school/6/course?page=".$num;
@@ -88,7 +100,6 @@ foreach($_GET['schools'] as $school){
 		    //$json_obj = json_decode ($json_str);
 		//print_r($response);
 		$num++;
-		
 		foreach($response->course as $course)
 			{
     		$course_id = (String) $course->id;
@@ -100,15 +111,16 @@ foreach($_GET['schools'] as $school){
 			$f = fopen('courses.csv', 'a');
 			fwrite($f,$data);
 			fclose($f);
+				echo "<tr><td>".$course_id."</td><td>".$short_name."</td><td>".$long_name."</td><td>".$status."</td></tr>";	
+
 			}
+			
+			$c++;
 		
-		$c++;
-		
-	}
+	}echo "</table></div></div></div></div>";
 }else{
 	//do nothing
 }
-
 			
 if ($_GET['import_sections'] === 'y'){
 	$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/section/count?q=term.start_year==2012";
@@ -148,15 +160,19 @@ if ($_GET['import_sections'] === 'y'){
 	$fp = fopen('sections.csv', 'w');
 //fwrite($fp,$json_str);
 	$data = "section_id,course_id,name,status\n";
-	$fp = fwrite($fp, $data);
 	fwrite($fp,$data);
 	fclose($fp);
-	$fp = fopen('enrollments.csv', 'w');
-//fwrite($fp,$json_str);
-	$data = "user_id,role,section_id,status\n";
-	$fp = fwrite($fp, $data);
-	fwrite($fp,$data);
-	fclose($fp);
+			echo "
+			  <div class='accordion-group'>
+			    <div class='accordion-heading'>
+			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#sections' align='center'>
+			        Preview Sections
+			      </h4>
+			    </div>
+			    <div id='sections' class='accordion-body collapse out'>
+			      <div class='accordion-inner'>
+			        		<div id='students_preview' class='table'><table class='table table-striped table-condensed'>
+			<thead><tr><td>Section&nbspID</td><td>Course&nbspID</td><td>Name</td><td>Status</td></tr></thead>";
 	while($s < $pages){
 		
 		$url =$_SESSION['ps_url']."/ws/v1/school/".$school_id."/section?page=".$num;
@@ -184,14 +200,17 @@ if ($_GET['import_sections'] === 'y'){
 		    //$json_obj = json_decode ($json_str);
 		//print_r($response);
 		$num++;
-		
 		foreach($response->section as $section)
 		{
     	$section_id = (String) $section->id;
     	$course_id = (String) $section->course_id;		
 		$name = (String) $section->section_number;
 		$term_id = (String) $section->term_id;
-		$status = 'active'; // change this to deleted to remove sections
+		$status = 'active';
+		$end = 1;
+		echo "<tr><td>".$section_id."</td><td>".$course_id."</td><td>".$name."</td><td>".$status."</td></tr>";
+		
+		 // change this to deleted to remove sections
 
 		/*$data = $section_id.",".$course_id.",".$name.",".$status."\n";
 		$f = fopen('sections.csv', 'a');
@@ -214,68 +233,25 @@ if ($_GET['import_sections'] === 'y'){
 		else{}*/
 
 		//Creating courses.csv with term_id
-		/*Creating enrollments for active sections*/
-			if($_GET['import_enrollments'] === 'y'){
-				$url =$_SESSION['ps_url']."/ws/v1/section/".$section_id."/section_enrollment";
-				//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
-				//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
-				//echo $url."<br>";
-				$ch = curl_init($url);
-				$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
-						'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
-				);
-				
-				# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
-				$ch = curl_init($url);
-				//echo $url."<br>";
-				//print_r($request_headers);
-				//echo "<br>";
-				
-				// Set headers
-				curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-				$response = new SimpleXMLElement(curl_exec($ch));
-						//$info = curl_getinfo($ch);
-				curl_close($ch);		
-				//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
-				    //$json_obj = json_decode ($json_str);
-				//print_r($response);
-	
-				foreach($response->section_enrollment as $enrollment){
-					$state = (String) $enrollment->dropped;
-					$section_en_id = (String) $enrollment->section_id;
-					$user_id = (String) $enrollment->student_id;
-					$role = "student";
-					$status = "active";
-					
-					if ($state == 'false'){
-						//do nothing
-					}else{
-						$data = $user_id.",".$role.",".$section_en_id.",".$status."\n";
-						$f = fopen('enrollments.csv', 'a');
-						fwrite($f,$data);
-						fclose($f);
-					}
+		//Creating enrollments for active sections
 			
-				}
-				}
-		
-		
-		
 		$data = $section_id.",".$course_id.",".$name.",".$status."\n";
 		$f = fopen('sections.csv', 'a');
 		fwrite($f,$data);
 		fclose($f);
-		}
-		$s++;
+					
+			}
+		$s++;	
+		}echo "</table></div></div></div></div>";
+		
 	}
 		
 	
 	
 	
-	}else{
+	/*}else{
 		//do nothing
-	}
+	}*/
 
 if ($_GET['import_students'] === 'y'){
 		$fp = fopen('users.csv', 'w');
@@ -310,20 +286,17 @@ if ($_GET['import_students'] === 'y'){
 		//creating users.csv for download
 		//looping through API requests for as many pages as necessary to complete student
 		echo"
-		<div class='accordion' id='accordion2'><div class='accordion' id='accordion2'>
 			  <div class='accordion-group'>
 			    <div class='accordion-heading'>
-			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapseOne'>
+			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#students' align='center'>
 			        Preview Students
 			      </h4>
 			    </div>
-			    <div id='collapseOne' class='accordion-body collapse out'>
+			    <div id='students' class='accordion-body collapse out'>
 			      <div class='accordion-inner'>
-			        		<div id='students_preview'><table class='table table-striped'>
+			        		<div id='students_preview' class='table'><table class='table table-striped table-condensed'>
 			<thead><tr><td>User_ID</td><td>Login_id</td><td>First&nbspName</td><td>Last&nbspName</td></tr></thead>";
 
-
-		$pre = 0;
 		while($st < $pages){
 			//call all students
 			$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/student?page=".$num."&page_size=100";
@@ -365,19 +338,141 @@ if ($_GET['import_students'] === 'y'){
 					$f = fopen('users.csv', 'a');
 					fwrite($f,$data);
 					fclose($f);
-					if($pre < 6){
-
 					echo "<tr><td>".$user_id."</td><td>".$email."</td><td>".$fname."</td><td>".$lname."</td></tr>";	
-					}
-					$pre++;
-					
 			}
-			echo "</table></div></div>
-			    </div>";
+
 			$st++;
-			}
+			}			echo "</table></div></div></div>
+			    </div>";
 		}else{
 			//do nothing
+		}
+if($_GET['import_enrollments'] === 'y'){
+	
+	$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/section/count?q=term.start_year==2012";
+//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
+//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
+//echo $url."<br>";
+	$ch = curl_init($url);
+	$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
+		'Content-Type: application/x-www-form-urlencoded;charset=UTF-8');
+
+# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
+	$ch = curl_init($url);
+	//echo $url."<br>";
+//print_r($request_headers);
+//echo "<br>";
+
+// Set headers
+	curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$response = new SimpleXMLElement(curl_exec($ch));
+		//$info = curl_getinfo($ch);
+	curl_close($ch);		
+//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
+    //$json_obj = json_decode ($json_str);
+//print_r($response);
+	$s = 0;
+//store course count as $count
+	foreach($response->count as $section_count) {
+		//echo "This school has ".$section_count." courses.";
+	}
+
+	$pages = $section_count / 100;
+
+//echo $pages;
+	$num = 1;
+//create section file
+	while($s < $pages){
+		
+		$url =$_SESSION['ps_url']."/ws/v1/school/".$school_id."/section?page=".$num;
+		//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
+		//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
+		//echo $url."<br>";
+		$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
+				'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
+		);
+		
+		# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
+		$ch = curl_init($url);
+		//echo $url."<br>";
+		//print_r($request_headers);
+		//echo "<br>";
+		
+		// Set headers
+		curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		$response = new SimpleXMLElement(curl_exec($ch));
+				//$info = curl_getinfo($ch);
+		curl_close($ch);		
+		//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
+		    //$json_obj = json_decode ($json_str);
+		//print_r($response);
+		$num++;
+						echo"
+			  <div class='accordion-group'>
+			    <div class='accordion-heading'>
+			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#enrollments' align='center'>
+			        Preview Enrollments
+			      </h4>
+			    </div>
+			    <div id='enrollments' class='accordion-body collapse out'>
+			      <div class='accordion-inner'>
+			        		<div id='enrollments_preview' class='table'><table class='table table-striped table-condensed'>
+			<thead><tr><td>User_ID</td><td>Role</td><td>Section&nbspID</td><td>Statuse</td></tr></thead>";
+		foreach($response->section as $section)
+		{
+    	$section_id = (String) $section->id;
+    	$course_id = (String) $section->course_id;		
+		$name = (String) $section->section_number;
+		$term_id = (String) $section->term_id;
+		$status = 'active';
+
+				$url =$_SESSION['ps_url']."/ws/v1/section/".$section_id."/section_enrollment";
+				//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
+				//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
+				//echo $url."<br>";
+				$ch = curl_init($url);
+				$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
+						'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
+				);
+				
+				# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
+				$ch = curl_init($url);
+				//echo $url."<br>";
+				//print_r($request_headers);
+				//echo "<br>";
+				
+				// Set headers
+				curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+				$response = new SimpleXMLElement(curl_exec($ch));
+						//$info = curl_getinfo($ch);
+				curl_close($ch);		
+				//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
+				    //$json_obj = json_decode ($json_str);
+				//print_r($response);
+			
+				foreach($response->section_enrollment as $enrollment){
+					$state = (String) $enrollment->dropped;
+					$section_en_id = (String) $enrollment->section_id;
+					$user_id = (String) $enrollment->student_id;
+					$role = "student";
+					$status = "active";
+					$table++;
+					if ($state == 'false'){
+						//do nothing
+					}else{
+						$data = $user_id.",".$role.",".$section_en_id.",".$status."\n";
+						$f = fopen('enrollments.csv', 'a');
+						fwrite($f,$data);
+						fclose($f);
+						echo "<tr><td>".$user_id."</td><td>".$role."</td><td>".$sections_en_id."</td><td>".$status."</td></tr>";	
+						}
+
+					}					
+				}echo "</table></div></div></div></div>";
+			}
 		}
 if($_GET['import_staff'] === 'y'){
 	//get student count
@@ -407,18 +502,17 @@ if($_GET['import_staff'] === 'y'){
 	echo "
 	
 	<div class='accordion-group'>
-	    <div class='accordion-heading'>
-	      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#collapseTwo'>
+	    <div class='accordion-heading' '>
+	      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#staff' align='center'>
 	        Preview Staff
 	      </h4>
 	    </div>
-	    <div id='collapseTwo' class='accordion-body collapse out'>
+	    <div id='staff' class='accordion-body collapse out'>
 	      <div class='accordion-inner'>
-	        		<div id='staff_preview'><table class='table table-striped'>
-	<thead><tr><td>User_ID</td><td>Login_id</td><td>First&nbspName</td><td>Last&nbspName</td></tr></thead>";
+	        		<div id='staff' class='table'><table id='staff_preview' class='table table-striped table-hover table-condensed'>
+	<thead><tr><td>User_ID</td><td>Login_id</td><td>First&nbspName</td><td>Last&nbspName</td></tr></thead><tbody>";
 	//creating users.csv for download
 	//looping through API requests for as many pages as necessary to complete student
-	$pre = 0;
 	while($st < $pages){
 		//call all students
 		$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/staff?page=".$num."&page_size=100";
@@ -458,24 +552,21 @@ if($_GET['import_staff'] === 'y'){
 				$f = fopen('users.csv', 'a');
 				fwrite($f,$data);
 				fclose($f);
-				if($pre < 6){
-
 					echo "<tr><td>".$user_id."</td><td>".$email."</td><td>".$fname."</td><td>".$lname."</td></tr>";	
-					}
-					$pre++;
 					
 				}
-			echo "</table></div></div>
-			    </div>
-			  </div>";
+
 			  $st++;
-		}
+		}			echo "</tbody></table></div></div>
+			    </div></div>
+			  ";
 		
 		}else{
 		//do nothing
 	}
 	
 }
+echo "</div>";
 	
 
 	
@@ -582,3 +673,4 @@ if($_GET['import_students'] === 'y' && $_GET['import_staff'] === 'y'){
 echo "</div>";
 
 ?>
+
