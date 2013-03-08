@@ -32,7 +32,7 @@
   overflow: auto;
 }
 .accordion-heading{
-	  min-height: 40px;
+	  min-height: 20px;
   padding-right: 20px;
   padding-left: 20px;
   background-color: #fafafa;

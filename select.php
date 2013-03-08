@@ -91,8 +91,8 @@ if(curl_errno($ch)){
 }
 ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<!--  <script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>  -->
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
 	<script src='js/tableutils.js'></script>
     <script src="js/bootstrap.js"></script>
 </script>
@@ -115,9 +115,6 @@ if(curl_errno($ch)){
 </script>
 <script>
 	$("#schools_submit").submit(function(){
-		      $("#select").fadeOut('slow', function(){
-      	
-      });
 		$('#import').button();
 		$('#import').submit(function(){
 			$(this).button('loading');
@@ -132,7 +129,7 @@ if(curl_errno($ch)){
         //setTimeout(function () {
          //   btn.button('reset')
         //}, 100)
-
+      $("#select").fadeOut(500);
 });
 
     // Intercept the form submission
@@ -142,7 +139,7 @@ if(curl_errno($ch)){
     $.get( "imports.php", formdata, function( data ) {
         // Act upon the data returned, setting it to #success <div>
         //$("#instances").html ( data ).fadeIn("slow");
-        $('#instances').hide().html( data ).fadeIn('slow');
+        $('#instances').hide().html( data ).fadeIn(800);
     });
 
     return false; // Prevent the form from actually submitting

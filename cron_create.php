@@ -1,88 +1,64 @@
-
 <?php
-ob_start();
-session_start();
-echo "<div class='accordion' id='accordion2'>";
-foreach($_GET['schools'] as $school){
-	$school_id = $school[0];
-	//echo $school_id."<br>";
-	if ($_GET['import_courses'] === 'y'){
-	$url =$_SESSION['ps_url']."/ws/v1/school/".$school_id."/course/count";
-	$ch = curl_init($url);
-	$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
+$ps_token = $_GET['access_token'];
+$ps_url = $_GET['ps_url'];
+if(file_exists($ps_token."/import-courses.php")){
+	
+}else{mkdir($ps_token);}
+$myFile = $ps_token."/import-courses.php";
+$data="<?php\n";
+$data.="\$ps_token = \$_GET['access_token'];\n";
+$data.="\$canvas_token = \$_GET['canvas_token'];\n";
+$data.="\$ps_url = \$_GET['ps_url'];\n";
+$data.="\$schools = \$_GET['schools'];\n";
+$data.="foreach(\$schools as \$school){\n";
+$data.="\$school_id = \$school[0];\n";
+$data.="\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course/count\";
+	\$ch = curl_init(\$url);
+	\$request_headers = array('Authorization: Bearer ' . \$ps_token,
 	'Content-Type: application/x-www-form-urlencoded;charset=UTF-8');
-	curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
-	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	$response = new SimpleXMLElement(curl_exec($ch));
-	curl_close($ch);		
-	$c = 0;
-//store course count as $count
-	$course_count = $resposne->count;
-	$pages = $course_count / 100;
-	$num = 1;
-	$fp = fopen('courses.csv', 'w');
-	$data = "course_id,short_name,long_name,term_id,status\n";
-	$fp = fwrite($fp, $data);
-			echo"<div class='accordion-group'>
-			    <div class='accordion-heading'>
-			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#courses' align='center'>
-			        Preview Courses
-			      </h4>
-			    </div>
-			    <div id='courses' class='accordion-body collapse out'>
-			      <div class='accordion-inner'>
-			        		<div id='courses_preview' class='table'><table class='table table-striped table-condensed'>
-			<thead><tr><td>Course&nbspID</td><td>Short&nbspName</td><td>Long&nbspName</td><td>Status</td></tr></thead>";
-		$pre = 0;
-	while($c < $pages){
-		
-		$url = $_SESSION['ps_url']."/ws/v1/school/6/course?page=".$num;
-		//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
-		//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
-		//echo $url."<br>";
-		$ch = curl_init($url);
-		$request_headers = array('Authorization: Bearer ' . $_SESSION['access_token'],
+	curl_setopt(\$ch,CURLOPT_HTTPHEADER,\$request_headers);
+	curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, 1);
+	\$response = new SimpleXMLElement(curl_exec(\$ch));
+	curl_close(\$ch);		
+	\$c = 0;
+	\$course_count = \$response->count;
+	\$pages = \$course_count / 100;
+	\$num = 1;
+	\$fp = fopen('courses.csv', 'w');
+	\$data = \"course_id,short_name,long_name,term_id,status\\n\";
+	\$fp = fwrite(\$fp, \$data);
+	while(\$c < \$pages){
+		\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course?page=\".\$num;
+		\$ch = curl_init(\$url);
+		\$request_headers = array('Authorization: Bearer ' . \$ps_token,
 				'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
 		);
-		
-		# Initiate cURL, adding the REQUEST_HEADERS to it for authentication
-		$ch = curl_init($url);
-		//echo $url."<br>";
-		//print_r($request_headers);
-		//echo "<br>";
-		
-		// Set headers
-		curl_setopt($ch,CURLOPT_HTTPHEADER,$request_headers);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		$response = new SimpleXMLElement(curl_exec($ch));
-				//$info = curl_getinfo($ch);
-		curl_close($ch);		
-		//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
-		    //$json_obj = json_decode ($json_str);
-		//print_r($response);
-		$num++;
-		foreach($response->course as $course)
+		\$ch = curl_init(\$url);		
+		curl_setopt(\$ch,CURLOPT_HTTPHEADER,\$request_headers);
+		curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, 1);
+		\$response = new SimpleXMLElement(curl_exec(\$ch));
+		curl_close(\$ch);		
+		\$num++;
+		foreach(\$response->course as \$course)
 			{
-    		$course_id = (String) $course->id;
-			$short_name = (String) $course->course_number;
-			$long_name = (String) $course->course_name;
-			$term_id = 226;
-			$status = 'active';
-			$data = $course_id.",".$short_name.",".$long_name.",".$term_id.",".$status."\n";
-			$f = fopen('courses.csv', 'a');
-			fwrite($f,$data);
-			fclose($f);
-				echo "<tr><td>".$course_id."</td><td>".$short_name."</td><td>".$long_name."</td><td>".$status."</td></tr>";	
-
+    		\$course_id = (String) \$course->id;
+			\$short_name = (String) \$course->course_number;
+			\$long_name = (String) \$course->course_name;
+			\$status = 'active';
+			\$data = \$course_id.\",\".\$short_name.\",\".\$long_name.\",\".\$status.\"\n\";
+			\$f = fopen('courses.csv', 'a');
+			fwrite(\$f,\$data);
+			fclose(\$f);
 			}
-			
-			$c++;
-		
-	}echo "</table></div></div></div></div>";
-}else{
-	//do nothing
-}
-			
+			\$c++;	
+	}
+}";
+$handle = fopen($myFile, 'w') or die('Cannont open file;');
+fwrite($handle, $data);
+
+$output = shell_exec('echo -e  "`crontab -l`\n45 21 * * 1-5 wget http://localhost:8888/api/'.$myFile.'" | crontab -'); 
+echo $output;
+/*	
 if ($_GET['import_sections'] === 'y'){
 	$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/section/count?q=term.start_year==2012";
 //$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
@@ -195,7 +171,7 @@ if ($_GET['import_sections'] === 'y'){
 
 		//Creating courses.csv with term_id
 		//Creating enrollments for active sections
-			
+		/*	
 		$data = $section_id.",".$course_id.",".$name.",".$status."\n";
 		$f = fopen('sections.csv', 'a');
 		fwrite($f,$data);
@@ -213,7 +189,7 @@ if ($_GET['import_sections'] === 'y'){
 	/*}else{
 		//do nothing
 	}*/
-
+/*
 if ($_GET['import_students'] === 'y'){
 		$fp = fopen('users.csv', 'w');
 		$data = "user_id,login_id,first_name,last_name,email,status\n";
@@ -532,7 +508,7 @@ echo "</div>";
 
 	
 
-/*
+
 $account = 1;
 $domain = "ericadams.test";
 $token = "1~OVzaepeSrdCKW9IJipmK2hMTeClJAQaGkD0RjQc59BDUQT3TRaUZgtPopqTdcKn4";
@@ -612,7 +588,7 @@ $ch = curl_init($url);
  * 
  * 
  */
-
+/*
 echo "<legend>Download Import Files</legend>";
 if($_GET['import_courses'] === 'y'){
 	
@@ -632,6 +608,6 @@ if($_GET['import_students'] === 'y' && $_GET['import_staff'] === 'y'){
 	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Staff</a>";
 	}
 echo "</div>";
-
+*/
 ?>
 
