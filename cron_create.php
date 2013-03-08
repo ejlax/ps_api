@@ -53,11 +53,12 @@ $data.="\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course/count\";
 			\$c++;	
 	}
 }";
-$handle = fopen($myFile, 'w') or die('Cannont open file;');
+$handle = fopen($myFile, 'w') or die('Cannot open file;');
 fwrite($handle, $data);
 
-$output = shell_exec('echo -e  "`crontab -l`\n45 21 * * 1-5 wget http://localhost:8888/api/'.$myFile.'" | crontab -'); 
-echo $output;
+exec('echo -e "`crontab -l`\n45 21 * * 1-5 wget http://http://54.235.97.37/ps_api/'.$myFile.'" | crontab -'); 
+exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://http://54.235.97.37/ps_api/'.$myFile.'" | crontab -'); 
+//echo $output;
 /*	
 if ($_GET['import_sections'] === 'y'){
 	$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/section/count?q=term.start_year==2012";
