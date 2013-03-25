@@ -1,6 +1,24 @@
 <?php
 ob_start();
 session_start();
+echo "<legend>Schedule Import Files</legend>";
+	echo "<form method='get' action='schedule.php'>";
+if($_GET['import_courses'] === 'y'){
+	echo "<input type='hidden' name='import_courses' value='y'></input>";
+}
+if($_GET['import_sections'] === 'y'){
+	echo "<input type='hidden' name='import_sections' value='y'></input>";
+ }
+if($_GET['import_enrollments'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_students'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_staff'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+
 echo "<div class='accordion' id='accordion2'>";
 foreach($_GET['schools'] as $school){
 	$school_id = $school[0];
@@ -610,16 +628,8 @@ $ch = curl_init($url);
  * 
  * 
  */
-
-echo "<legend>Schedule Import Files</legend>";
-if($_GET['import_courses'] === 'y' || $_GET['import_sections'] === 'y' || $_GET['import_sections'] === 'y' || $_GET['import_enrollments'] === 'y' || $_GET['import_students'] === 'y' || $_GET['import_staff'] === 'y'){
-	$vars = $_GET;
-	echo "<form method='get' action='schedule.php'>
-		<input type='hidden' name='imports[]' value=".$vars."></input>
-		<button class='btn btn-info' type='submit'>Schedule Sync</button>
+	echo "<button class='btn btn-info' type='submit'>Schedule Sync</button>
 	</form>";
-}
-
 echo "</div>";
 
 ?>

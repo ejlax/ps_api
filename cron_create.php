@@ -4,71 +4,81 @@ $ps_url = $_GET['ps_url'];
 $daily = $_GET['once_a_day'];
 $twice = $_GET['twice_a_day'];
 $thrice = $_GET['thrice_a_day'];
-if($daily === 1){
-if(file_exists($ps_token."/import-courses.php")){
-	
-}else{mkdir($ps_token);}
-
-$myFile = $ps_token."/import-courses.php";
-$data="<?php\n";
-$data.="\$ps_token = \$_GET['access_token'];\n";
-$data.="\$canvas_token = \$_GET['canvas_token'];\n";
-$data.="\$ps_url = \$_GET['ps_url'];\n";
-$data.="\$schools = \$_GET['schools'];\n";
-$data.="foreach(\$schools as \$school){\n";
-$data.="\$school_id = \$school[0];\n";
-$data.="\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course/count\";
-	\$ch = curl_init(\$url);
-	\$request_headers = array('Authorization: Bearer ' . \$ps_token,
-	'Content-Type: application/x-www-form-urlencoded;charset=UTF-8');
-	curl_setopt(\$ch,CURLOPT_HTTPHEADER,\$request_headers);
-	curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, 1);
-	\$response = new SimpleXMLElement(curl_exec(\$ch));
-	curl_close(\$ch);		
-	\$c = 0;
-	\$course_count = \$response->count;
-	\$pages = \$course_count / 100;
-	\$num = 1;
-	\$fp = fopen('courses.csv', 'w');
-	\$data = \"course_id,short_name,long_name,term_id,status\\n\";
-	\$fp = fwrite(\$fp, \$data);
-	while(\$c < \$pages){
-		\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course?page=\".\$num;
-		\$ch = curl_init(\$url);
-		\$request_headers = array('Authorization: Bearer ' . \$ps_token,
-				'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
-		);
-		\$ch = curl_init(\$url);		
-		curl_setopt(\$ch,CURLOPT_HTTPHEADER,\$request_headers);
-		curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, 1);
-		\$response = new SimpleXMLElement(curl_exec(\$ch));
-		curl_close(\$ch);		
-		\$num++;
-		foreach(\$response->course as \$course)
-			{
-    		\$course_id = (String) \$course->id;
-			\$short_name = (String) \$course->course_number;
-			\$long_name = (String) \$course->course_name;
-			\$status = 'active';
-			\$data = \$course_id.\",\".\$short_name.\",\".\$long_name.\",\".\$status.\"\n\";
-			\$f = fopen('courses.csv', 'a');
-			fwrite(\$f,\$data);
-			fclose(\$f);
+if($_GET['import_course'] === 'y'){
+	if($daily === 1){
+		$sched_time = $_GET['sched_time'];
+		if(file_exists($ps_token."/import-courses.php")){
+			}else{
+				mkdir($ps_token);
+				}
+		$myFile = $ps_token."/".$_GET['import-courses'];
+		$data="<?php\n";
+		$data.="\$ps_token = \$_GET['access_token'];\n";
+		$data.="\$canvas_token = \$_GET['canvas_token'];\n";
+		$data.="\$ps_url = \$_GET['ps_url'];\n";
+		$data.="\$schools = \$_GET['schools'];\n";
+		$data.="foreach(\$schools as \$school){\n";
+		$data.="\$school_id = \$school[0];\n";
+		$data.="\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course/count\";
+			\$ch = curl_init(\$url);
+			\$request_headers = array('Authorization: Bearer ' . \$ps_token,
+			'Content-Type: application/x-www-form-urlencoded;charset=UTF-8');
+			curl_setopt(\$ch,CURLOPT_HTTPHEADER,\$request_headers);
+			curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, 1);
+			\$response = new SimpleXMLElement(curl_exec(\$ch));
+			curl_close(\$ch);		
+			\$c = 0;
+			\$course_count = \$response->count;
+			\$pages = \$course_count / 100;
+			\$num = 1;
+			\$fp = fopen('courses.csv', 'w');
+			\$data = \"course_id,short_name,long_name,term_id,status\\n\";
+			\$fp = fwrite(\$fp, \$data);
+			while(\$c < \$pages){
+				\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course?page=\".\$num;
+				\$ch = curl_init(\$url);
+				\$request_headers = array('Authorization: Bearer ' . \$ps_token,
+						'Content-Type: application/x-www-form-urlencoded;charset=UTF-8'
+				);
+				\$ch = curl_init(\$url);		
+				curl_setopt(\$ch,CURLOPT_HTTPHEADER,\$request_headers);
+				curl_setopt(\$ch, CURLOPT_RETURNTRANSFER, 1);
+				\$response = new SimpleXMLElement(curl_exec(\$ch));
+				curl_close(\$ch);		
+				\$num++;
+				foreach(\$response->course as \$course)
+					{
+		    		\$course_id = (String) \$course->id;
+					\$short_name = (String) \$course->course_number;
+					\$long_name = (String) \$course->course_name;
+					\$status = 'active';
+					\$data = \$course_id.\",\".\$short_name.\",\".\$long_name.\",\".\$status.\"\n\";
+					\$f = fopen('courses.csv', 'a');
+					fwrite(\$f,\$data);
+					fclose(\$f);
+					}
+					\$c++;	
 			}
-			\$c++;	
-	}
-}";
+		}";
+		$handle = fopen($myFile, 'w') or die('Cannot open file;');
+		fwrite($handle, $data);
+		
+		exec('echo -e "`crontab -l`\n* '.$sched_time.' * * * 1-7 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
+		//exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
+}
+if($twice === 1){
+
 $handle = fopen($myFile, 'w') or die('Cannot open file;');
 fwrite($handle, $data);
 
-exec('echo -e "`crontab -l`\n45 21 * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
-exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
-}
-if($twice === 1){
-	
+exec('echo -e "`crontab -l`\n45 21 * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');	
 }
 if($thrice === 1){
-	
+
+$handle = fopen($myFile, 'w') or die('Cannot open file;');
+fwrite($handle, $data);
+
+exec('echo -e "`crontab -l`\n45 21 * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');	
 }
 //echo $output;
 /*	
@@ -622,5 +632,6 @@ if($_GET['import_students'] === 'y' && $_GET['import_staff'] === 'y'){
 	}
 echo "</div>";
 */
+}
 ?>
 

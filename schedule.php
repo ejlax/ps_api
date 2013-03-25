@@ -140,7 +140,22 @@ var_dump($_GET);
 					<option value='21'>21:00</option>
 					<option value='22'>22:00</option>
 					<option value='23'>23:00</option>
-				</select>
+				</select><?php
+if($_GET['import_courses'] === 'y'){
+	echo "<input type='hidden' name='import_courses' value='y'></input>";
+}
+if($_GET['import_sections'] === 'y'){
+	echo "<input type='hidden' name='import_sections' value='y'></input>";
+ }
+if($_GET['import_enrollments'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_students'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_staff'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}?>
 				<button class='btn btn-info' type='submit'>Schedule</button>
 			</form>
 		</div>
@@ -173,7 +188,22 @@ var_dump($_GET);
 					<option value='21'>21:00</option>
 					<option value='22'>22:00</option>
 					<option value='23'>23:00</option>
-				</select>
+				</select><?php
+if($_GET['import_courses'] === 'y'){
+	echo "<input type='hidden' name='import_courses' value='y'></input>";
+}
+if($_GET['import_sections'] === 'y'){
+	echo "<input type='hidden' name='import_sections' value='y'></input>";
+ }
+if($_GET['import_enrollments'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_students'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_staff'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}?>
 				<button class='btn btn-info' type='submit'>Schedule</button>
 			</form>
 		</div>
@@ -206,7 +236,22 @@ var_dump($_GET);
 					<option value='21'>21:00</option>
 					<option value='22'>22:00</option>
 					<option value='23'>23:00</option>
-				</select>
+				</select><?php
+if($_GET['import_courses'] === 'y'){
+	echo "<input type='hidden' name='import_courses' value='y'></input>";
+}
+if($_GET['import_sections'] === 'y'){
+	echo "<input type='hidden' name='import_sections' value='y'></input>";
+ }
+if($_GET['import_enrollments'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_students'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}
+if($_GET['import_staff'] === 'y'){
+	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+}?>
 				<button class='btn btn-info' type='submit'>Schedule</button>
 			</form>
 		</div
