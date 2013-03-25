@@ -108,8 +108,8 @@ while($i < $pages){
 					curl_close($ch);		
 			//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
 			    //$json_obj = json_decode ($json_str);
-			//print_r($response);
-
+			print_r($response);
+/*
 			foreach($response->section_enrollment as $enrollment){
 				$state = (String) $enrollment->dropped;
 				$section_en_id = (String) $enrollment->section_id;
@@ -126,7 +126,7 @@ while($i < $pages){
 					fclose($f);
 				}
 				
-			}	
+			}	*/
 		
 		
 		

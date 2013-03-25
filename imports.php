@@ -344,8 +344,19 @@ if($_GET['import_enrollments'] === 'y'){
 //echo $pages;
 	$num = 1;
 //create section file
+		echo"
+			  <div class='accordion-group'>
+			    <div class='accordion-heading'>
+			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#enrollments' align='center'>
+			        Preview Enrollments
+			      </h4>
+			    </div>
+			    <div id='enrollments' class='accordion-body collapse out'>
+			      <div class='accordion-inner'>
+			        		<div id='enrollments_preview' class='table'><table class='table table-striped table-condensed'>
+			<thead><tr><td>User_ID</td><td>Role</td><td>Section&nbspID</td><td>Statuse</td></tr></thead>";
 	while($s < $pages){
-		
+
 		$url =$_SESSION['ps_url']."/ws/v1/school/".$school_id."/section?page=".$num;
 		//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
 		//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
@@ -369,18 +380,8 @@ if($_GET['import_enrollments'] === 'y'){
 		//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
 		    //$json_obj = json_decode ($json_str);
 		//print_r($response);
-		$num++;
-						echo"
-			  <div class='accordion-group'>
-			    <div class='accordion-heading'>
-			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#enrollments' align='center'>
-			        Preview Enrollments
-			      </h4>
-			    </div>
-			    <div id='enrollments' class='accordion-body collapse out'>
-			      <div class='accordion-inner'>
-			        		<div id='enrollments_preview' class='table'><table class='table table-striped table-condensed'>
-			<thead><tr><td>User_ID</td><td>Role</td><td>Section&nbspID</td><td>Statuse</td></tr></thead>";
+		$s++; // controls while loop
+		$num++; // control number of pages requested					
 		foreach($response->section as $section)
 		{
     	$section_id = (String) $section->id;
@@ -420,7 +421,6 @@ if($_GET['import_enrollments'] === 'y'){
 					$user_id = (String) $enrollment->student_id;
 					$role = "student";
 					$status = "active";
-					$table++;
 					if ($state == 'false'){
 						//do nothing
 					}else{
@@ -428,12 +428,12 @@ if($_GET['import_enrollments'] === 'y'){
 						$f = fopen('enrollments.csv', 'a');
 						fwrite($f,$data);
 						fclose($f);
-						echo "<tr><td>".$user_id."</td><td>".$role."</td><td>".$sections_en_id."</td><td>".$status."</td></tr>";	
+						echo "<tr><td>".$user_id."</td><td>".$role."</td><td>".$section_en_id."</td><td>".$status."</td></tr>";	
 						}
 
 					}					
-				}echo "</table></div></div></div></div>";
-			}
+				}
+			}echo "</table></div></div></div></div>";
 		}
 if($_GET['import_staff'] === 'y'){
 	//get student count

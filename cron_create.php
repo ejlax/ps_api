@@ -56,8 +56,8 @@ $data.="\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course/count\";
 $handle = fopen($myFile, 'w') or die('Cannot open file;');
 fwrite($handle, $data);
 
-exec('echo -e "`crontab -l`\n45 21 * * 1-5 wget http://http://54.235.97.37/ps_api/'.$myFile.'" | crontab -'); 
-exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://http://54.235.97.37/ps_api/'.$myFile.'" | crontab -'); 
+exec('echo -e "`crontab -l`\n45 21 * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
+exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
 //echo $output;
 /*	
 if ($_GET['import_sections'] === 'y'){

@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 $ps_url= $_GET['ps_url'];
-
+$_SESSION['ps_url'] = $ps_url; 
 $ps_code = $_GET['client_id'];
 $ps_secret = $_GET['client_secret'];
 $auth_url = $ps_url."/oauth/access_token/";
@@ -20,8 +20,8 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, "grant_type=client_credentials");
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); 
 curl_setopt($ch, CURLOPT_USERPWD, "$ps_code:$ps_secret");
 $response = curl_exec($ch);
-$json = json_decode($respose);
-//print_r($json);
+$json = json_decode($response);
+print_r($json);
 //$result = new SimpleXMLElement(curl_exec($ch));
 //unset($_SESSION['access_token']);
 if(curl_errno($ch))
