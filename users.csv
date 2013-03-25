@@ -233,6 +233,7 @@ user_id,login_id,first_name,last_name,email,status
 784,brea.burroughs@govikes.org,brea,burroughs,brea.burroughs@govikes.org,active
 785,tami.carlson@govikes.org,tami,carlson,tami.carlson@govikes.org,active
 786,trista.chabot@govikes.org,trista,chabot,trista.chabot@govikes.org,active
+788,kain.cortez@govikes.org,kain,cortez,kain.cortez@govikes.org,active
 790,anthony.dickerson@govikes.org,anthony,dickerson,anthony.dickerson@govikes.org,active
 791,sawyer.digman@govikes.org,sawyer,digman,sawyer.digman@govikes.org,active
 792,derek.dinderman@govikes.org,derek,dinderman,derek.dinderman@govikes.org,active
@@ -393,7 +394,6 @@ user_id,login_id,first_name,last_name,email,status
 972,garrett.paustian@govikes.org,garrett,paustian,garrett.paustian@govikes.org,active
 973,kendra.peterson@govikes.org,kendra,peterson,kendra.peterson@govikes.org,active
 974,austin.pettit@govikes.org,austin,pettit,austin.pettit@govikes.org,active
-975,marko.pilipovic@govikes.org,marko,pilipovic,marko.pilipovic@govikes.org,active
 976,abigail.price@govikes.org,abigail,price,abigail.price@govikes.org,active
 977,josephine.wehage@govikes.org,josephine,wehage,josephine.wehage@govikes.org,active
 978,joshua.rake@govikes.org,joshua,rake,joshua.rake@govikes.org,active
@@ -476,3 +476,4 @@ user_id,login_id,first_name,last_name,email,status
 3653,cole.kite@govikes.org,cole,kite,cole.kite@govikes.org,active
 3654,alisa.anderson@govikes.org,alisa,anderson,alisa.anderson@govikes.org,active
 3657,cade.storey@govikes.org,cade,storey,cade.storey@govikes.org,active
+3663,brittany.scheurer@govikes.org,brittany,scheurer,brittany.scheurer@govikes.org,active

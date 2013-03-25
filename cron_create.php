@@ -1,9 +1,14 @@
 <?php
 $ps_token = $_GET['access_token'];
 $ps_url = $_GET['ps_url'];
+$daily = $_GET['once_a_day'];
+$twice = $_GET['twice_a_day'];
+$thrice = $_GET['thrice_a_day'];
+if($daily === 1){
 if(file_exists($ps_token."/import-courses.php")){
 	
 }else{mkdir($ps_token);}
+
 $myFile = $ps_token."/import-courses.php";
 $data="<?php\n";
 $data.="\$ps_token = \$_GET['access_token'];\n";
@@ -58,6 +63,13 @@ fwrite($handle, $data);
 
 exec('echo -e "`crontab -l`\n45 21 * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
 exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
+}
+if($twice === 1){
+	
+}
+if($thrice === 1){
+	
+}
 //echo $output;
 /*	
 if ($_GET['import_sections'] === 'y'){

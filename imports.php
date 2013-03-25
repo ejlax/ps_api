@@ -1,4 +1,3 @@
-
 <?php
 ob_start();
 session_start();
@@ -17,7 +16,7 @@ foreach($_GET['schools'] as $school){
 	curl_close($ch);		
 	$c = 0;
 //store course count as $count
-	$course_count = $resposne->count;
+	$course_count = $response->count;
 	$pages = $course_count / 100;
 	$num = 1;
 	$fp = fopen('courses.csv', 'w');
@@ -57,22 +56,21 @@ foreach($_GET['schools'] as $school){
 		$response = new SimpleXMLElement(curl_exec($ch));
 				//$info = curl_getinfo($ch);
 		curl_close($ch);		
-		//$json_str = "{'aintlist':[4,3,2,1], 'astringlist':['str1','str2']}";
-		    //$json_obj = json_decode ($json_str);
 		//print_r($response);
 		$num++;
 		foreach($response->course as $course)
 			{
     		$course_id = (String) $course->id;
-			$short_name = (String) $course->course_number;
-			$long_name = (String) $course->course_name;
+			$course_num = (string) $course->course_number;
+			$short_name = (String) $course->course_name;
+			//$long_name = (String) $course->course_name;
 			$term_id = 226;
 			$status = 'active';
-			$data = $course_id.",".$short_name.",".$long_name.",".$term_id.",".$status."\n";
+			$data = $course_id.",".$short_name.",".$long_name."-".$course_num.".".$term_id.",".$status."\n";
 			$f = fopen('courses.csv', 'a');
 			fwrite($f,$data);
 			fclose($f);
-				echo "<tr><td>".$course_id."</td><td>".$short_name."</td><td>".$long_name."</td><td>".$status."</td></tr>";	
+				echo "<tr><td>".$course_id."</td><td>".$short_name."</td><td>".$short_name."-".$course_num."</td><td>".$status."</td></tr>";	
 
 			}
 			
@@ -613,24 +611,15 @@ $ch = curl_init($url);
  * 
  */
 
-echo "<legend>Download Import Files</legend>";
-if($_GET['import_courses'] === 'y'){
-	
-	echo "<a class='btn btn-primary' href='courses.csv'><i class='icon-download-alt icon-white'></i> Courses</a><br><br>";
+echo "<legend>Schedule Import Files</legend>";
+if($_GET['import_courses'] === 'y' || $_GET['import_sections'] === 'y' || $_GET['import_sections'] === 'y' || $_GET['import_enrollments'] === 'y' || $_GET['import_students'] === 'y' || $_GET['import_staff'] === 'y'){
+	$vars = $_GET;
+	echo "<form method='get' action='schedule.php'>
+		<input type='hidden' name='imports[]' value=".$vars."></input>
+		<button class='btn btn-info' type='submit'>Schedule Sync</button>
+	</form>";
 }
-if($_GET['import_sections'] === 'y'){
-	echo "<a class='btn btn-primary' href='sections.csv'><i class='icon-download-alt icon-white'></i> Sections</a><br><br>";
-}
-if($_GET['import_enrollments'] === 'y'){
-	echo "<a class='btn btn-primary' href='enrollments.csv'><i class='icon-download-alt icon-white'></i> Enrollments</a><br><br>";
-} 
-if($_GET['import_students'] === 'y' && $_GET['import_staff'] === 'y'){
-	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Staff and Students</a><br><br>";
-	}elseif($_GET['import_students'] === 'y'){
-	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Students</a><br><br>";
-	}elseif($_GET['import_staff'] === 'y'){
-	echo "<a class='btn btn-primary' href='users.csv'><i class='icon-download-alt icon-white'></i> Staff</a>";
-	}
+
 echo "</div>";
 
 ?>
