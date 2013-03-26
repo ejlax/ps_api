@@ -1,15 +1,20 @@
 <?php
-$ps_token = $_GET['access_token'];
-$ps_url = $_GET['ps_url'];
+session_start();
+var_dump($_GET);
+var_dump($_SESSION);
+$ps_token = $_SESSION['access_token'];
+$ps_url = $_SESSION['ps_url'];
 $daily = $_GET['once_a_day'];
 $twice = $_GET['twice_a_day'];
 $thrice = $_GET['thrice_a_day'];
-if($_GET['import_course'] === 'y'){
+if($_GET['import_courses'] === 'y'){
 	if($daily === 1){
 		$sched_time = $_GET['sched_time'];
 		if(file_exists($ps_token."/import-courses.php")){
 			}else{
-				mkdir($ps_token);
+				if (!mkdir($ps_token, 0, true)) {
+    			die('Failed to create folders...');
+					}
 				}
 		$myFile = $ps_token."/".$_GET['import-courses'];
 		$data="<?php\n";

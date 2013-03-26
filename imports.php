@@ -10,13 +10,13 @@ if($_GET['import_sections'] === 'y'){
 	echo "<input type='hidden' name='import_sections' value='y'></input>";
  }
 if($_GET['import_enrollments'] === 'y'){
-	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+	echo "<input type='hidden' name='import_enrollments' value='y'></input>";
 }
 if($_GET['import_students'] === 'y'){
-	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+	echo "<input type='hidden' name='import_students' value='y'></input>";
 }
 if($_GET['import_staff'] === 'y'){
-	echo "<input type='hidden' name='import_files[]' value='y'></input>";
+	echo "<input type='hidden' name='import_staff' value='y'></input>";
 }
 
 echo "<div class='accordion' id='accordion2'>";
@@ -84,7 +84,7 @@ foreach($_GET['schools'] as $school){
 			//$long_name = (String) $course->course_name;
 			$term_id = 226;
 			$status = 'active';
-			$data = $course_id.",".$short_name.",".$long_name."-".$course_num.".".$term_id.",".$status."\n";
+			$data = $course_id.",".$short_name.",".$short_name."-".$course_num.".".$term_id.",".$status."\n";
 			$f = fopen('courses.csv', 'a');
 			fwrite($f,$data);
 			fclose($f);
