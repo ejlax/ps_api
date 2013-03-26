@@ -1,7 +1,7 @@
 <?php
 session_start();
-var_dump($_GET);
-var_dump($_SESSION);
+//var_dump($_GET);
+//var_dump($_SESSION);
 $ps_token = $_SESSION['access_token'];
 $ps_url = $_SESSION['ps_url'];
 $daily = $_GET['once_a_day'];
@@ -10,18 +10,12 @@ $thrice = $_GET['thrice_a_day'];
 if($_GET['import_courses'] === 'y'){
 	if($daily === 1){
 		$sched_time = $_GET['sched_time'];
-		if(file_exists($ps_token."/import-courses.php")){
-			}else{
-				if (!mkdir($ps_token, 0, true)) {
-    			die('Failed to create folders...');
-					}
-				}
-		$myFile = $ps_token."/".$_GET['import-courses'];
+		$myFile = $ps_token."/import_courses.php";
 		$data="<?php\n";
-		$data.="\$ps_token = \$_GET['access_token'];\n";
-		$data.="\$canvas_token = \$_GET['canvas_token'];\n";
-		$data.="\$ps_url = \$_GET['ps_url'];\n";
-		$data.="\$schools = \$_GET['schools'];\n";
+		$data.="\$ps_token = ".$_GET['access_token'].";\n";
+		$data.="\$canvas_token = ".$_GET['canvas_token'].";\n";
+		$data.="\$ps_url = ".$_GET['ps_url'].";\n";
+		$data.="\$schools = ".$_GET['schools'].";\n";
 		$data.="foreach(\$schools as \$school){\n";
 		$data.="\$school_id = \$school[0];\n";
 		$data.="\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course/count\";
@@ -36,9 +30,9 @@ if($_GET['import_courses'] === 'y'){
 			\$course_count = \$response->count;
 			\$pages = \$course_count / 100;
 			\$num = 1;
-			\$fp = fopen('courses.csv', 'w');
+			\$handle = fopen('courses.csv', 'w');
 			\$data = \"course_id,short_name,long_name,term_id,status\\n\";
-			\$fp = fwrite(\$fp, \$data);
+			\$fp = fwrite(\$handle, \$data);
 			while(\$c < \$pages){
 				\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course?page=\".\$num;
 				\$ch = curl_init(\$url);
@@ -68,7 +62,7 @@ if($_GET['import_courses'] === 'y'){
 		$handle = fopen($myFile, 'w') or die('Cannot open file;');
 		fwrite($handle, $data);
 		
-		exec('echo -e "`crontab -l`\n* '.$sched_time.' * * * 1-7 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
+		exec('echo -e "`crontab -l`\n* '.$sched_time.' * * * 0-6 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
 		//exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
 }
 if($twice === 1){
