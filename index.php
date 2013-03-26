@@ -8,9 +8,13 @@ if(isset($_SESSION['access_token']) && isset($_SESSION['ps_url'])){
 if(!isset($_POST['custom_ps_url']) && !isset($_POST['custom_client_secret']) && !isset($_POST['custom_client_id'])){
 			echo "<div class='row'><div class='span4'><h6>Please input your client Id, client secret, and PowerSchool URL in the <a href='https://lti-examples.heroku.com/index.html?tool=redirect'>Redirect LTI tool</a>.<p>This Program will not function until you do.<p></h6></div>";
 		echo "</div><div><iframe src='https://lti-examples.heroku.com/index.html?tool=redirect' height=800 width=800></iframe></div>";
+		var_dump($_POST);
 		exit();
 }
 $ps_url= $_POST['custom_ps_url'];
+$guid = explode('.', $_POST['tool_consumer_instance_guid']);
+$user_guid = $guid[0];
+$canvas_token = $_POST['custom_canvas_token'];
 $_SESSION['ps_url'] = $ps_url; 
 $ps_code = $_POST['custom_client_id'];
 $ps_secret = $_POST['custom_client_secret'];
@@ -42,11 +46,13 @@ if( isset($ps_url) && isset($ps_secret) && isset($ps_code)){
 	  //print_r($result);
 	  $_SESSION['access_token'] = $json->access_token;
 	  $_SESSION['ps_url'] = $ps_url;
+	  $variables = $guid[1].".".$guid[2].".".$guid[3]."\n".$user_guid."\n".$_SESSION['access_token']."\n".$ps_url."\n".$canvas_token."\n"ps;	  
+	  file_put_contents('variable.txt', $variables);
 	  //$_SESSION['access_token'] = $result['access_token'];
 	  //echo $_SESSION['access_token'];
 	  }
 	
-	
+
 	
 	//$_SESSION['ps_url'] = $ps_url;
 	//echo $_SESSION['access_token'];

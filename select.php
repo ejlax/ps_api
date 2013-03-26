@@ -9,6 +9,14 @@ if(!isset($_SESSION['access_token'])){
 	header('location: index.php');
 	
 }
+//Creating Directory for files
+if(file_exists($ps_token) && is_dir($ps_token)){
+			}else{
+				if (!mkdir($ps_token, 0755, true)) {
+    			die('Failed to create folders...');
+					exit();
+					}
+				}
 /*if(!isset($_GET['schools'])){
 /*select schools from which to import users
  * this will loop through each school and aggregate all users (Staff and Students)
