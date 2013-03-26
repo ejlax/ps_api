@@ -12,7 +12,8 @@ if(!isset($_SESSION['access_token'])){
 //Creating Directory for files
 if(file_exists($ps_token) && is_dir($ps_token)){
 			}else{
-				if (!mkdir($ps_token, 0755, true)) {
+				if (!mkdir($ps_token)) {
+					
     			die('Failed to create folders...');
 					exit();
 					}
