@@ -1,668 +1,756 @@
 course_id,short_name,long_name,term_id,status
-475,Lrn. Center I,-001.226,active
-476,Lrn. Center II,-002.226,active
-498,Lrn. Center III,-003.226,active
-499,Lrn. Center IA,-004.226,active
-500,Lrn. Center IIA,-005.226,active
-501,Lrn. Center IIIA,-006.226,active
-502,Lrn. Center IB,-007.226,active
-503,Lrn. Center IIB,-008.226,active
-504,Lrn. Center IIIB,-009.226,active
-505,Careers,-010.226,active
-1522,Practical Lang. IB,-01001S05021.226,active
-506,Lrn. Center I,-011.226,active
-1474,Lrn. Center I,-0115.226,active
-507,Lrn. Center II,-012.226,active
-1351,Learning Center II,-0125.226,active
-508,Lrn. Center III,-013.226,active
-1352,Learning Center III,-0135.226,active
-571,Financial Skills,-014.226,active
-601,Corrective Reading B-1,-015.226,active
-602,Corrective Reading B-2,-016.226,active
-603,Corrective Reading B-3,-017.226,active
-604,Corrective Reading C-1,-018.226,active
-605,Corrective Reading C-2,-019.226,active
-606,Corrective Reading C-3,-020.226,active
-509,Lrn. Center I,-021.226,active
-510,Lrn. Center II,-022.226,active
-511,Lrn. Center III,-023.226,active
-950,LA-Read to Achieve 1-1,-024.226,active
-951,LA-Read to Achieve 1-2,-025.226,active
-952,LA-Read to Achieve 1-3,-026.226,active
-1303,Corrective Reading A-1,-027.226,active
-1501,Corrective Reading D-1,-027D.226,active
-1304,Corrective Reading A-2,-028.226,active
-1502,Corrective Reading D-2,-028D.226,active
-1305,Corrective Reading A-3,-029.226,active
-1503,Corrective Reading D-3,-029D.226,active
-512,Lrn. Center I,-031.226,active
-513,Lrn. Center II,-032.226,active
-514,Lrn. Center III,-033.226,active
-515,Lang. Arts Fusion 1-1,-035.226,active
-516,Lang. Arts Fusion 1-2,-036.226,active
-517,Lang. Arts Fusion 1-3,-037.226,active
-607,Lang. Arts Fusion 2-1,-038.226,active
-608,Lang. Arts Fusion 2-2,-039.226,active
-609,Lang. Arts Fusion 2-3,-040.226,active
-518,Lrn. Center I,-041.226,active
-519,Lrn. Center II,-042.226,active
-520,Lrn. Center III,-043.226,active
-560,Basic Consumer Math. A,-044.226,active
-561,Basic Consumer Math. B,-045.226,active
-562,Basic Fund. Math. A,-046.226,active
-563,Basic Fund. Math B,-047.226,active
-564,Basic Algebra A,-048.226,active
-565,Basic Algebra B,-049.226,active
-566,Basic Algebra C,-050.226,active
-521,Lrn. Center I,-051.226,active
-522,Lrn. Center II,-052.226,active
-523,Lrn. Center III,-053.226,active
-524,Basic Science I,-060.226,active
-525,Basic Science II,-061.226,active
-526,Basic Science III,-062.226,active
-527,Basic Biology A,-066.226,active
-528,Basic Biology B,-067.226,active
-529,Basic Biology C,-068.226,active
-1073,Basic Environ. Science,-0681.226,active
-1074,Basic Global,-069.226,active
-530,Basic Am. Hist. I,-070.226,active
-531,Basic Am. Hist. II,-071.226,active
-532,Basic Wld. Hist. I,-072.226,active
-533,Basic Wld. Hist. II,-073.226,active
-534,Basic Economics,-074.226,active
-535,Basic Government,-075.226,active
-536,Practical Math. IA,-076.226,active
-1100,Practical Math.,-07633.226,active
-537,Practical Math. IB,-077.226,active
-1518,Practical Math. IC,-077C.226,active
-538,Practical Math. IIA,-078.226,active
-539,Practical Math. IIB,-079.226,active
-1519,Practical Math. IIC,-079C.226,active
-658,Practical Math. IIIA,-080.226,active
-659,Practical Math. IIIB,-081.226,active
-1520,Practical Math. IIIC,-081C.226,active
-660,Practical Math. IVA,-082.226,active
-661,Practical Math. IVB,-083.226,active
-1521,Practical Math. IVC,-083C.226,active
-1101,Practical Health,-084.226,active
-540,Basic Math IA,-085.226,active
-1077,Basic Math. IIA,-0851.226,active
-541,Basic Math IB,-086.226,active
-1078,Basic Math. IIB,-0861.226,active
-542,Basic Math III,-087.226,active
-543,Basic Math IVA,-088.226,active
-679,Basic Math. IVB,-089.226,active
-545,Practical Lang. IA,-090.226,active
-1523,Practical Lang. IB,-090B.226,active
-1524,Practical Lang. IC,-090C.226,active
-546,Practical Lang. IIA,-091.226,active
-1081,Practical Lang. II,-09125.226,active
-1525,Practical Lang. IIB,-091B.226,active
-1526,Practical Lang. IIC,-091C.226,active
-547,Practical Lang. IIIA,-092.226,active
-1527,Practical Lang. IIIB,-092B.226,active
-1528,Practical Lang. IIIC,-092C.226,active
-548,Practical Lang. IVA,-093.226,active
-1529,Practical Lang. IVB,-093B.226,active
-1530,Practical Lang. IVC,-093C.226,active
-553,Basic Lang. Arts A,-094.226,active
-549,Basic Lang. Arts B,-095.226,active
-550,Basic Composition I,-096.226,active
-551,Basic Communication,-097.226,active
-554,Basic Composition II,-098.226,active
-555,Basic Literature I,-099.226,active
-1076,Basic Lit.,-09925.226,active
-556,Basic Short Fiction,-100.226,active
-1505,Basic Creative Writing,-100S.226,active
-57,Reading I,-101.226,active
-58,Reading II,-102.226,active
-59,Reading III,-103.226,active
-60,Reading IV,-104.226,active
-657,Life Skills IA,-105.226,active
-1093,Life Skills,-10525.226,active
-663,Life Skills IB,-106.226,active
-1506,Life Skills IC,-106C.226,active
-664,Life Skills IIA,-107.226,active
-665,Life Skills IIB,-108.226,active
-1507,Life Skills IIC,-108C.226,active
-567,Life Skills IIIA,-109.226,active
-61,Life Skills IIIB,-110.226,active
-1508,Life Skills IIIC,-110C.226,active
-568,Life Skills IVA,-111.226,active
-569,Life Skills IVB,-112.226,active
-1509,Life Skills IVC,-112C.226,active
-666,Practical Foods I,-113.226,active
-667,Practical Foods II,-114.226,active
-668,Practical Foods III,-115.226,active
-669,Practical Foods IV,-116.226,active
-1103,Reading,-118.226,active
-1104,Reading,-11825.226,active
-1143,T*Reading,-118T.226,active
-62,Keyboarding,-119.226,active
-63,Work Exp. I,-120.226,active
-64,Work Exp. II,-121.226,active
-65,Work Exp. III,-122.226,active
-558,Prac. Job Skills IA,-123.226,active
-1510,Prac. Job Skills IB,-123B.226,active
-1511,Prac. Job Skills IC,-123C.226,active
-559,Prac. Job Skills IIA,-124.226,active
-1512,Prac. Job Skills IIB,-124B.226,active
-1513,Prac. Job Skills IIC,-124C.226,active
-66,Prac. Job Skills IIIA,-125.226,active
-1514,Prac. Job Skills IIIB,-125B.226,active
-1515,Prac. Job Skills IIIC,-125C.226,active
-67,Prac. Job Skills IVA,-126.226,active
-1516,Prac. Job Skills IVB,-126B.226,active
-1517,Prac. Job Skills IVC,-126C.226,active
-68,Life Skills I,-127.226,active
-69,Life Skills II,-128.226,active
-70,Life Skills III,-129.226,active
-570,Life Skills IV,-130.226,active
-71,Social Skills I,-131.226,active
-72,Social Skills II,-132.226,active
-557,Social Skills III,-133.226,active
-73,Social SkillsIV,-134.226,active
-1075,Basic Hm. Mng. I,-135.226,active
-1533,Practical Health I,-1361.226,active
-1534,Practical Health II,-1362.226,active
-1535,Practical Health III,-1363.226,active
-1536,Practical Health IV,-1364.226,active
-552,Lrn. Center II,-14.226,active
-74,Lrn. Center I,-141.226,active
-75,Lrn. Center II,-142.226,active
-76,Lrn. Center III,-143.226,active
-670,Reading Skills-SCR 1-1,-144.226,active
-671,Reading Skills-SCR 1-2,-145.226,active
-672,Reading Skills-SCR 1-3,-146.226,active
-673,Reading Skills - SCR 2-1,-147.226,active
-674,Reading Skills - SCR 2-2,-148.226,active
-675,Reading Skills - SCR 2-3,-149.226,active
-77,Language Arts A,-150.226,active
-1089,T*Lang. Arts,-15025T.226,active
-1134,T*Lang. Arts A,-150T.226,active
-78,Language Arts B,-151.226,active
-1537,Language Arts C,-151C.226,active
-1090,T*Language Arts B,-151T.226,active
-79,Communication,-152.226,active
-1454,English 10A,-152A.226,active
-1455,English 10B,-152B.226,active
-1453,English 10C,-152C.226,active
-80,Composition I,-153.226,active
-1452,English 10A,-153A.226,active
-81,English 11,-154.226,active
-82,Generation Lit.,-155.226,active
-83,Genres of Lit.,-156.226,active
-84,Contemporary Literature,-157.226,active
-85,Dramatic Lit,-158.226,active
-86,American Lit.,-159.226,active
-87,World Lit I,-160.226,active
-88,World Lit. II,-161.226,active
-89,CreativeWriting,-162.226,active
-90,Per/Prof. Comm.,-163.226,active
-91,Public Speaking,-164.226,active
-92,Journalism A,-165.226,active
-1133,T*Journalism,-165T.226,active
-93,Journalism B,-166.226,active
-94,Journalism C,-167.226,active
-406,Individual Literature,-168.226,active
-1094,T*Lit. - Ind. Study,-16805T.226,active
-1132,T*Lit.-Ind. Study,-168844T.226,active
-496,Reading Skills,-169.226,active
-95,Am. History I,-170.226,active
-1108,T* Am. History I,-170T.226,active
-96,Am. History II,-171.226,active
-1146,T*US History,-171281T.226,active
-1109,T*Am. History II,-171T.226,active
-97,World History I,-172.226,active
-1149,T*World History I,-172T.226,active
-98,Economics,-173.226,active
-99,World HistoryII,-174.226,active
-1129,T*Global Insights,-174281T.226,active
-1082,T*Global Insights,-17437.226,active
-1083,T*World History II,-174T.226,active
-100,American Govt.,-175.226,active
-101,Psychology,-176.226,active
-1142,T*Psychology,-176281T.226,active
-102,Sociology,-177.226,active
-103,Contemporary Affairs I,-178.226,active
-104,World Religions,-179.226,active
-105,Biology A,-180.226,active
-1092,T*Life Science,-18025T.226,active
-1118,T* Biology,-180281T.226,active
-1110,T*Biology A,-180T.226,active
-106,Biology B,-181.226,active
-1111,T* Biology B,-181T.226,active
-405,Biology C,-182.226,active
-1072,Environ. Science,-1821.226,active
-107,Adv. Biology A,-183.226,active
-108,Adv. Biology B,-184.226,active
-109,Anatomy and Physiology A,-185.226,active
-110,Anatomy and Physiology B,-186.226,active
-111,Chemistry A,-187.226,active
-112,Chemistry B,-188.226,active
-113,Physics A,-189.226,active
-114,Physics B,-190.226,active
-115,General Science A,-191.226,active
-1071,Science Topics,-1911.226,active
-116,General Science B,-192.226,active
-1070,Intro. Physics,-1921.226,active
-1088,T*Intro. Physics,-1921T.226,active
-117,General Science C,-193.226,active
-1069,Intro Chem,-1931.226,active
-1085,T*Intro Chem,-1931T.226,active
-118,Fund. of Math A,-195.226,active
-119,Fund. of Math B,-196.226,active
-120,Extended Algebra A,-197.226,active
-1086,T*Informal Algebra,-19725T.226,active
-1141,T* Pre-Algebra,-197844T.226,active
-1102,T*Pre-Algebra,-197T.226,active
-121,Extended Algebra B,-198.226,active
-122,Extended Algebra C,-199.226,active
-123,Algebra IA,-200.226,active
-1115,T*Algebra,-200281T.226,active
-1106,T*Algebra IA,-200T.226,active
-124,Algebra IB,-201.226,active
-1107,T*Algebra IB,-201T.226,active
-125,Algebra IIA,-202.226,active
-126,Algebra IIB,-203.226,active
-127,Geometry A,-204.226,active
-128,Geometry B,-205.226,active
-130,Math Topics A,-208.226,active
-131,Math Topics B,-209.226,active
-132,Adv. Math A,-210.226,active
-133,Adv. Math B,-211.226,active
-495,*Finite Math,-212.226,active
-134,Non-Proof Geo.,-213.226,active
-135,Descriptive Statistics,-214.226,active
-136,Math Excursions,-215.226,active
-137,*Calculus IA,-216.226,active
-403,*Calculus IB,-217.226,active
-404,Consumer Math A,-218.226,active
-610,Consumer Math B,-219.226,active
-138,*Fund. of Web Programming,-220.226,active
-139,Graphic Apps.,-221.226,active
-140,General Business,-222.226,active
-141,Business Law,-223.226,active
-142,Marketing,-224.226,active
-544,Digital Literacy,-227.226,active
-143,Computer & Workplace Skills,-228.226,active
-1504,Computer & Workplace Skills,-228S.226,active
-1112,T*Comp&Work Skills,-228T.226,active
-144,*PowPtMultiMed,-229.226,active
-488,*Digital Layout,-230.226,active
-145,*Java A,-231.226,active
-146,*Java B,-232.226,active
-147,Accounting A,-233.226,active
-148,Accounting B,-234.226,active
-477,Adv. Accounting,-235.226,active
-149,Internship,-236.226,active
-150,Internship,-237.226,active
-151,Internship,-238.226,active
-611,*Intro Prog Logic,-239.226,active
-478,Intro. to Sp. Culture,-240.226,active
-152,Spanish IA,-241.226,active
-1144,T*Spanish IA,-241T.226,active
-153,Spanish IB,-242.226,active
-1145,T*Spanish IB,-242T.226,active
-154,Spanish IIA,-243.226,active
-155,Spanish IIB,-244.226,active
-156,Spanish IIIA,-245.226,active
-157,Spanish IIIB,-246.226,active
-158,Spanish IVA,-247.226,active
-1601,Spanish IVB,-247B.226,active
-479,Conversational Spanish,-249.226,active
-480,Intro. to Fr. Culture,-250.226,active
-159,French IA,-251.226,active
-160,French IB,-252.226,active
-161,French IIA,-253.226,active
-162,French IIB,-254.226,active
-163,French IIIA,-255.226,active
-164,French IIIB,-256.226,active
-165,French IV,-257.226,active
-1603,French IVA,-257A.226,active
-1604,French IVB,-258.226,active
-481,Conversational French,-259.226,active
-166,IntroCompBusApp,-261.226,active
-482,*Intermediate Computer Business Apps.,-262.226,active
-167,PersFinanMngmt,-263.226,active
-662,Metals/Small Engines A,-264.226,active
-1095,Metals/Sm. Engines,-2641.226,active
-168,Industrial Tech./Woods,-265.226,active
-169,Metals/Sm Eng. B,-266.226,active
-1456,Industrial Tech./Metals,-2661.226,active
-1457,Industrial Tech./Small Engines,-2662.226,active
-170,Tech Draft&CAD,-267.226,active
-171,Arch Draft&CAD,-268.226,active
-172,Adv Drafting I,-269.226,active
-173,Adv Drafting II,-270.226,active
-174,Fund of ACDC,-271.226,active
-175,Basic Electron,-272.226,active
-176,Basic Auto,-273.226,active
-177,Ind Wood Work A,-274.226,active
-178,Ind Wood Work B,-275.226,active
-179,Ind.Metal Work,-276.226,active
-180,Princ of Tech 1,-277.226,active
-181,Princ of Tech 2,-278.226,active
-182,Princ of Tech 3,-279.226,active
-483,Princ of Tech 4,-280.226,active
-484,*Auto Collision Aca.,-281.226,active
-485,*Auto Tech Acad.,-282.226,active
-183,Construction Trades,-283.226,active
-184,Intro. to FCS,-285.226,active
-185,Creative Sewing,-286.226,active
-186,Fashion Merch.,-287.226,active
-187,Foods I,-288.226,active
-1122,T*Computer&Work Skills,-288T.226,active
-188,Foods II,-289.226,active
-189,Health I,-290.226,active
-1099,Health IA,-29025.226,active
-1131,T*Health,-290281T.226,active
-1130,T*Health,-2905T.226,active
-190,Health II,-291.226,active
-1084,T*Health II,-29125.226,active
-191,ChildDev&Parent,-292.226,active
-486,Housing and Interiors,-293.226,active
-192,Marriage&Family,-294.226,active
-487,*Health Sci. Academy,-295.226,active
-193,Basic Art I,-300.226,active
-1113,T* Art,-3000T.226,active
-194,Basic Art II,-301.226,active
-195,3 Dimen I,-302.226,active
-196,3 Dimen II,-303.226,active
-197,Draw & Paint I,-304.226,active
-198,Draw & Paint II,-305.226,active
-199,GraphicDesign I,-306.226,active
-200,GraphicDesignII,-307.226,active
-201,*DigitImagingI,-308.226,active
-202,*Illustrator I,-309.226,active
-203,Portfolio I,-310.226,active
-204,Portfolio II,-311.226,active
-205,Study Hall T1,-312.226,active
-206,Study Hall T2,-313.226,active
-207,Study Hall T3,-314.226,active
-1551,ELP Study Hall,-314elp1.226,active
-208,Instru Music T1,-315.226,active
-1117,T*Band,-315T.226,active
-680,Band - Concert Choir,-315XX.226,active
-209,Instru Music T2,-316.226,active
-681,Band - Concert Choir,-316XX.226,active
-210,Instru Music T3,-317.226,active
-682,Band - Concert Choir,-317XX.226,active
-612,Treble Choir T1,-318.226,active
-1120,T*WChorus,-31825T.226,active
-1152,T*Chorus,-3185T.226,active
-1119,T*Chorus,-318T.226,active
-613,Treble Choir T2,-319.226,active
-211,Treble Choir T3,-320.226,active
-212,Concert Choir T1,-321.226,active
-614,Concert Choir T2,-322.226,active
-615,Concert Choir T3,-323.226,active
-213,Driver's Ed,-324.226,active
-214,*Composition 1,-325.226,active
-616,PE 9-10,-326.226,active
-1458,General PE  ,-3261.226,active
-1459,General PE,-3262.226,active
-1153,T*PE,-32625T.226,active
-1139,T*Phy. Ed,-326281T.226,active
-1460,General PE,-3263.226,active
-1138,T*Phy. Ed.,-326844T.226,active
-1098,T*PE 9-10,-326T.226,active
-617,PE 11-12,-327.226,active
-1461,Str. and Cond.,-3271.226,active
-1462,Str. and Cond.,-3272.226,active
-1463,Str. and Cond.,-3273.226,active
-1001,Physical Ed,-3275.226,active
-1531,Physical Ed,-3276.226,active
-1532,Physical Ed,-3277.226,active
-1464,Personal Fitness,-3281.226,active
-1465,Personal Fitness,-3282.226,active
-1466,Personal Fitness,-3283.226,active
-497,*US Hist.to 1877,-329.226,active
-216,*Exploration of Health Careers,-330.226,active
-217,*Medical Terminology,-331.226,active
-218,*Nurse Aid,-332.226,active
-1252,*Prof. in Health,-333.226,active
-1251,*Automotive Electricity,-334.226,active
-219,*Intro AutoTech,-335.226,active
-220,*Industrial Math,-336.226,active
-223,Ag Education I,-339.226,active
-224,Ag Education I,-340.226,active
-225,Ag Education I,-341.226,active
-226,Animal Science,-342.226,active
-227,Vet. Medicine,-343.226,active
-228,Nat. Resources,-344.226,active
-229,Landscape Des.,-345.226,active
-230,Aqua Science,-346.226,active
-231,Intro. to Hort.,-347.226,active
-1087,Indoor Horticulture,-3471.226,active
-1096,Outdoor Horticulture,-3472.226,active
-489,Ag. Business Manag.,-348.226,active
-490,*Prin. of Agronomy,-349.226,active
-232,*Precis. Farm.,-350.226,active
-234,Study Hall 180 A,-353.226,active
-676,Study Hall 180 B,-354.226,active
-677,Study Hall 180 C,-355.226,active
-237,Study Hall A1,-358.226,active
-963,Study Hall A2,-3582.226,active
-964,Study Hall A3,-3583.226,active
-238,Study Hall B1,-359.226,active
-961,Study Hall B2,-3592.226,active
-962,Study Hall B3,-3593.226,active
-491,*Metal Fab. Academy,-360.226,active
-239,Release,-361.226,active
-240,Release,-362.226,active
-934,Corr. Reading,-3622.226,active
-241,Release,-363.226,active
-242,*PLTW Intro to Eng Design A,-365.226,active
-243,*PLTW Intro to Eng  Design B,-366.226,active
-244,*PLTW Intro to Eng Design C,-367.226,active
-493,*PLTW Prin of Eng A,-368.226,active
-618,*PLTW Prin of Eng B,-369.226,active
-494,*PLTW Prin of Eng C,-370.226,active
-619,*PLTW BioTech Eng A,-371.226,active
-620,*PLTW BioTech Eng B,-372.226,active
-621,*PLTW BioTech Eng C,-373.226,active
-622,*PLTW Civil Eng & Arch A,-374.226,active
-623,*PLTW Civil Eng & Arch B,-375.226,active
-624,*PLTW Civil Eng & Arch C,-376.226,active
-851,Entrepenuer 1,-391.226,active
-1469,Entrepreneur IA,-3911.226,active
-1468,Entrepreneur IB,-3912.226,active
-1470,Entrepreneur IC,-3913.226,active
-852,Entrepenuer 2,-392.226,active
-1471,Entrepreneur 2A,-3921.226,active
-1472,Entrepreneur 2B,-3922.226,active
-1473,Entrepreneur 2C,-3923.226,active
-853,Entrepenuer 3,-393.226,active
-1467,Entrepreneur IA,-3991.226,active
-262,P*WesternCiv:Ancient to Early Modern,-419.226,active
-266,P*Cult Anthrop,-428.226,active
-270,AA-Beltz,-450.226,active
-271,A/A-Cox,-451.226,active
-272,A/A-Diedrichsen,-452.226,active
-273,A/A-Mohlis,-453.226,active
-274,A/A-Johnson,-454.226,active
-275,A/A-Wesley,-455.226,active
-276,A/A-Fleming,-456.226,active
-277,A/A-Lough,-457.226,active
-278,A/A-Steffen,-458.226,active
-279,A/A-Garwood,-459.226,active
-280,A/A-O'Brien,-460.226,active
-281,AA-Chvala,-462.226,active
-282,A/A-Harken,-463.226,active
-283,A/A-Sandau,-464.226,active
-284,A/A-Gleiter,-465.226,active
-285,A/A-Juhl,-466.226,active
-286,A/A-Kearns,-467.226,active
-287,A/A-Lorenzen,-468.226,active
-288,A/A-Furlong,-469.226,active
-289,A/A-Lahr,-470.226,active
-290,A/A-McGrew,-471.226,active
-291,A/A-Kalous,-472.226,active
-292,A/A-K. Smith,-473.226,active
-293,A/A-Mulvaney,-474.226,active
-294,A/A-Vettraino,-475.226,active
-295,A/A-Womochil,-476.226,active
-296,A/A-Woods,-477.226,active
-297,A/A-Repp,-478.226,active
-298,A/A-Lash,-479.226,active
-299,A/A-Chyma,-480.226,active
-300,A/A-Patterson,-481.226,active
-301,A/A-J.Temple,-483.226,active
-302,A/A-May,-484.226,active
-303,A/A-Engdahl,-485.226,active
-304,A/A-Zuspann,-486.226,active
-305,A/A-Upmeyer,-487.226,active
-306,A/A-Vaughan,-488.226,active
-307,A/A-Jackson,-489.226,active
-308,T*Elective,-497.226,active
-1150,T*Elective,-497125T.226,active
-1080,T*Elective,-49725.226,active
-407,PSEO 1st Sem,-498.226,active
-309,PSEO 2nd Sem,-499.226,active
-408,Language Arts A,-500.226,active
-409,Language Arts B,-501.226,active
-410,Composition I,-502.226,active
-411,Composition II,-503.226,active
-310,Introduction to Literature,-504.226,active
-1410,Poetry Workshop,-504P.226,active
-412,Generation Literature,-505.226,active
-413,Contemporary Literature,-506.226,active
-311,Genres of Literature,-507.226,active
-414,Dramatic Literature,-508.226,active
-312,Individualized Study of Literature I,-509.226,active
-938,Individualized Study of Literature II,-5092.226,active
-313,Communication,-510.226,active
-314,Pers/Prof. Communication,-511.226,active
-941,Contemporary Afffairs III,-5112.226,active
-415,Public Speaking,-512.226,active
-416,Creative Writing,-513.226,active
-1306,Creative Writing,-51325.226,active
-315,Journalism,-514.226,active
-935,Environ. Sci,-5142.226,active
-316,Am. Literature,-515.226,active
-418,World Literature I,-516.226,active
-317,World Literature II,-517.226,active
-936,General Sci A,-5172.226,active
-417,Film as Literature,-518.226,active
-318,Physical Ed,-519.226,active
-319,Am. History I,-520.226,active
-1405,Am. History IA,-5201.226,active
-1406,Am. History IB,-5202.226,active
-419,Literacy & Comprehension,-521.226,active
-320,Am. History II,-522.226,active
-1052,Am. History IIA,-5221.226,active
-1407,Am. History IIB,-52222.226,active
-321,Economics ,-524.226,active
-1408,Economics A,-5241.226,active
-1403,Economics B,-5242.226,active
-422,World History I,-526.226,active
-1058,World History IA,-5261.226,active
-1409,World History IB,-5262.226,active
-322,World History II,-528.226,active
-1060,World History IIA,-5281.226,active
-1404,World History IIB,-5282.226,active
-323,Am. Government,-529.226,active
-424,Am. Government A,-530.226,active
-425,Am. Government B,-531.226,active
-426,Contemporary Affairs I,-532.226,active
-427,Contemporary Affairs II,-533.226,active
-428,Contemporary Affairs III,-534.226,active
-429,Contemporary Affairs IV,-535.226,active
-430,US Presidents I,-536.226,active
-431,US Presidents II,-537.226,active
-432,Sociology,-538.226,active
-433,Social Problems,-539.226,active
-434,Psychology,-540.226,active
-435,Abnormal Psychology,-541.226,active
-324,Geography A,-542.226,active
-325,Geography B,-543.226,active
-932,Am.Presidents I,-5432.226,active
-326,Heroes & Villians,-544.226,active
-1401,Villians in History I,-5441.226,active
-327,Women's Issues,-545.226,active
-328,Men's Issues,-546.226,active
-931,21stCent.Skills,-5462.226,active
-436,History of Technology,-547.226,active
-437,History of Gender and Race,-548.226,active
-438,World Religions,-549.226,active
-329,Biology A,-550.226,active
-937,Literature,-5502.226,active
-439,Biology B,-551.226,active
-330,Biology C,-552.226,active
-1451,Contemporary Issues in Science,-552C.226,active
-440,General Science A1,-553.226,active
-331,Gen. Science A2,-554.226,active
-332,Gen. Science B1,-555.226,active
-333,Gen. Science B2,-556.226,active
-441,General Science C,-557.226,active
-334,Gen. Science C2,-558.226,active
-335,Career Planning,-559.226,active
-442,Consumer Math. A,-560.226,active
-443,Consumer Math. B,-561.226,active
-1402,Consumer Math. C,-561C.226,active
-444,Fundamentals of Math. A,-562.226,active
-446,Fundamentals of Math. B,-563.226,active
-445,Extended Algebra A,-564.226,active
-447,Extended Algebra B,-565.226,active
-448,Extended Algebra C,-566.226,active
-449,Descriptive Statistics,-567.226,active
-1253,Business Math.,-5671.226,active
-450,Math. Excursions,-568.226,active
-451,Non-proof Geometry,-569.226,active
-452,Geometry A,-570.226,active
-453,Geometry A1,-571.226,active
-454,Geometry B,-572.226,active
-455,Geometry B1,-573.226,active
-456,Algebra IIA,-574.226,active
-457,Algebra IIA2,-575.226,active
-458,Algebra IIB,-576.226,active
-459,Algebra IIB2,-577.226,active
-1154,Statistics of Gaming,-578.226,active
-460,Physical Ed.,-580.226,active
-461,21st Century Skills,-581.226,active
-462,Strategies for Academic Success,-582.226,active
-463,Personal Financial Management,-583.226,active
-464,Health I,-584.226,active
-465,Health II,-585.226,active
-466,Introduction to Art,-586.226,active
-467,Marriage and Family,-587.226,active
-468,Child Development & Parenting,-588.226,active
-469,Astronomy,-589.226,active
-470,Music Appreciation,-590.226,active
-471,Work Experience,-591.226,active
-472,W. African Culture,-592.226,active
-1057,Living History,-593.226,active
-1056,Am. Civil War,-5931.226,active
-1079,Earth Science,-596.226,active
-1091,Intro. to Physics,-5961.226,active
-1105,Science Topics,-5962.226,active
-1055,Strategies for Academic Success,-599.226,active
-1053,Healthy Living,-5991.226,active
-1054,Literacy & Comprehension,-5993.226,active
-1202,Geography A,-5994.226,active
-1203,Geography B,-59942.226,active
-1301,Lang. Arts A,-5995.226,active
-1302,Lang. Arts B,-5996.226,active
-904,P*Environmental Science,-653.226,active
-906,P*Music Appreciation,-655.226,active
-910,P*Ancient Med. World,-659.226,active
-914,P*Art Appreciation,-661.226,active
-965,P*Film Analysis,-666.226,active
-966,P*Intro to Ethics,-668.226,active
-967,*Intro to Psychology,-670.226,active
-968,P*Intro to Sociology,-672.226,active
-969,P*Mass Media,-674.226,active
-970,P*Music Appreciation,-676.226,active
-971,P*Prin. of MacroEcon,-678.226,active
-972,P*Social Problems,-680.226,active
-1003,P*US Hist. since 1877,-682.226,active
-1201,P*UC: Modern Japan,-684.226,active
-1353,P*Survey of Wld.Relig.,-690.226,active
-1354,P*Nutrition,-691.226,active
-1355,P*Fund. of Oral Communication,-692.226,active
-1356,P*Med. Term.,-693.226,active
-1358,P*Intro to Business,-694.226,active
-1357,P*Human Bio.,-695.226,active
-1359,P*Juvenile Delinquency,-696.226,active
-902,P*World Regional Geography,-751.226,active
+475,Lrn. Center I,Lrn. Center I-001.226,active
+476,Lrn. Center II,Lrn. Center II-002.226,active
+498,Lrn. Center III,Lrn. Center III-003.226,active
+499,Lrn. Center IA,Lrn. Center IA-004.226,active
+500,Lrn. Center IIA,Lrn. Center IIA-005.226,active
+501,Lrn. Center IIIA,Lrn. Center IIIA-006.226,active
+502,Lrn. Center IB,Lrn. Center IB-007.226,active
+503,Lrn. Center IIB,Lrn. Center IIB-008.226,active
+504,Lrn. Center IIIB,Lrn. Center IIIB-009.226,active
+505,Careers,Careers-010.226,active
+1522,Practical Lang. IB,Practical Lang. IB-01001S05021.226,active
+506,Lrn. Center I,Lrn. Center I-011.226,active
+1474,Lrn. Center I,Lrn. Center I-0115.226,active
+507,Lrn. Center II,Lrn. Center II-012.226,active
+1351,Learning Center II,Learning Center II-0125.226,active
+508,Lrn. Center III,Lrn. Center III-013.226,active
+1352,Learning Center III,Learning Center III-0135.226,active
+571,Financial Skills,Financial Skills-014.226,active
+601,Corrective Reading B-1,Corrective Reading B-1-015.226,active
+602,Corrective Reading B-2,Corrective Reading B-2-016.226,active
+603,Corrective Reading B-3,Corrective Reading B-3-017.226,active
+604,Corrective Reading C-1,Corrective Reading C-1-018.226,active
+605,Corrective Reading C-2,Corrective Reading C-2-019.226,active
+606,Corrective Reading C-3,Corrective Reading C-3-020.226,active
+509,Lrn. Center I,Lrn. Center I-021.226,active
+510,Lrn. Center II,Lrn. Center II-022.226,active
+511,Lrn. Center III,Lrn. Center III-023.226,active
+950,LA-Read to Achieve 1-1,LA-Read to Achieve 1-1-024.226,active
+951,LA-Read to Achieve 1-2,LA-Read to Achieve 1-2-025.226,active
+952,LA-Read to Achieve 1-3,LA-Read to Achieve 1-3-026.226,active
+1303,Corrective Reading A-1,Corrective Reading A-1-027.226,active
+1501,Corrective Reading D-1,Corrective Reading D-1-027D.226,active
+1304,Corrective Reading A-2,Corrective Reading A-2-028.226,active
+1502,Corrective Reading D-2,Corrective Reading D-2-028D.226,active
+1305,Corrective Reading A-3,Corrective Reading A-3-029.226,active
+1503,Corrective Reading D-3,Corrective Reading D-3-029D.226,active
+512,Lrn. Center I,Lrn. Center I-031.226,active
+513,Lrn. Center II,Lrn. Center II-032.226,active
+514,Lrn. Center III,Lrn. Center III-033.226,active
+515,Lang. Arts Fusion 1-1,Lang. Arts Fusion 1-1-035.226,active
+516,Lang. Arts Fusion 1-2,Lang. Arts Fusion 1-2-036.226,active
+517,Lang. Arts Fusion 1-3,Lang. Arts Fusion 1-3-037.226,active
+607,Lang. Arts Fusion 2-1,Lang. Arts Fusion 2-1-038.226,active
+608,Lang. Arts Fusion 2-2,Lang. Arts Fusion 2-2-039.226,active
+609,Lang. Arts Fusion 2-3,Lang. Arts Fusion 2-3-040.226,active
+518,Lrn. Center I,Lrn. Center I-041.226,active
+519,Lrn. Center II,Lrn. Center II-042.226,active
+520,Lrn. Center III,Lrn. Center III-043.226,active
+560,Basic Consumer Math. A,Basic Consumer Math. A-044.226,active
+561,Basic Consumer Math. B,Basic Consumer Math. B-045.226,active
+562,Basic Fund. Math. A,Basic Fund. Math. A-046.226,active
+563,Basic Fund. Math B,Basic Fund. Math B-047.226,active
+564,Basic Algebra A,Basic Algebra A-048.226,active
+565,Basic Algebra B,Basic Algebra B-049.226,active
+566,Basic Algebra C,Basic Algebra C-050.226,active
+521,Lrn. Center I,Lrn. Center I-051.226,active
+522,Lrn. Center II,Lrn. Center II-052.226,active
+523,Lrn. Center III,Lrn. Center III-053.226,active
+524,Basic Science I,Basic Science I-060.226,active
+525,Basic Science II,Basic Science II-061.226,active
+526,Basic Science III,Basic Science III-062.226,active
+527,Basic Biology A,Basic Biology A-066.226,active
+528,Basic Biology B,Basic Biology B-067.226,active
+529,Basic Biology C,Basic Biology C-068.226,active
+1073,Basic Environ. Science,Basic Environ. Science-0681.226,active
+1074,Basic Global,Basic Global-069.226,active
+530,Basic Am. Hist. I,Basic Am. Hist. I-070.226,active
+531,Basic Am. Hist. II,Basic Am. Hist. II-071.226,active
+532,Basic Wld. Hist. I,Basic Wld. Hist. I-072.226,active
+533,Basic Wld. Hist. II,Basic Wld. Hist. II-073.226,active
+534,Basic Economics,Basic Economics-074.226,active
+535,Basic Government,Basic Government-075.226,active
+536,Practical Math. IA,Practical Math. IA-076.226,active
+1100,Practical Math.,Practical Math.-07633.226,active
+537,Practical Math. IB,Practical Math. IB-077.226,active
+1518,Practical Math. IC,Practical Math. IC-077C.226,active
+538,Practical Math. IIA,Practical Math. IIA-078.226,active
+539,Practical Math. IIB,Practical Math. IIB-079.226,active
+1519,Practical Math. IIC,Practical Math. IIC-079C.226,active
+658,Practical Math. IIIA,Practical Math. IIIA-080.226,active
+659,Practical Math. IIIB,Practical Math. IIIB-081.226,active
+1520,Practical Math. IIIC,Practical Math. IIIC-081C.226,active
+660,Practical Math. IVA,Practical Math. IVA-082.226,active
+661,Practical Math. IVB,Practical Math. IVB-083.226,active
+1521,Practical Math. IVC,Practical Math. IVC-083C.226,active
+1101,Practical Health,Practical Health-084.226,active
+540,Basic Math IA,Basic Math IA-085.226,active
+1077,Basic Math. IIA,Basic Math. IIA-0851.226,active
+541,Basic Math IB,Basic Math IB-086.226,active
+1078,Basic Math. IIB,Basic Math. IIB-0861.226,active
+542,Basic Math III,Basic Math III-087.226,active
+543,Basic Math IVA,Basic Math IVA-088.226,active
+679,Basic Math. IVB,Basic Math. IVB-089.226,active
+545,Practical Lang. IA,Practical Lang. IA-090.226,active
+1523,Practical Lang. IB,Practical Lang. IB-090B.226,active
+1524,Practical Lang. IC,Practical Lang. IC-090C.226,active
+546,Practical Lang. IIA,Practical Lang. IIA-091.226,active
+1081,Practical Lang. II,Practical Lang. II-09125.226,active
+1525,Practical Lang. IIB,Practical Lang. IIB-091B.226,active
+1526,Practical Lang. IIC,Practical Lang. IIC-091C.226,active
+547,Practical Lang. IIIA,Practical Lang. IIIA-092.226,active
+1527,Practical Lang. IIIB,Practical Lang. IIIB-092B.226,active
+1528,Practical Lang. IIIC,Practical Lang. IIIC-092C.226,active
+548,Practical Lang. IVA,Practical Lang. IVA-093.226,active
+1529,Practical Lang. IVB,Practical Lang. IVB-093B.226,active
+1530,Practical Lang. IVC,Practical Lang. IVC-093C.226,active
+553,Basic Lang. Arts A,Basic Lang. Arts A-094.226,active
+549,Basic Lang. Arts B,Basic Lang. Arts B-095.226,active
+550,Basic Composition I,Basic Composition I-096.226,active
+551,Basic Communication,Basic Communication-097.226,active
+554,Basic Composition II,Basic Composition II-098.226,active
+555,Basic Literature I,Basic Literature I-099.226,active
+1076,Basic Lit.,Basic Lit.-09925.226,active
+556,Basic Short Fiction,Basic Short Fiction-100.226,active
+1505,Basic Creative Writing,Basic Creative Writing-100S.226,active
+57,Reading I,Reading I-101.226,active
+58,Reading II,Reading II-102.226,active
+59,Reading III,Reading III-103.226,active
+60,Reading IV,Reading IV-104.226,active
+657,Life Skills IA,Life Skills IA-105.226,active
+1093,Life Skills,Life Skills-10525.226,active
+663,Life Skills IB,Life Skills IB-106.226,active
+1506,Life Skills IC,Life Skills IC-106C.226,active
+664,Life Skills IIA,Life Skills IIA-107.226,active
+665,Life Skills IIB,Life Skills IIB-108.226,active
+1507,Life Skills IIC,Life Skills IIC-108C.226,active
+567,Life Skills IIIA,Life Skills IIIA-109.226,active
+61,Life Skills IIIB,Life Skills IIIB-110.226,active
+1508,Life Skills IIIC,Life Skills IIIC-110C.226,active
+568,Life Skills IVA,Life Skills IVA-111.226,active
+569,Life Skills IVB,Life Skills IVB-112.226,active
+1509,Life Skills IVC,Life Skills IVC-112C.226,active
+666,Practical Foods I,Practical Foods I-113.226,active
+667,Practical Foods II,Practical Foods II-114.226,active
+668,Practical Foods III,Practical Foods III-115.226,active
+669,Practical Foods IV,Practical Foods IV-116.226,active
+1103,Reading,Reading-118.226,active
+1104,Reading,Reading-11825.226,active
+1143,T*Reading,T*Reading-118T.226,active
+62,Keyboarding,Keyboarding-119.226,active
+63,Work Exp. I,Work Exp. I-120.226,active
+64,Work Exp. II,Work Exp. II-121.226,active
+65,Work Exp. III,Work Exp. III-122.226,active
+558,Prac. Job Skills IA,Prac. Job Skills IA-123.226,active
+1510,Prac. Job Skills IB,Prac. Job Skills IB-123B.226,active
+1511,Prac. Job Skills IC,Prac. Job Skills IC-123C.226,active
+559,Prac. Job Skills IIA,Prac. Job Skills IIA-124.226,active
+1512,Prac. Job Skills IIB,Prac. Job Skills IIB-124B.226,active
+1513,Prac. Job Skills IIC,Prac. Job Skills IIC-124C.226,active
+66,Prac. Job Skills IIIA,Prac. Job Skills IIIA-125.226,active
+1514,Prac. Job Skills IIIB,Prac. Job Skills IIIB-125B.226,active
+1515,Prac. Job Skills IIIC,Prac. Job Skills IIIC-125C.226,active
+67,Prac. Job Skills IVA,Prac. Job Skills IVA-126.226,active
+1516,Prac. Job Skills IVB,Prac. Job Skills IVB-126B.226,active
+1517,Prac. Job Skills IVC,Prac. Job Skills IVC-126C.226,active
+68,Life Skills I,Life Skills I-127.226,active
+69,Life Skills II,Life Skills II-128.226,active
+70,Life Skills III,Life Skills III-129.226,active
+570,Life Skills IV,Life Skills IV-130.226,active
+71,Social Skills I,Social Skills I-131.226,active
+72,Social Skills II,Social Skills II-132.226,active
+557,Social Skills III,Social Skills III-133.226,active
+73,Social SkillsIV,Social SkillsIV-134.226,active
+1075,Basic Hm. Mng. I,Basic Hm. Mng. I-135.226,active
+1533,Practical Health I,Practical Health I-1361.226,active
+1534,Practical Health II,Practical Health II-1362.226,active
+1535,Practical Health III,Practical Health III-1363.226,active
+1536,Practical Health IV,Practical Health IV-1364.226,active
+552,Lrn. Center II,Lrn. Center II-14.226,active
+74,Lrn. Center I,Lrn. Center I-141.226,active
+75,Lrn. Center II,Lrn. Center II-142.226,active
+76,Lrn. Center III,Lrn. Center III-143.226,active
+670,Reading Skills-SCR 1-1,Reading Skills-SCR 1-1-144.226,active
+671,Reading Skills-SCR 1-2,Reading Skills-SCR 1-2-145.226,active
+672,Reading Skills-SCR 1-3,Reading Skills-SCR 1-3-146.226,active
+673,Reading Skills - SCR 2-1,Reading Skills - SCR 2-1-147.226,active
+674,Reading Skills - SCR 2-2,Reading Skills - SCR 2-2-148.226,active
+675,Reading Skills - SCR 2-3,Reading Skills - SCR 2-3-149.226,active
+77,Language Arts A,Language Arts A-150.226,active
+1089,T*Lang. Arts,T*Lang. Arts-15025T.226,active
+1134,T*Lang. Arts A,T*Lang. Arts A-150T.226,active
+78,Language Arts B,Language Arts B-151.226,active
+1537,Language Arts C,Language Arts C-151C.226,active
+1090,T*Language Arts B,T*Language Arts B-151T.226,active
+79,Communication,Communication-152.226,active
+1454,English 10A,English 10A-152A.226,active
+1455,English 10B,English 10B-152B.226,active
+1453,English 10C,English 10C-152C.226,active
+80,Composition I,Composition I-153.226,active
+1452,English 10A,English 10A-153A.226,active
+81,English 11,English 11-154.226,active
+82,Generation Lit.,Generation Lit.-155.226,active
+83,Genres of Lit.,Genres of Lit.-156.226,active
+84,Contemporary Literature,Contemporary Literature-157.226,active
+85,Dramatic Lit,Dramatic Lit-158.226,active
+86,American Lit.,American Lit.-159.226,active
+87,World Lit I,World Lit I-160.226,active
+88,World Lit. II,World Lit. II-161.226,active
+89,CreativeWriting,CreativeWriting-162.226,active
+90,Per/Prof. Comm.,Per/Prof. Comm.-163.226,active
+91,Public Speaking,Public Speaking-164.226,active
+92,Journalism A,Journalism A-165.226,active
+1133,T*Journalism,T*Journalism-165T.226,active
+93,Journalism B,Journalism B-166.226,active
+94,Journalism C,Journalism C-167.226,active
+406,Individual Literature,Individual Literature-168.226,active
+1094,T*Lit. - Ind. Study,T*Lit. - Ind. Study-16805T.226,active
+1132,T*Lit.-Ind. Study,T*Lit.-Ind. Study-168844T.226,active
+496,Reading Skills,Reading Skills-169.226,active
+95,Am. History I,Am. History I-170.226,active
+1108,T* Am. History I,T* Am. History I-170T.226,active
+96,Am. History II,Am. History II-171.226,active
+1146,T*US History,T*US History-171281T.226,active
+1109,T*Am. History II,T*Am. History II-171T.226,active
+97,World History I,World History I-172.226,active
+1149,T*World History I,T*World History I-172T.226,active
+98,Economics,Economics-173.226,active
+99,World HistoryII,World HistoryII-174.226,active
+1129,T*Global Insights,T*Global Insights-174281T.226,active
+1082,T*Global Insights,T*Global Insights-17437.226,active
+1083,T*World History II,T*World History II-174T.226,active
+100,American Govt.,American Govt.-175.226,active
+101,Psychology,Psychology-176.226,active
+1142,T*Psychology,T*Psychology-176281T.226,active
+102,Sociology,Sociology-177.226,active
+103,Contemporary Affairs I,Contemporary Affairs I-178.226,active
+104,World Religions,World Religions-179.226,active
+105,Biology A,Biology A-180.226,active
+1092,T*Life Science,T*Life Science-18025T.226,active
+1118,T* Biology,T* Biology-180281T.226,active
+1110,T*Biology A,T*Biology A-180T.226,active
+106,Biology B,Biology B-181.226,active
+1111,T* Biology B,T* Biology B-181T.226,active
+405,Biology C,Biology C-182.226,active
+1072,Environ. Science,Environ. Science-1821.226,active
+107,Adv. Biology A,Adv. Biology A-183.226,active
+108,Adv. Biology B,Adv. Biology B-184.226,active
+109,Anatomy and Physiology A,Anatomy and Physiology A-185.226,active
+110,Anatomy and Physiology B,Anatomy and Physiology B-186.226,active
+111,Chemistry A,Chemistry A-187.226,active
+112,Chemistry B,Chemistry B-188.226,active
+113,Physics A,Physics A-189.226,active
+114,Physics B,Physics B-190.226,active
+115,General Science A,General Science A-191.226,active
+1071,Science Topics,Science Topics-1911.226,active
+116,General Science B,General Science B-192.226,active
+1070,Intro. Physics,Intro. Physics-1921.226,active
+1088,T*Intro. Physics,T*Intro. Physics-1921T.226,active
+117,General Science C,General Science C-193.226,active
+1069,Intro Chem,Intro Chem-1931.226,active
+1085,T*Intro Chem,T*Intro Chem-1931T.226,active
+118,Fund. of Math A,Fund. of Math A-195.226,active
+119,Fund. of Math B,Fund. of Math B-196.226,active
+120,Extended Algebra A,Extended Algebra A-197.226,active
+1086,T*Informal Algebra,T*Informal Algebra-19725T.226,active
+1141,T* Pre-Algebra,T* Pre-Algebra-197844T.226,active
+1102,T*Pre-Algebra,T*Pre-Algebra-197T.226,active
+121,Extended Algebra B,Extended Algebra B-198.226,active
+122,Extended Algebra C,Extended Algebra C-199.226,active
+123,Algebra IA,Algebra IA-200.226,active
+1115,T*Algebra,T*Algebra-200281T.226,active
+1106,T*Algebra IA,T*Algebra IA-200T.226,active
+124,Algebra IB,Algebra IB-201.226,active
+1107,T*Algebra IB,T*Algebra IB-201T.226,active
+125,Algebra IIA,Algebra IIA-202.226,active
+126,Algebra IIB,Algebra IIB-203.226,active
+127,Geometry A,Geometry A-204.226,active
+128,Geometry B,Geometry B-205.226,active
+130,Math Topics A,Math Topics A-208.226,active
+131,Math Topics B,Math Topics B-209.226,active
+132,Adv. Math A,Adv. Math A-210.226,active
+133,Adv. Math B,Adv. Math B-211.226,active
+495,*Finite Math,*Finite Math-212.226,active
+134,Non-Proof Geo.,Non-Proof Geo.-213.226,active
+135,Descriptive Statistics,Descriptive Statistics-214.226,active
+136,Math Excursions,Math Excursions-215.226,active
+137,*Calculus IA,*Calculus IA-216.226,active
+403,*Calculus IB,*Calculus IB-217.226,active
+404,Consumer Math A,Consumer Math A-218.226,active
+610,Consumer Math B,Consumer Math B-219.226,active
+138,*Fund. of Web Programming,*Fund. of Web Programming-220.226,active
+139,Graphic Apps.,Graphic Apps.-221.226,active
+140,General Business,General Business-222.226,active
+141,Business Law,Business Law-223.226,active
+142,Marketing,Marketing-224.226,active
+544,Digital Literacy,Digital Literacy-227.226,active
+143,Computer & Workplace Skills,Computer & Workplace Skills-228.226,active
+1504,Computer & Workplace Skills,Computer & Workplace Skills-228S.226,active
+1112,T*Comp&Work Skills,T*Comp&Work Skills-228T.226,active
+144,*PowPtMultiMed,*PowPtMultiMed-229.226,active
+488,*Digital Layout,*Digital Layout-230.226,active
+145,*Java A,*Java A-231.226,active
+146,*Java B,*Java B-232.226,active
+147,Accounting A,Accounting A-233.226,active
+148,Accounting B,Accounting B-234.226,active
+477,Adv. Accounting,Adv. Accounting-235.226,active
+149,Internship,Internship-236.226,active
+150,Internship,Internship-237.226,active
+151,Internship,Internship-238.226,active
+611,*Intro Prog Logic,*Intro Prog Logic-239.226,active
+478,Intro. to Sp. Culture,Intro. to Sp. Culture-240.226,active
+152,Spanish IA,Spanish IA-241.226,active
+1144,T*Spanish IA,T*Spanish IA-241T.226,active
+153,Spanish IB,Spanish IB-242.226,active
+1145,T*Spanish IB,T*Spanish IB-242T.226,active
+154,Spanish IIA,Spanish IIA-243.226,active
+155,Spanish IIB,Spanish IIB-244.226,active
+156,Spanish IIIA,Spanish IIIA-245.226,active
+157,Spanish IIIB,Spanish IIIB-246.226,active
+158,Spanish IVA,Spanish IVA-247.226,active
+1601,Spanish IVB,Spanish IVB-247B.226,active
+479,Conversational Spanish,Conversational Spanish-249.226,active
+480,Intro. to Fr. Culture,Intro. to Fr. Culture-250.226,active
+159,French IA,French IA-251.226,active
+160,French IB,French IB-252.226,active
+161,French IIA,French IIA-253.226,active
+162,French IIB,French IIB-254.226,active
+163,French IIIA,French IIIA-255.226,active
+164,French IIIB,French IIIB-256.226,active
+165,French IV,French IV-257.226,active
+1603,French IVA,French IVA-257A.226,active
+1604,French IVB,French IVB-258.226,active
+481,Conversational French,Conversational French-259.226,active
+166,IntroCompBusApp,IntroCompBusApp-261.226,active
+482,*Intermediate Computer Business Apps.,*Intermediate Computer Business Apps.-262.226,active
+167,PersFinanMngmt,PersFinanMngmt-263.226,active
+662,Metals/Small Engines A,Metals/Small Engines A-264.226,active
+1095,Metals/Sm. Engines,Metals/Sm. Engines-2641.226,active
+168,Industrial Tech./Woods,Industrial Tech./Woods-265.226,active
+169,Metals/Sm Eng. B,Metals/Sm Eng. B-266.226,active
+1456,Industrial Tech./Metals,Industrial Tech./Metals-2661.226,active
+1457,Industrial Tech./Small Engines,Industrial Tech./Small Engines-2662.226,active
+170,Tech Draft&CAD,Tech Draft&CAD-267.226,active
+171,Arch Draft&CAD,Arch Draft&CAD-268.226,active
+172,Adv Drafting I,Adv Drafting I-269.226,active
+173,Adv Drafting II,Adv Drafting II-270.226,active
+174,Fund of ACDC,Fund of ACDC-271.226,active
+175,Basic Electron,Basic Electron-272.226,active
+176,Basic Auto,Basic Auto-273.226,active
+177,Ind Wood Work A,Ind Wood Work A-274.226,active
+178,Ind Wood Work B,Ind Wood Work B-275.226,active
+179,Ind.Metal Work,Ind.Metal Work-276.226,active
+180,Princ of Tech 1,Princ of Tech 1-277.226,active
+181,Princ of Tech 2,Princ of Tech 2-278.226,active
+182,Princ of Tech 3,Princ of Tech 3-279.226,active
+483,Princ of Tech 4,Princ of Tech 4-280.226,active
+484,*Auto Collision Aca.,*Auto Collision Aca.-281.226,active
+485,*Auto Tech Acad.,*Auto Tech Acad.-282.226,active
+183,Construction Trades,Construction Trades-283.226,active
+184,Intro. to FCS,Intro. to FCS-285.226,active
+185,Creative Sewing,Creative Sewing-286.226,active
+186,Fashion Merch.,Fashion Merch.-287.226,active
+187,Foods I,Foods I-288.226,active
+1122,T*Computer&Work Skills,T*Computer&Work Skills-288T.226,active
+188,Foods II,Foods II-289.226,active
+189,Health I,Health I-290.226,active
+1099,Health IA,Health IA-29025.226,active
+1131,T*Health,T*Health-290281T.226,active
+1130,T*Health,T*Health-2905T.226,active
+190,Health II,Health II-291.226,active
+1084,T*Health II,T*Health II-29125.226,active
+191,ChildDev&Parent,ChildDev&Parent-292.226,active
+486,Housing and Interiors,Housing and Interiors-293.226,active
+192,Marriage&Family,Marriage&Family-294.226,active
+487,*Health Sci. Academy,*Health Sci. Academy-295.226,active
+193,Basic Art I,Basic Art I-300.226,active
+1113,T* Art,T* Art-3000T.226,active
+194,Basic Art II,Basic Art II-301.226,active
+195,3 Dimen I,3 Dimen I-302.226,active
+196,3 Dimen II,3 Dimen II-303.226,active
+197,Draw & Paint I,Draw & Paint I-304.226,active
+198,Draw & Paint II,Draw & Paint II-305.226,active
+199,GraphicDesign I,GraphicDesign I-306.226,active
+200,GraphicDesignII,GraphicDesignII-307.226,active
+201,*DigitImagingI,*DigitImagingI-308.226,active
+202,*Illustrator I,*Illustrator I-309.226,active
+203,Portfolio I,Portfolio I-310.226,active
+204,Portfolio II,Portfolio II-311.226,active
+205,Study Hall T1,Study Hall T1-312.226,active
+206,Study Hall T2,Study Hall T2-313.226,active
+207,Study Hall T3,Study Hall T3-314.226,active
+1551,ELP Study Hall,ELP Study Hall-314elp1.226,active
+208,Instru Music T1,Instru Music T1-315.226,active
+1117,T*Band,T*Band-315T.226,active
+680,Band - Concert Choir,Band - Concert Choir-315XX.226,active
+209,Instru Music T2,Instru Music T2-316.226,active
+681,Band - Concert Choir,Band - Concert Choir-316XX.226,active
+210,Instru Music T3,Instru Music T3-317.226,active
+682,Band - Concert Choir,Band - Concert Choir-317XX.226,active
+612,Treble Choir T1,Treble Choir T1-318.226,active
+1120,T*WChorus,T*WChorus-31825T.226,active
+1152,T*Chorus,T*Chorus-3185T.226,active
+1119,T*Chorus,T*Chorus-318T.226,active
+613,Treble Choir T2,Treble Choir T2-319.226,active
+211,Treble Choir T3,Treble Choir T3-320.226,active
+212,Concert Choir T1,Concert Choir T1-321.226,active
+614,Concert Choir T2,Concert Choir T2-322.226,active
+615,Concert Choir T3,Concert Choir T3-323.226,active
+213,Driver's Ed,Driver's Ed-324.226,active
+214,*Composition 1,*Composition 1-325.226,active
+616,PE 9-10,PE 9-10-326.226,active
+1458,General PE  ,General PE  -3261.226,active
+1459,General PE,General PE-3262.226,active
+1153,T*PE,T*PE-32625T.226,active
+1139,T*Phy. Ed,T*Phy. Ed-326281T.226,active
+1460,General PE,General PE-3263.226,active
+1138,T*Phy. Ed.,T*Phy. Ed.-326844T.226,active
+1098,T*PE 9-10,T*PE 9-10-326T.226,active
+617,PE 11-12,PE 11-12-327.226,active
+1461,Str. and Cond.,Str. and Cond.-3271.226,active
+1462,Str. and Cond.,Str. and Cond.-3272.226,active
+1463,Str. and Cond.,Str. and Cond.-3273.226,active
+1001,Physical Ed,Physical Ed-3275.226,active
+1531,Physical Ed,Physical Ed-3276.226,active
+1532,Physical Ed,Physical Ed-3277.226,active
+1464,Personal Fitness,Personal Fitness-3281.226,active
+1465,Personal Fitness,Personal Fitness-3282.226,active
+1466,Personal Fitness,Personal Fitness-3283.226,active
+497,*US Hist.to 1877,*US Hist.to 1877-329.226,active
+216,*Exploration of Health Careers,*Exploration of Health Careers-330.226,active
+217,*Medical Terminology,*Medical Terminology-331.226,active
+218,*Nurse Aid,*Nurse Aid-332.226,active
+1252,*Prof. in Health,*Prof. in Health-333.226,active
+1251,*Automotive Electricity,*Automotive Electricity-334.226,active
+219,*Intro AutoTech,*Intro AutoTech-335.226,active
+220,*Industrial Math,*Industrial Math-336.226,active
+223,Ag Education I,Ag Education I-339.226,active
+224,Ag Education I,Ag Education I-340.226,active
+225,Ag Education I,Ag Education I-341.226,active
+226,Animal Science,Animal Science-342.226,active
+227,Vet. Medicine,Vet. Medicine-343.226,active
+228,Nat. Resources,Nat. Resources-344.226,active
+229,Landscape Des.,Landscape Des.-345.226,active
+230,Aqua Science,Aqua Science-346.226,active
+231,Intro. to Hort.,Intro. to Hort.-347.226,active
+1087,Indoor Horticulture,Indoor Horticulture-3471.226,active
+1096,Outdoor Horticulture,Outdoor Horticulture-3472.226,active
+489,Ag. Business Manag.,Ag. Business Manag.-348.226,active
+490,*Prin. of Agronomy,*Prin. of Agronomy-349.226,active
+232,*Precis. Farm.,*Precis. Farm.-350.226,active
+234,Study Hall 180 A,Study Hall 180 A-353.226,active
+676,Study Hall 180 B,Study Hall 180 B-354.226,active
+677,Study Hall 180 C,Study Hall 180 C-355.226,active
+237,Study Hall A1,Study Hall A1-358.226,active
+963,Study Hall A2,Study Hall A2-3582.226,active
+964,Study Hall A3,Study Hall A3-3583.226,active
+238,Study Hall B1,Study Hall B1-359.226,active
+961,Study Hall B2,Study Hall B2-3592.226,active
+962,Study Hall B3,Study Hall B3-3593.226,active
+491,*Metal Fab. Academy,*Metal Fab. Academy-360.226,active
+239,Release,Release-361.226,active
+240,Release,Release-362.226,active
+934,Corr. Reading,Corr. Reading-3622.226,active
+241,Release,Release-363.226,active
+242,*PLTW Intro to Eng Design A,*PLTW Intro to Eng Design A-365.226,active
+243,*PLTW Intro to Eng  Design B,*PLTW Intro to Eng  Design B-366.226,active
+244,*PLTW Intro to Eng Design C,*PLTW Intro to Eng Design C-367.226,active
+493,*PLTW Prin of Eng A,*PLTW Prin of Eng A-368.226,active
+618,*PLTW Prin of Eng B,*PLTW Prin of Eng B-369.226,active
+494,*PLTW Prin of Eng C,*PLTW Prin of Eng C-370.226,active
+619,*PLTW BioTech Eng A,*PLTW BioTech Eng A-371.226,active
+620,*PLTW BioTech Eng B,*PLTW BioTech Eng B-372.226,active
+621,*PLTW BioTech Eng C,*PLTW BioTech Eng C-373.226,active
+622,*PLTW Civil Eng & Arch A,*PLTW Civil Eng & Arch A-374.226,active
+623,*PLTW Civil Eng & Arch B,*PLTW Civil Eng & Arch B-375.226,active
+624,*PLTW Civil Eng & Arch C,*PLTW Civil Eng & Arch C-376.226,active
+851,Entrepenuer 1,Entrepenuer 1-391.226,active
+1469,Entrepreneur IA,Entrepreneur IA-3911.226,active
+1468,Entrepreneur IB,Entrepreneur IB-3912.226,active
+1470,Entrepreneur IC,Entrepreneur IC-3913.226,active
+852,Entrepenuer 2,Entrepenuer 2-392.226,active
+1471,Entrepreneur 2A,Entrepreneur 2A-3921.226,active
+1472,Entrepreneur 2B,Entrepreneur 2B-3922.226,active
+1473,Entrepreneur 2C,Entrepreneur 2C-3923.226,active
+853,Entrepenuer 3,Entrepenuer 3-393.226,active
+1467,Entrepreneur IA,Entrepreneur IA-3991.226,active
+262,P*WesternCiv:Ancient to Early Modern,P*WesternCiv:Ancient to Early Modern-419.226,active
+266,P*Cult Anthrop,P*Cult Anthrop-428.226,active
+270,AA-Beltz,AA-Beltz-450.226,active
+271,A/A-Cox,A/A-Cox-451.226,active
+272,A/A-Diedrichsen,A/A-Diedrichsen-452.226,active
+273,A/A-Mohlis,A/A-Mohlis-453.226,active
+274,A/A-Johnson,A/A-Johnson-454.226,active
+275,A/A-Wesley,A/A-Wesley-455.226,active
+276,A/A-Fleming,A/A-Fleming-456.226,active
+277,A/A-Lough,A/A-Lough-457.226,active
+278,A/A-Steffen,A/A-Steffen-458.226,active
+279,A/A-Garwood,A/A-Garwood-459.226,active
+280,A/A-O'Brien,A/A-O'Brien-460.226,active
+281,AA-Chvala,AA-Chvala-462.226,active
+282,A/A-Harken,A/A-Harken-463.226,active
+283,A/A-Sandau,A/A-Sandau-464.226,active
+284,A/A-Gleiter,A/A-Gleiter-465.226,active
+285,A/A-Juhl,A/A-Juhl-466.226,active
+286,A/A-Kearns,A/A-Kearns-467.226,active
+287,A/A-Lorenzen,A/A-Lorenzen-468.226,active
+288,A/A-Furlong,A/A-Furlong-469.226,active
+289,A/A-Lahr,A/A-Lahr-470.226,active
+290,A/A-McGrew,A/A-McGrew-471.226,active
+291,A/A-Kalous,A/A-Kalous-472.226,active
+292,A/A-K. Smith,A/A-K. Smith-473.226,active
+293,A/A-Mulvaney,A/A-Mulvaney-474.226,active
+294,A/A-Vettraino,A/A-Vettraino-475.226,active
+295,A/A-Womochil,A/A-Womochil-476.226,active
+296,A/A-Woods,A/A-Woods-477.226,active
+297,A/A-Repp,A/A-Repp-478.226,active
+298,A/A-Lash,A/A-Lash-479.226,active
+299,A/A-Chyma,A/A-Chyma-480.226,active
+300,A/A-Patterson,A/A-Patterson-481.226,active
+301,A/A-J.Temple,A/A-J.Temple-483.226,active
+302,A/A-May,A/A-May-484.226,active
+303,A/A-Engdahl,A/A-Engdahl-485.226,active
+304,A/A-Zuspann,A/A-Zuspann-486.226,active
+305,A/A-Upmeyer,A/A-Upmeyer-487.226,active
+306,A/A-Vaughan,A/A-Vaughan-488.226,active
+307,A/A-Jackson,A/A-Jackson-489.226,active
+308,T*Elective,T*Elective-497.226,active
+1150,T*Elective,T*Elective-497125T.226,active
+1080,T*Elective,T*Elective-49725.226,active
+407,PSEO 1st Sem,PSEO 1st Sem-498.226,active
+309,PSEO 2nd Sem,PSEO 2nd Sem-499.226,active
+408,Language Arts A,Language Arts A-500.226,active
+409,Language Arts B,Language Arts B-501.226,active
+410,Composition I,Composition I-502.226,active
+411,Composition II,Composition II-503.226,active
+310,Introduction to Literature,Introduction to Literature-504.226,active
+1410,Poetry Workshop,Poetry Workshop-504P.226,active
+412,Generation Literature,Generation Literature-505.226,active
+413,Contemporary Literature,Contemporary Literature-506.226,active
+311,Genres of Literature,Genres of Literature-507.226,active
+414,Dramatic Literature,Dramatic Literature-508.226,active
+312,Individualized Study of Literature I,Individualized Study of Literature I-509.226,active
+938,Individualized Study of Literature II,Individualized Study of Literature II-5092.226,active
+313,Communication,Communication-510.226,active
+314,Pers/Prof. Communication,Pers/Prof. Communication-511.226,active
+941,Contemporary Afffairs III,Contemporary Afffairs III-5112.226,active
+415,Public Speaking,Public Speaking-512.226,active
+416,Creative Writing,Creative Writing-513.226,active
+1306,Creative Writing,Creative Writing-51325.226,active
+315,Journalism,Journalism-514.226,active
+935,Environ. Sci,Environ. Sci-5142.226,active
+316,Am. Literature,Am. Literature-515.226,active
+418,World Literature I,World Literature I-516.226,active
+317,World Literature II,World Literature II-517.226,active
+936,General Sci A,General Sci A-5172.226,active
+417,Film as Literature,Film as Literature-518.226,active
+318,Physical Ed,Physical Ed-519.226,active
+319,Am. History I,Am. History I-520.226,active
+1405,Am. History IA,Am. History IA-5201.226,active
+1406,Am. History IB,Am. History IB-5202.226,active
+419,Literacy & Comprehension,Literacy & Comprehension-521.226,active
+320,Am. History II,Am. History II-522.226,active
+1052,Am. History IIA,Am. History IIA-5221.226,active
+1407,Am. History IIB,Am. History IIB-52222.226,active
+321,Economics ,Economics -524.226,active
+1408,Economics A,Economics A-5241.226,active
+1403,Economics B,Economics B-5242.226,active
+422,World History I,World History I-526.226,active
+1058,World History IA,World History IA-5261.226,active
+1409,World History IB,World History IB-5262.226,active
+322,World History II,World History II-528.226,active
+1060,World History IIA,World History IIA-5281.226,active
+1404,World History IIB,World History IIB-5282.226,active
+323,Am. Government,Am. Government-529.226,active
+424,Am. Government A,Am. Government A-530.226,active
+425,Am. Government B,Am. Government B-531.226,active
+426,Contemporary Affairs I,Contemporary Affairs I-532.226,active
+427,Contemporary Affairs II,Contemporary Affairs II-533.226,active
+428,Contemporary Affairs III,Contemporary Affairs III-534.226,active
+429,Contemporary Affairs IV,Contemporary Affairs IV-535.226,active
+430,US Presidents I,US Presidents I-536.226,active
+431,US Presidents II,US Presidents II-537.226,active
+432,Sociology,Sociology-538.226,active
+433,Social Problems,Social Problems-539.226,active
+434,Psychology,Psychology-540.226,active
+435,Abnormal Psychology,Abnormal Psychology-541.226,active
+324,Geography A,Geography A-542.226,active
+325,Geography B,Geography B-543.226,active
+932,Am.Presidents I,Am.Presidents I-5432.226,active
+326,Heroes & Villians,Heroes & Villians-544.226,active
+1401,Villians in History I,Villians in History I-5441.226,active
+327,Women's Issues,Women's Issues-545.226,active
+328,Men's Issues,Men's Issues-546.226,active
+931,21stCent.Skills,21stCent.Skills-5462.226,active
+436,History of Technology,History of Technology-547.226,active
+437,History of Gender and Race,History of Gender and Race-548.226,active
+438,World Religions,World Religions-549.226,active
+329,Biology A,Biology A-550.226,active
+937,Literature,Literature-5502.226,active
+439,Biology B,Biology B-551.226,active
+330,Biology C,Biology C-552.226,active
+1451,Contemporary Issues in Science,Contemporary Issues in Science-552C.226,active
+440,General Science A1,General Science A1-553.226,active
+331,Gen. Science A2,Gen. Science A2-554.226,active
+332,Gen. Science B1,Gen. Science B1-555.226,active
+333,Gen. Science B2,Gen. Science B2-556.226,active
+441,General Science C,General Science C-557.226,active
+334,Gen. Science C2,Gen. Science C2-558.226,active
+335,Career Planning,Career Planning-559.226,active
+442,Consumer Math. A,Consumer Math. A-560.226,active
+443,Consumer Math. B,Consumer Math. B-561.226,active
+1402,Consumer Math. C,Consumer Math. C-561C.226,active
+444,Fundamentals of Math. A,Fundamentals of Math. A-562.226,active
+446,Fundamentals of Math. B,Fundamentals of Math. B-563.226,active
+445,Extended Algebra A,Extended Algebra A-564.226,active
+447,Extended Algebra B,Extended Algebra B-565.226,active
+448,Extended Algebra C,Extended Algebra C-566.226,active
+449,Descriptive Statistics,Descriptive Statistics-567.226,active
+1253,Business Math.,Business Math.-5671.226,active
+450,Math. Excursions,Math. Excursions-568.226,active
+451,Non-proof Geometry,Non-proof Geometry-569.226,active
+452,Geometry A,Geometry A-570.226,active
+453,Geometry A1,Geometry A1-571.226,active
+454,Geometry B,Geometry B-572.226,active
+455,Geometry B1,Geometry B1-573.226,active
+456,Algebra IIA,Algebra IIA-574.226,active
+457,Algebra IIA2,Algebra IIA2-575.226,active
+458,Algebra IIB,Algebra IIB-576.226,active
+459,Algebra IIB2,Algebra IIB2-577.226,active
+1154,Statistics of Gaming,Statistics of Gaming-578.226,active
+460,Physical Ed.,Physical Ed.-580.226,active
+461,21st Century Skills,21st Century Skills-581.226,active
+462,Strategies for Academic Success,Strategies for Academic Success-582.226,active
+463,Personal Financial Management,Personal Financial Management-583.226,active
+464,Health I,Health I-584.226,active
+465,Health II,Health II-585.226,active
+466,Introduction to Art,Introduction to Art-586.226,active
+467,Marriage and Family,Marriage and Family-587.226,active
+468,Child Development & Parenting,Child Development & Parenting-588.226,active
+469,Astronomy,Astronomy-589.226,active
+470,Music Appreciation,Music Appreciation-590.226,active
+471,Work Experience,Work Experience-591.226,active
+472,W. African Culture,W. African Culture-592.226,active
+1057,Living History,Living History-593.226,active
+1056,Am. Civil War,Am. Civil War-5931.226,active
+1079,Earth Science,Earth Science-596.226,active
+1091,Intro. to Physics,Intro. to Physics-5961.226,active
+1105,Science Topics,Science Topics-5962.226,active
+1055,Strategies for Academic Success,Strategies for Academic Success-599.226,active
+1053,Healthy Living,Healthy Living-5991.226,active
+1054,Literacy & Comprehension,Literacy & Comprehension-5993.226,active
+1202,Geography A,Geography A-5994.226,active
+1203,Geography B,Geography B-59942.226,active
+1301,Lang. Arts A,Lang. Arts A-5995.226,active
+1302,Lang. Arts B,Lang. Arts B-5996.226,active
+904,P*Environmental Science,P*Environmental Science-653.226,active
+906,P*Music Appreciation,P*Music Appreciation-655.226,active
+910,P*Ancient Med. World,P*Ancient Med. World-659.226,active
+914,P*Art Appreciation,P*Art Appreciation-661.226,active
+965,P*Film Analysis,P*Film Analysis-666.226,active
+966,P*Intro to Ethics,P*Intro to Ethics-668.226,active
+967,*Intro to Psychology,*Intro to Psychology-670.226,active
+968,P*Intro to Sociology,P*Intro to Sociology-672.226,active
+969,P*Mass Media,P*Mass Media-674.226,active
+970,P*Music Appreciation,P*Music Appreciation-676.226,active
+971,P*Prin. of MacroEcon,P*Prin. of MacroEcon-678.226,active
+972,P*Social Problems,P*Social Problems-680.226,active
+1003,P*US Hist. since 1877,P*US Hist. since 1877-682.226,active
+1201,P*UC: Modern Japan,P*UC: Modern Japan-684.226,active
+1353,P*Survey of Wld.Relig.,P*Survey of Wld.Relig.-690.226,active
+1354,P*Nutrition,P*Nutrition-691.226,active
+1355,P*Fund. of Oral Communication,P*Fund. of Oral Communication-692.226,active
+1356,P*Med. Term.,P*Med. Term.-693.226,active
+1358,P*Intro to Business,P*Intro to Business-694.226,active
+1357,P*Human Bio.,P*Human Bio.-695.226,active
+1359,P*Juvenile Delinquency,P*Juvenile Delinquency-696.226,active
+902,P*World Regional Geography,P*World Regional Geography-751.226,active
+336,Language Arts 6,Language Arts 6-600.226,active
+337,Math 6,Math 6-601.226,active
+338,Enriched Math 6,Enriched Math 6-602.226,active
+339,Science 6,Science 6-603.226,active
+340,Social Studies 6,Social Studies 6-604.226,active
+341,SCR 6,SCR 6-605.226,active
+343,Industrical Technology 6,Industrical Technology 6-607.226,active
+344,Art 6,Art 6-608.226,active
+345,PE 6,PE 6-609.226,active
+347,Study Hall 6,Study Hall 6-611.226,active
+348,ELP 6,ELP 6-612.226,active
+349,RTP 6,RTP 6-613.226,active
+948,RTP Even,RTP Even-613E.226,active
+949,RTP Odd,RTP Odd-613O.226,active
+350,Advisor 6,Advisor 6-614.226,active
+351,General Music 6,General Music 6-615.226,active
+651,Chorus 6,Chorus 6-619.226,active
+652,Band 6,Band 6-620.226,active
+352,Language Arts 7,Language Arts 7-700.226,active
+353,Math 7,Math 7-701.226,active
+354,Enriched Math 7,Enriched Math 7-702.226,active
+355,Science 7,Science 7-703.226,active
+356,Social Studies 7,Social Studies 7-704.226,active
+357,SCR 7,SCR 7-705.226,active
+358,Literacy B2,Literacy B2-706.226,active
+359,Industrial Technology 7 ,Industrial Technology 7 -707.226,active
+360,Art 7,Art 7-708.226,active
+361,PE 7,PE 7-709.226,active
+363,Study Hall 7,Study Hall 7-711.226,active
+364,ELP 7,ELP 7-712.226,active
+365,RTP 7,RTP 7-713.226,active
+953,RTP-Even,RTP-Even-713E.226,active
+954,RTP-Odd,RTP-Odd-713O.226,active
+366,Technology 7,Technology 7-714.226,active
+367,Health 7,Health 7-715.226,active
+368,FCS 7,FCS 7-716.226,active
+369,Careers 7,Careers 7-717.226,active
+653,Chorus 7,Chorus 7-719.226,active
+654,Band 7,Band 7-720.226,active
+1002,Literacy B1,Literacy B1-721.226,active
+370,Language Arts 8,Language Arts 8-800.226,active
+371,Math 8,Math 8-801.226,active
+372,Algebra I 8,Algebra I 8-802.226,active
+373,Science 8,Science 8-803.226,active
+374,Social Studies 8,Social Studies 8-804.226,active
+375,SCR 8,SCR 8-805.226,active
+376,Literacy C,Literacy C-806.226,active
+377,Industrial Technology 8,Industrial Technology 8-807.226,active
+378,Art 8,Art 8-808.226,active
+379,PE 8,PE 8-809.226,active
+381,Study Hall 8,Study Hall 8-811.226,active
+382,ELP 8,ELP 8-812.226,active
+383,RTP 8,RTP 8-813.226,active
+955,RTP-Even,RTP-Even-813E.226,active
+956,RTP-Odd,RTP-Odd-813O.226,active
+384,Technology 8,Technology 8-814.226,active
+385,Health 8,Health 8-815.226,active
+386,FCS 8,FCS 8-816.226,active
+387,Careers 8,Careers 8-817.226,active
+655,Chorus 8,Chorus 8-819.226,active
+656,Band 8,Band 8-820.226,active
+389,Math,Math-901.226,active
+390,Science,Science-902.226,active
+392,RTP,RTP-904.226,active
+959,RTP-Even,RTP-Even-904E.226,active
+957,RTP-Odd,RTP-Odd-904O.226,active
+393,Language Arts,Language Arts-906.226,active
+394,Math,Math-907.226,active
+395,Science,Science-908.226,active
+397,Social Skills,Social Skills-910.226,active
+960,Social Skills Even,Social Skills Even-910E.226,active
+398,Language Arts,Language Arts-912.226,active
+399,Math,Math-913.226,active
+400,Science,Science-914.226,active
+401,Social Studies,Social Studies-915.226,active
+402,RTP,RTP-916.226,active
+958,RTP-Odd,RTP-Odd-916O.226,active
+917,Instructional Time,Instructional Time-917.226,active
+922,Guided Learning ,Guided Learning -918.226,active
+924,Guided Learning-E,Guided Learning-E-918E.226,active
+923,Guided Learning-O,Guided Learning-O-918O.226,active
+925,Guided Learning 6,Guided Learning 6-919.226,active
+926,Guided Learning 6E,Guided Learning 6E-919E.226,active
+927,Guided Learning 6O,Guided Learning 6O-919O.226,active
+928,Guided Learning 7,Guided Learning 7-920.226,active
+929,Guided Learning 7E,Guided Learning 7E-920E.226,active
+930,Guided Learning 7O,Guided Learning 7O-920O.226,active
+1602,Read to Acheive,Read to Acheive-930.226,active
