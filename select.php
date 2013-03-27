@@ -9,15 +9,6 @@ if(!isset($_SESSION['access_token'])){
 	header('location: index.php');
 	
 }
-//Creating Directory for files
-if(file_exists($ps_token) && is_dir($ps_token)){
-			}else{
-				if (!mkdir($ps_token)) {
-					
-    			die('Failed to create folders...');
-					exit();
-					}
-				}
 /*if(!isset($_GET['schools'])){
 /*select schools from which to import users
  * this will loop through each school and aggregate all users (Staff and Students)
@@ -94,7 +85,7 @@ if(curl_errno($ch)){
 				echo "<label class='checkbox'>
 			      <input type='checkbox' name='import_terms' value='y'><h6>Import Term</h6>
 			    </label>";
-				echo "<button id='import' class='btn btn-primary' data-loading-text='Creating...' type='submit'>Create Import Files</button></p></form></div></div>";
+				echo "<button id='import' class='btn btn-large btn-info' data-loading-text='Creating...' type='submit'>Create Import Files</button></p></form></div></div>";
 
 				//include_once('footer.php');
 }

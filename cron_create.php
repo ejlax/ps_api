@@ -2,21 +2,46 @@
 session_start();
 //var_dump($_GET);
 //var_dump($_SESSION);
-$ps_token = $_SESSION['access_token'];
-$ps_url = $_SESSION['ps_url'];
+$urls=$_SESSION['access_token']."/variables.txt";
+$page = join("",file("$urls"));
+$kw = explode("\n", $page);
+ 
+//for($i=0;$i<count($kw);$i++){
+//echo $kw[$i]."<br>";
+//}
+$canvas_url = $kw[0];
+$canvas_guid = $kw[1];
+$ps_token = $kw[2];
+$ps_url = $kw[3];
+$canvas_token = $kw[4];
+
+echo $canvas_url;
+echo "<br>";
+echo $canvas_guid;
+echo "<br>";
+echo $ps_url;
+echo "<br>";
+echo $canvas_token;
+echo "<br>";
+
+$urls=$_SESSION['access_token']."/schools.txt";
+$page = join("",file("$urls"));
+$kw = explode("\n", $page);
+
+//$ps_token = $_SESSION['access_token'];
+//$ps_url = $_SESSION['ps_url'];
 $daily = $_GET['once_a_day'];
 $twice = $_GET['twice_a_day'];
 $thrice = $_GET['thrice_a_day'];
 if($_GET['import_courses'] === 'y'){
-	if($daily === 1){
 		$sched_time = $_GET['sched_time'];
 		$myFile = $ps_token."/import_courses.php";
 		$data="<?php\n";
-		$data.="\$ps_token = ".$_GET['access_token'].";\n";
-		$data.="\$canvas_token = ".$_GET['canvas_token'].";\n";
-		$data.="\$ps_url = ".$_GET['ps_url'].";\n";
+		$data.="\$ps_token = ".$ps_token.";\n";
+		$data.="\$canvas_token = ".$canvas_token.";\n";
+		$data.="\$ps_url = ".$ps_url.";\n";
 		$data.="\$schools = ".$_GET['schools'].";\n";
-		$data.="foreach(\$schools as \$school){\n";
+		$data.="foreach(\$kw as \$school){\n";
 		$data.="\$school_id = \$school[0];\n";
 		$data.="\$url = \$ps_url.\"/ws/v1/school/\".\$school_id.\"/course/count\";
 			\$ch = curl_init(\$url);
@@ -64,7 +89,7 @@ if($_GET['import_courses'] === 'y'){
 		
 		exec('echo -e "`crontab -l`\n* '.$sched_time.' * * * 0-6 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
 		//exec('echo -e "`crontab -l`\n0 * * * 1-5 wget http://localhost/ps_api/'.$myFile.'" | crontab -');
-}
+
 if($twice === 1){
 
 $handle = fopen($myFile, 'w') or die('Cannot open file;');

@@ -4,6 +4,9 @@ session_start();
 echo "<legend>Schedule Import Files</legend>";
 	echo "<form method='get' action='schedule.php'>";
 if($_GET['import_courses'] === 'y'){
+		$fp = fopen($_SESSION['access_token'].'/courses.csv', 'w');
+	$data = "course_id,short_name,long_name,term_id,status\n";
+	$fp = fwrite($fp, $data);
 	echo "<input type='hidden' name='import_courses' value='y'></input>";
 }
 if($_GET['import_sections'] === 'y'){
@@ -20,8 +23,22 @@ if($_GET['import_staff'] === 'y'){
 }
 
 echo "<div class='accordion' id='accordion2'>";
+if(file_exists($_SESSION['access_token']."/schools.txt")){
+	unlink($_SESSION['access_token']."/schools.txt");
+}
 foreach($_GET['schools'] as $school){
 	$school_id = $school[0];
+	$file = $_SESSION['access_token']."/schools.txt";
+	$data = $school_id."\n";
+	if(file_exists($_SESSION['access_token']."/schools.txt")){
+		$handle = fopen($file, 'a');
+		$fp = fwrite($handle, $data);
+		fclose($handle);
+	}else{
+		$handle = fopen($file, 'w');
+		$fp = fwrite($handle, $data);
+		fclose($handle);
+	}	
 	//echo $school_id."<br>";
 	if ($_GET['import_courses'] === 'y'){
 	$url =$_SESSION['ps_url']."/ws/v1/school/".$school_id."/course/count";
@@ -37,23 +54,21 @@ foreach($_GET['schools'] as $school){
 	$course_count = $response->count;
 	$pages = $course_count / 100;
 	$num = 1;
-	$fp = fopen('courses.csv', 'w');
-	$data = "course_id,short_name,long_name,term_id,status\n";
-	$fp = fwrite($fp, $data);
+
 			echo"<div class='accordion-group'>
 			    <div class='accordion-heading'>
-			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion2' href='#courses' align='center'>
+			      <h4 class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='#courses".$school_id."' align='center'>
 			        Preview Courses
 			      </h4>
 			    </div>
-			    <div id='courses' class='accordion-body collapse out'>
+			    <div id='courses".$school_id."' class='accordion-body collapse out'>
 			      <div class='accordion-inner'>
 			        		<div id='courses_preview' class='table'><table class='table table-striped table-condensed'>
 			<thead><tr><td>Course&nbspID</td><td>Short&nbspName</td><td>Long&nbspName</td><td>Status</td></tr></thead>";
 		$pre = 0;
 	while($c < $pages){
 		
-		$url = $_SESSION['ps_url']."/ws/v1/school/6/course?page=".$num;
+		$url = $_SESSION['ps_url']."/ws/v1/school/".$school_id."/course?page=".$num;
 		//$url = "https://ps-vscsd.gwaea.org/ws/v1/district/school";
 		//api/v1/accounts/1/sis_imports/17888.json?access_token=".$token;
 		//echo $url."<br>";
@@ -85,7 +100,7 @@ foreach($_GET['schools'] as $school){
 			$term_id = 226;
 			$status = 'active';
 			$data = $course_id.",".$short_name.",".$short_name."-".$course_num.".".$term_id.",".$status."\n";
-			$f = fopen('courses.csv', 'a');
+			$f = fopen($_SESSION['access_token'].'/courses.csv', 'a');
 			fwrite($f,$data);
 			fclose($f);
 				echo "<tr><td>".$course_id."</td><td>".$short_name."</td><td>".$short_name."-".$course_num."</td><td>".$status."</td></tr>";	

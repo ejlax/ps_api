@@ -14,6 +14,7 @@ if(!isset($_POST['custom_ps_url']) && !isset($_POST['custom_client_secret']) && 
 $ps_url= $_POST['custom_ps_url'];
 $guid = explode('.', $_POST['tool_consumer_instance_guid']);
 $user_guid = $guid[0];
+$_SESSION['canvas_token'] = $_POST['custom_canvas_token'];
 $canvas_token = $_POST['custom_canvas_token'];
 $_SESSION['ps_url'] = $ps_url; 
 $ps_code = $_POST['custom_client_id'];
